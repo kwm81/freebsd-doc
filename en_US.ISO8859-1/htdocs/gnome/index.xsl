@@ -124,8 +124,7 @@
 		<h2>State of the port</h2>
 
 	      <p>GNOME/MATE/CINNAMON for &os; are currently fully supported on
-		9.3, and 9.3-STABLE, 10.1 and 10.1-STABLE while
-                8.4, 8-STABLE and 11.0-CURRENT is provided on a best effort basis.
+		9.3, and 9.3-STABLE, 10.2, 10.1 and 10.1-STABLE while 11.0-CURRENT is provided on a best effort basis.
 		There is still <a href="docs/volunteer.html">plenty left to be done</a>!</p>
 
 	      <h2>One stop solution shop!</h2>
