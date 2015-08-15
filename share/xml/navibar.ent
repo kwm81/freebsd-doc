@@ -132,7 +132,7 @@
 	<li><a href="&base;/gnome/docs/halfaq.html">HAL FAQ</a></li>
         <!--not needed atm <li><a href="&base;/gnome/docs/faq316.html">3.14 to 3.16 Upgrade FAQ</a></li>-->
         <li><a href="&base;/gnome/docs/develfaq.html">Development Branch FAQ</a></li>
-        <li><a href="&base;/books/porters-handbook/using-gnome.html">Creating Ports</a></li>
+        <li><a href="&url.books.porters-handbook;/using-gnome.html">Creating Ports</a></li>
         <li><a href="&base;/gnome/docs/faq316.html#knownissues">Known Issues</a></li>
       </ul></li>
     </ul>
