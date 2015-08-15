@@ -73,14 +73,11 @@
       <li style="padding-bottom: 0.5em"><a name="q3"></a>
 	<p><b>How do I obtain the development versions of GNOME stuff?</b></p>
 <!-- A3 -->
-	<p><a href="mailto:marcus@FreeBSD.org">Marcus</a> maintains a
-	  SVN repository where all the development versions of
-	  the GNOME components for &os; are housed.  Instructions for
-	  how to check out the development ports module and how to merge it
-	  into the &os; ports tree reside on the entrance page to his SVN
-	  repository.  Please read carefully the instructions at
-	  <a href="http://www.marcuscom.com/viewvc/viewvc.cgi/marcuscom/">
-	  http://www.marcuscom.com/viewvc/viewvc.cgi/marcuscom/</a>.</p>
+	<p>The FreeBSD gnome team uses a GIT repository where we maintain
+	  the development versions for &os; of the software we maintain.  These
+	  branches contain the complete &os; ports tree plus the development changes.</p>
+
+	<p>How to checkout the new git repo setup.</p>
 
 	<p>During the development cycle, FreeBSD-specific caveats and
 	  other useful information will be sent to <a
@@ -99,7 +96,7 @@
 <pre>
 WITH_DEBUG="yes"
 </pre>
-	<p>GNOME has an excellent guide for getting <a href="https://wiki.gnome.org/GettingTraces">
+	<p>GNOME has an excellent guide for getting <a href="https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces">
 	  useful back traces</a>.</p>
       </li>
 
@@ -107,19 +104,20 @@ WITH_DEBUG="yes"
       <li style="padding-bottom: 0.5em"><a name="q4"></a>
 	<p><b>How do I keep everything up-to-date and in sync?</b></p>
 <!-- A4 -->
-	<p>The short answer is that you need to use the <tt>marcusmerge</tt>
-	  script to merge the development tree with the &os; ports tree.
-	  The <tt>marcusmerge</tt> script is available
-	  <a href="http://www.marcuscom.com/downloads/marcusmerge">
-	  here</a>, and a man page on using the script is available
-	  <a href="http://www.marcuscom.com/marcusmerge.8.html">
-	  here</a>.  This script will merge the development ports tree
-	  into your main ports tree.  From there, you can use
-	  <tt>portupgrade</tt> or <tt>portmaster</tt> to upgrade from
-	  &gnomever; to &gnomedevelver; and stay up-to-date afterwards.</p>
+	<p>There are two methods of keeping track of what happens in
+	  development branches.</p>
 
-	<p>The long answer is that keeping up-to-date with the GNOME
-	  development branch is complicated.  Sometimes components change
+	<ol>
+	  <li><b>portmaster</b> - Use <tt>portmaster</tt> to update installed ports.  This can be done by telling portmaster where to find the GNOME development checkout.
+<pre>
+# env PORTSDIR=/path/to/where/the/checkout/is/ portmaster -a
+</pre></li>
+	  <li><b>poudriere</b> - Build a set of package from the development repository you want to test.</li>
+	</ol>
+	<p></p>
+
+	<p>Keeping your ports up-to-date with the GNOME
+	  development branch can be complicated.  Sometimes components change
 	  in a way that makes <tt>portupgrade</tt> or <tt>portmaster</tt>
 	  fail, or causes strange end results. If you plan to track the
 	  development branch, it is a good idea to join the

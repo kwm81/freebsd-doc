@@ -118,8 +118,8 @@
   <ul>
     <li><a href="&base;/gnome/index.html">FreeBSD/GNOME</a>
       <ul>
-        <li><a href="&base;/gnome/docs/faq2.html#q1">Installation Instructions</a></li>
-        <li><a href="&base;/gnome/docs/faq232.html#q2">Upgrade Instructions</a></li>
+        <li><a href="&base;/gnome/docs/faq3.html#install">Installation Instructions</a></li>
+<!--        <li><a href="&base;/gnome/docs/faq316.html#upgrade">Upgrade Instructions</a></li> -->
         <li><a href="&base;/gnome/../ports/gnome.html">Available Applications</a></li>
         <li><a href="&base;/gnome/docs/volunteer.html">How to Help</a></li>
         <li><a href="&base;/gnome/docs/bugging.html">Reporting a Bug</a></li>
@@ -128,12 +128,12 @@
       </ul></li>
     <li><a href="&base;/gnome/index.html">Documentation</a>
       <ul>
-        <li><a href="&base;/gnome/docs/faq2.html">FAQ</a></li>
+        <li><a href="&base;/gnome/docs/faq3.html">FAQ</a></li>
 	<li><a href="&base;/gnome/docs/halfaq.html">HAL FAQ</a></li>
-        <li><a href="&base;/gnome/docs/faq232.html">2.30 to 2.32 Upgrade FAQ</a></li>
+        <!--not needed atm <li><a href="&base;/gnome/docs/faq316.html">3.14 to 3.16 Upgrade FAQ</a></li>-->
         <li><a href="&base;/gnome/docs/develfaq.html">Development Branch FAQ</a></li>
         <li><a href="&base;/gnome/docs/porting.html">Creating Ports</a></li>
-        <li><a href="&base;/gnome/docs/faq232.html#q4">Known Issues</a></li>
+        <li><a href="&base;/gnome/docs/faq316.html#knownissues">Known Issues</a></li>
       </ul></li>
     </ul>
 </div> <!-- SIDENAV -->'>

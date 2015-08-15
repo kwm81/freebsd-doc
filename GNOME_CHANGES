@@ -1,0 +1,16 @@
+List of changes and where to find some macro's so I don't need to grep the
+tree every time.
+
+New USE_GNOME chapter
+en_US.ISO8859-1/books/porters-handbook/special/chapter.xml
+
+New handbook section how to install gnome3
+en_US.ISO8859-1/books/handbook/x11/chapter.xml
+
+GNOME website updates:
+en_US.ISO8859-1/htdocs/gnome/*
+
+GNOME navibar
+share/xml/navibar.ent
+GNOME version macros
+share/xml/release.ent

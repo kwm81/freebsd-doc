@@ -44,13 +44,6 @@
 	        needed.</p>
 
 	      <ul>
-	        <li><p>Fix <tt>sysutils/system-tools-backends</tt> to
-		  work with all supported versions of FreeBSD.  This
-		  will require someone with FreeBSD configuration
-		  knowledged as well as a good knowledge of Perl
-		  programming.  All patches can be submitted as
-		  PRs.</p></li>
-
 		<li><p>Port <a
 		  href="http://www.gnome.org/projects/NetworkManager/">
 		    NetworkManager</a> to FreeBSD.  This will require

@@ -1400,12 +1400,293 @@ USE_XORG=	x11 xpm</programlisting>
 
   <sect1 xml:id="using-gnome">
     <title>Using GNOME</title>
+    <sect2>
+      <title>Introduction</title>
+      <para>This chapter will explain the <acronym>GNOME</acronym> framework as used by
+        ports.  The framework can be loosly divided into the base components, <acronym>GNOME</acronym> desktop components and a few special macros that simplify the work of ports maintainers.</para>
+      <para>While developing a port or changing one, please consider enabling <varname>DEVELOPER=yes</varname> in the environment or /etc/make.conf. This will cause the ports framework to enable additional ports checks.</para>
+    </sect2>
 
-    <para>The &os;/GNOME project uses its own set of variables to
-      define which GNOME components a particular port uses.  A <link
-	xlink:href="http://www.FreeBSD.org/gnome/docs/porting.html">comprehensive
-	list of these variables</link> exists within the
-      &os;/GNOME project's homepage.</para>
+      <sect2 xml:id="use-gnome">
+	<title>Using USE_GNOME</title>
+
+	<para>Adding this variable to the port will allow the use of the macro's and components defined in bsd.gnome.mk.  The code in bsd.gnome.mk will add the needed BUILD/LIB/RUN dependancy lines or the handling of special files.  <acronym>GNOME</acronym> applications under &os; use the <varname>USE_GNOME</varname> infrastructure.  Simply list all the needed components as a
+            space-separated list.  The <varname>USE_GNOME</varname> components are divided into
+            the following virtual lists: basic components, GNOME 3 components and legacy components.  If your port needs only GTK3 libraries, the following is the shortest way to define this:
+            <programlisting>USE_GNOME=gtk30</programlisting>
+
+            The above USE_GNOME component will automaticly add other USE_GNOME
+            components it needs.  This means that the adding glib20 as is done in the following example is not needed:
+            <programlisting>USE_GNOME=glib20 gtk30</programlisting>
+	    Please see the
+	    <link xlink:href="gnome-components.html">USE_GNOME components</link>
+	    page for the full list off all <varname>USE_GNOME</varname> compentens and which other components they imply.</para>
+
+            <para>Below is an example Makefile for a GNOME port, which uses many
+            of the tricks outlined in this document.  Please feel free to
+            use it as a guide for creating your own ports.
+
+<programlisting>
+# &dollar;FreeBSD&dollar;
+
+PORTNAME=       regexxer
+PORTVERSION=    0.10
+CATEGORIES=     devel textproc gnome
+MASTER_SITES=   GNOME
+
+MAINTAINER=     kwm@FreeBSD.org
+COMMENT=        Interactive tool for performing search and replace operations
+
+USES=           gettext gmake pathfix pkgconfig tar:xz
+GNU_CONFIGURE=  yes
+USE_GNOME=      gnomeprefix intlhack gtksourceviewmm3
+CPPFLAGS+=      -I${LOCALBASE}/include
+LDFLAGS+=       -L${LOCALBASE}/lib
+INSTALLS_ICONS= yes
+
+GLIB_SCHEMAS=   org.regexxer.gschema.xml
+
+.include &lt;bsd.port.mk&gt;
+</programlisting>
+
+<note><para>The USE_GNOME macro without any arguments doesn't add any dependacies to your port.  USE_GNOME can be set after bsd.port.options.mk inclusion, but not after bsd.port.pre.mk.</para></note>
+        </para>
+      </sect2>
+
+    <sect2>
+      <title>Variables</title>
+      <para>The following section explains which macros are available and what they do. The next section has a more indepth explantation and a example Makefile.</para>
+
+      <variablelist>
+	<varlistentry>
+	  <term xml:id="gnome-icons">INSTALLS_ICONS</term>
+	  <listitem>
+
+          <para>GTK+ ports which install Freedesktop-style icons to
+	    ${LOCALBASE}/share/icons should use this macro to ensure the icons
+	    are cached and will display correctly. The cache file is named
+	    icon-theme.cache and should not be listed in the pkg-plist
+ 	    file as this macro will do that for you. This macro isn't needed 
+            for QT based applications, which use a different method.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term xml:id="gnome-glibschema">GLIB_SCHEMAS</term>
+	  <listitem>
+	    <para>List of all the glib schema files the port installs. The macro will add the files to the port plist and handle the registration of these files on install and deinstall.</para>
+	    <para>The glib schema files are written in XML and end with the gschema.xml extension, and are installed in the "share/glib-2.0/schemas/" directory. These schema files contain all application config values with there default settings.  The actually database that is used by the applications, is build by the <application>glib-compile-schema</application> that is run by the GLIB_SCHEMAS macro.</para>
+
+	    <programlisting>GLIB_SCHEMAS=foo.gschema.xml</programlisting>
+
+            <note>
+	      <para>Glib schema's should not be listed in the pkg-plist. If they are listed in the pkg-plist instead they will not get registered and the applications might not work properly.</para></note>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term xml:id="gnome-gconfschema">GCONF_SCHEMAS</term>
+
+	    <listitem>
+<para>List all the gconf schema files. The macro will add the schema files to the port plist and will handle the registration on install and deinstall.</para>
+
+       <para>GConf is the XML-based database that virtually all GNOME
+          applications use for storing their settings.  These files are installed
+into the "etc/gconf/schemas" directory.  This
+          database is defined by installed schema files that are
+          used to generate <varname>%gconf.xml</varname> key files.  For each schema file installed by your port,
+          you must have the following listed in the <varname>Makefile</varname>:</para>
+
+          <programlisting>GCONF_SCHEMAS=my_app.schemas my_app2.schemas my_app3.schemas</programlisting>
+
+         <para>The schema files and <varname>%gconf.xml</varname> key files should
+           not be in the <varname>pkg-plist</varname>.  If you notice that the
+           port doesn't has any <varname>%gconf.xml</varname> key files, but
+           has schema files then you should not be use
+           <varname>GCONF_SCHEMAS</varname>.  It means, this port has broke
+           either schema files or installation of GConf.</para>
+
+<note>
+	      <para>Gconf schema's should be listed in the GCONF_SCHEMAS macro instead of the pkg-plist. If they are listed in the pkg-plist instead they will not get registered and the applications might not work properly.</para></note>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term xml:id="gnome-omf">INSTALLS_OMF</term>
+
+	    <listitem>
+	      <para>The Open Source Metadata Framework (OMF) files are commenly used by GNOME 2 applications. These files contain the help file information of these applications.  These files require special processing by ScrollKeeper/rarian in order.  In order to accomplish proper registry of these OMF files when installing GNOME applications
+          from packages, you should make sure that <varname>omf</varname>
+          files are listed in <varname>pkg-plist</varname> and that
+          your <varname>Makefile</varname> has this defined:</para>
+          <programlisting>INSTALLS_OMF=yes</programlisting>
+
+        <para>If set, bsd.gnome.mk will automatically scan pkg-plist
+          file and add apropriate @exec/@unexec directives for
+          each .omf file found to track OMF registration database.</para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect2>
+    </sect1>
+
+  <sect1 xml:id="gnome-components">
+    <title>GNOME components</title>
+
+<!-- XXX oh dear hardcoded www.f.o -->
+         <para>If you still need help with your port, have a look at some of
+    the <link xlink:href="http://www.freebsd.org/ports/gnome.html">existing ports</link> for examples.
+    The <link xlink:href="http://www.freebsd.org/gnome/">FreeBSD GNOME page</link> has contact information if more help is needed</para>
+
+<!-- update summary -->
+          <table>
+            <title>Basic components</title>
+
+            <tgroup cols="4">
+              <thead>
+                <row>
+                  <entry>component</entry>
+		  <entry>associated program</entry>
+                  <entry>implies</entry>
+                  <entry>description</entry>
+                </row>
+              </thead>
+
+              <tbody>
+                <row>
+                  <entry><literal>glib20</literal></entry>
+		  <entry>devel/glib20</entry>
+                  <entry></entry>
+                  <entry>core library <literal>glib20</literal></entry>
+                </row>
+                <row>
+                  <entry><literal>glibmm</literal></entry>
+		  <entry>devel/glibmm</entry>
+                  <entry>glib20 libsigc++20</entry>
+                  <entry>glib c++ bindings</entry>
+                </row>
+                <row>
+                  <entry><literal>gtk20</literal></entry>
+		  <entry>x11-toolkits/gtk20</entry>
+                  <entry>glib20</entry>
+                  <entry>Gtk+ 2 toolkit</entry>
+                </row>
+                <row>
+                  <entry><literal>gtkmm20</literal></entry>
+		  <entry>x11-toolkits/gtkmm20</entry>
+                  <entry>gtk20</entry>
+                  <entry>Gtk+ 2 c++ bindings</entry>
+                </row>
+                <row>
+                  <entry><literal>gtk30</literal></entry>
+		  <entry>x11-toolkits/gtk30</entry>
+                  <entry>glib20</entry>
+                  <entry>Gtk+ 3 toolkit</entry>
+                </row>
+                <row>
+                  <entry><literal>gtkmm30</literal></entry>
+		  <entry>x11-toolkits/gtkmm30</entry>
+                  <entry>gtk30</entry>
+                  <entry>Gtk+ 3 c++ bindings</entry>
+                </row>
+                <row>
+                  <entry><literal></literal></entry>
+		  <entry></entry>
+                  <entry></entry>
+                  <entry></entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+
+          <table>
+            <title>GNOME desktop components</title>
+            <tgroup cols="4">
+              <thead>
+                <row>
+                  <entry>component</entry>
+		  <entry>associated program</entry>
+                  <entry>implies</entry>
+                  <entry>description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>gnome-session</entry>
+		  <entry>x11/gnome-session</entry>
+		  <entry>gtk30</entry>
+                  <entry>GNOME session handler</entry>
+                </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+          <table>
+            <title>GNOME legacy components</title>
+            <tgroup cols="4">
+              <thead>
+                <row>
+                  <entry>component</entry>
+		  <entry>associated program</entry>
+                  <entry>implies</entry>
+                  <entry>description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>glib12</entry>
+		  <entry>devel/glib12</entry>
+		  <entry></entry>
+                  <entry>Old glib core library</entry>
+                </row>
+                <row>
+                  <entry>gtk12</entry>
+		  <entry>x11-toolkits/gtk12</entry>
+		  <entry>glib12</entry>
+                  <entry>Gtk+ 1.2 toolkit</entry>
+                </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+	<para>The following components are deprecated. They are still supported, but use is discouraged.</para>
+
+<!-- XXX HAVE_GNOME text needs more work -->
+	<variablelist xml:id="gnome-deprecated">
+	  <varlistentry>
+	    <term>HAVE_GNOME</term>
+	    <listitem>
+	      <para>This macro is used to check if a component is installed. This can be used for ports that don't have --enable/--disable switches for there configure script. But the building of parts of a port without a implicit request is frowned upon.</para>
+	    </listitem>
+          </varlistentry>
+	  <varlistentry>
+	    <term>WANT_GNOME</term>
+	    <listitem>
+	      <para>This macro was used by ports that needed USE_GNOME for optional dependancies defined after bsd.port.pre.mk.  Since USE_GNOME is useable after the inclusion of bsd.port.options.mk there is little use for this macro anymore.</para>
+	    </listitem>
+          </varlistentry>
+	</variablelist>
+
+          <table>
+            <title>Deprecated GNOME components</title>
+
+            <tgroup cols="2">
+              <thead>
+                <row>
+                  <entry>Name</entry>
+                  <entry>Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry></entry>
+		  <entry></entry>
+                </row>
+            </tbody>
+          </tgroup>
+	  </table>
+
+
   </sect1>
 
   <sect1 xml:id="using-qt">
