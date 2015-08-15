@@ -127,14 +127,8 @@
 		9.3, and 9.3-STABLE, 10.2, 10.1 and 10.1-STABLE while 11.0-CURRENT is provided on a best effort basis.
 		There is still <a href="docs/volunteer.html">plenty left to be done</a>!</p>
 
-	      <h2>One stop solution shop!</h2>
-
 	      <p>GNOME is simple and easy to build using the &os; ports system, but
-	        sometimes things simply go wrong. If GNOME -- or anything that uses
-		GNOME libraries -- is not building the way it should, simply run the
-		<a href="/gnome/gnomelogalyzer.sh">gnomelogalyzer.sh</a>
-		tool from the directory of the failed port, and let the gnomelogalyzer
-		figure out what's wrong and how to fix it!</p>
+	        sometimes things simply go wrong.</p>
 
 		<h2>Resources</h2>
 		<ul>
