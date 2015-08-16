@@ -1410,10 +1410,9 @@ USE_XORG=	x11 xpm</programlisting>
 	desktop components, and a few special macros that simplify the
 	work of port maintainers.</para>
 
-<!--XXX varname moet tags zijn-->
       <para>While developing a port or changing one, please consider
-	setting <literal>varnameDEVELOPERvarname=yes</literal> in
-	the environment or in <filename>/etc/make.conf</filename>.
+	setting <programlisting><varname>DEVELOPER</varname>=<literal>yes</literal></programlisting>
+	in the environment or in <filename>/etc/make.conf</filename>.
 	This will cause the ports framework to enable additional
 	checks.</para>
     </sect2>
@@ -1615,7 +1614,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 
     <!-- update summary -->
     <table>
-      <title>Basic Components</title>
+      <title>Basic GNOME Components</title>
 
       <tgroup cols="4">
 	<thead>
