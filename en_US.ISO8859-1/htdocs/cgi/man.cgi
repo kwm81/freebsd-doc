@@ -1,6 +1,6 @@
 #!/usr/bin/perl -T
 #
-# Copyright (c) 1996-2011 Wolfram Schneider <wosch@FreeBSD.org>
+# Copyright (c) 1996-2015 Wolfram Schneider <wosch@FreeBSD.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -153,6 +153,7 @@ $sectionpath = {
     'OpenBSD 5.4' => { 'path' => '1:2:3:3p:4:5:6:7:8:9', },
     'OpenBSD 5.5' => { 'path' => '1:2:3:3p:4:5:6:7:8:9', },
     'OpenBSD 5.6' => { 'path' => '1:2:3:3p:4:5:6:7:8:9', },
+    'OpenBSD 5.7' => { 'path' => '1:2:3:3p:4:5:6:7:8:9', },
 
     'CentOS Linux/i386 3.9' => { 'path' => '1:2:3:3p:4:5:6:7:8:9:n', },
     'CentOS Linux/i386 4.8' => { 'path' => '1:1p:2:3:3p:4:5:6:7:8:9:n:0p', },
@@ -223,8 +224,13 @@ $manLocalDir    = '/usr/local/www/bsddoc/man';
 $manPathDefault = 'FreeBSD 10.2-RELEASE';
 
 %manPath = (
+    'FreeBSD 10.2-RELEASE and Ports',
+"$manLocalDir/FreeBSD-10.2-RELEASE/man:$manLocalDir/FreeBSD-10.2-RELEASE/openssl/man:$manLocalDir/FreeBSD-ports-10.2-RELEASE/man:$manLocalDir/FreeBSD-ports-10.2-RELEASE/misc",
     'FreeBSD 10.1-RELEASE and Ports',
-"$manLocalDir/FreeBSD-10.1-RELEASE/man:$manLocalDir/FreeBSD-10.1-RELEASE/openssl/man:$manLocalDir/FreeBSD-ports-10.1-RELEASE/man",
+"$manLocalDir/FreeBSD-10.1-RELEASE/man:$manLocalDir/FreeBSD-10.1-RELEASE/openssl/man:$manLocalDir/FreeBSD-ports-10.1-RELEASE/man:$manLocalDir/FreeBSD-ports-10.1-RELEASE/misc",
+    'FreeBSD 10.0-RELEASE and Ports',
+"$manLocalDir/FreeBSD-10.0-RELEASE/man:$manLocalDir/FreeBSD-10.0-RELEASE/openssl/man:$manLocalDir/FreeBSD-ports-10.0-RELEASE/man:$manLocalDir/FreeBSD-ports-10.0-RELEASE/misc",
+
     'FreeBSD 9.3-RELEASE and Ports',
 "$manLocalDir/FreeBSD-9.3-RELEASE/man:$manLocalDir/FreeBSD-9.3-RELEASE/openssl/man:$manLocalDir/FreeBSD-ports-9.3-RELEASE/man:$manLocalDir/FreeBSD-ports-9.3-RELEASE/misc",
     'FreeBSD 9.2-RELEASE and Ports',
@@ -255,19 +261,15 @@ $manPathDefault = 'FreeBSD 10.2-RELEASE';
 "$manLocalDir/FreeBSD-10.2-RELEASE/man:$manLocalDir/FreeBSD-10.2-RELEASE/openssl/man",
     'FreeBSD 10.1-RELEASE',
 "$manLocalDir/FreeBSD-10.1-RELEASE/man:$manLocalDir/FreeBSD-10.1-RELEASE/openssl/man",
+    'FreeBSD 10.0-RELEASE',
+"$manLocalDir/FreeBSD-10.0-RELEASE/man:$manLocalDir/FreeBSD-10.0-RELEASE/openssl/man",
 
     'FreeBSD 10.2-stable',
 "$manLocalDir/FreeBSD-10.2-stable/man:$manLocalDir/FreeBSD-10.2-stable/openssl/man",
-    'FreeBSD 10.1-stable',
-"$manLocalDir/FreeBSD-10.1-stable/man:$manLocalDir/FreeBSD-10.1-stable/openssl/man",
 
+    'FreeBSD Ports 10.2-RELEASE', "$manLocalDir/FreeBSD-ports-10.2-RELEASE/man:$manLocalDir/FreeBSD-ports-10.2-RELEASE/misc",
     'FreeBSD Ports 10.1-RELEASE', "$manLocalDir/FreeBSD-ports-10.1-RELEASE/man:$manLocalDir/FreeBSD-ports-10.1-RELEASE/misc",
     'FreeBSD Ports 10.0-RELEASE', "$manLocalDir/FreeBSD-ports-10.0-RELEASE/man:$manLocalDir/FreeBSD-ports-10.0-RELEASE/misc",
-
-    'FreeBSD 10.0-RELEASE',
-"$manLocalDir/FreeBSD-10.0-RELEASE/man:$manLocalDir/FreeBSD-10.0-RELEASE/openssl/man",
-    'FreeBSD 10.0-stable',
-"$manLocalDir/FreeBSD-10.0-stable/man:$manLocalDir/FreeBSD-10.0-stable/openssl/man",
 
     'FreeBSD 9.3-RELEASE',
 "$manLocalDir/FreeBSD-9.3-RELEASE/man:$manLocalDir/FreeBSD-9.3-RELEASE/openssl/man",
@@ -493,6 +495,7 @@ $manPathDefault = 'FreeBSD 10.2-RELEASE';
     'OpenBSD 5.4', "$manLocalDir/OpenBSD-5.4",
     'OpenBSD 5.5', "$manLocalDir/OpenBSD-5.5",
     'OpenBSD 5.6', "$manLocalDir/OpenBSD-5.6",
+    'OpenBSD 5.7', "$manLocalDir/OpenBSD-5.7",
 
     #'NetBSD 0.9',            "$manLocalDir/NetBSD-0.9",
     'NetBSD 1.0',   "$manLocalDir/NetBSD-1.0",
@@ -729,6 +732,7 @@ my %arch = (
 'OpenBSD 5.4' => { 'arch' => [qw/alpha amd64 armish aviion beagle hp300 hppa hppa64 i386 landisk loongson luna88k macppc mvme68k mvme88k octeon sgi socppc sparc sparc64 vax zaurus/] }, 
 'OpenBSD 5.5' => { 'arch' => [qw/alpha amd64 armish armv7 aviion hp300 hppa hppa64 i386 landisk loongson luna88k macppc mvme68k mvme88k octeon sgi socppc sparc sparc64 vax zaurus/] }, 
 'OpenBSD 5.6' => { 'arch' => [qw/alpha amd64 armish armv7 aviion hppa hppa64 i386 landisk loongson luna88k macppc octeon sgi socppc sparc sparc64 vax zaurus/] }, 
+'OpenBSD 5.7' => { 'arch' => [qw/alpha amd64 armish armv7 aviion hppa hppa64 i386 landisk loongson luna88k macppc octeon sgi socppc sparc sparc64 vax zaurus/] }, 
 );
 
 # delete not existing releases
@@ -760,7 +764,7 @@ while ( ( $key, $val ) = each %manPath ) {
     'freebsd-stable6', 'FreeBSD 6.4-stable',
 
     'freebsd-current',       'FreeBSD 11-current',
-    'freebsd-release-ports', 'FreeBSD 10.1-RELEASE and Ports',
+    'freebsd-release-ports', 'FreeBSD 10.2-RELEASE and Ports',
 
     'slackware',  'Linux Slackware 3.1',
     'redhat',     'Red Hat Linux/i386 9',
@@ -773,7 +777,7 @@ while ( ( $key, $val ) = each %manPath ) {
     'macosx',     'Darwin 8.0.1/ppc',
 
     'netbsd',        'NetBSD 6.1.5',
-    'openbsd',       'OpenBSD 5.6',
+    'openbsd',       'OpenBSD 5.7',
     'v7',            'Unix Seventh Edition',
     'v7man',         'Unix Seventh Edition',
     'x11',           'X11R7.4',

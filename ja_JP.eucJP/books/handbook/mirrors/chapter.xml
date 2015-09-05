@@ -3,7 +3,7 @@
      The FreeBSD Documentation Project
      The FreeBSD Japanese Documentation Project
 
-     Original revision: r47093
+     Original revision: r47332
      $FreeBSD$
 -->
 <appendix xmlns="http://docbook.org/ns/docbook"
@@ -59,31 +59,31 @@
 
 <!--
 This site is just showing the Apache test page.
-	<listitem>
-	  <address>
-	    Linux Distro UK
-	    <street>42 Wharfedale Road</street>
-	    <city>Margate</city>
-	    <postcode>CT9 2TB</postcode>
-	    <country>United Kingdom</country>
-	    WWW: <otheraddr
-	      xlink:href="https://linux-distro.co.uk/">https://linux-distro.co.uk/</otheraddr>
-	  </address>
-	</listitem>
+      <listitem>
+	<address>
+	  Linux Distro UK
+	  <street>42 Wharfedale Road</street>
+	  <city>Margate</city>
+	  <postcode>CT9 2TB</postcode>
+	  <country>United Kingdom</country>
+	  WWW: <otheraddr
+	    xlink:href="https://linux-distro.co.uk/">https://linux-distro.co.uk/</otheraddr>
+	</address>
+      </listitem>
 
 This site doesn't have any products newer than 8.1 which is now EOL'd
-<listitem>
-	  <address>The Linux Emporium
-	    <street>The Techno Centre, Puma Way</street>
-	    <city>Parkside</city>
-	    <postcode>CV1 2TT</postcode>
-	    <country>United Kingdom</country>
-	    電話: <phone>+44 (0)247 615 8121</phone>
-	    Fax: <fax>+44 1491 837016</fax>
-	    WWW: <otheraddr
-	      xlink:href="http://www.linuxemporium.co.uk/products/bsd/">http://www.linuxemporium.co.uk/products/bsd/</otheraddr>
-	  </address>
-	</listitem>
+      <listitem>
+	<address>The Linux Emporium
+	  <street>The Techno Centre, Puma Way</street>
+	  <city>Parkside</city>
+	  <postcode>CV1 2TT</postcode>
+	  <country>United Kingdom</country>
+	  電話: <phone>+44 (0)247 615 8121</phone>
+	  Fax: <fax>+44 1491 837016</fax>
+	  WWW: <otheraddr
+	    xlink:href="http://www.linuxemporium.co.uk/products/bsd/">http://www.linuxemporium.co.uk/products/bsd/</otheraddr>
+	</address>
+      </listitem>
 -->
 
       <listitem>
@@ -112,14 +112,14 @@ This site doesn't have any products newer than 8.1 which is now EOL'd
       これは、プロジェクトクラスタの管理者により運用されている数多くのコンピュータから構成されています。
       また、GeoDNS により、近くの利用可能なミラーをユーザに提供します。</para>
 
-    <para>さらに、&os; は以下のミラーサイトから anonymous <acronym>FTP</acronym>
-      によって入手できます。もし &os; を anonymous <acronym>FTP</acronym>
-      によって手にいれる場合は、
-      近くのサイトを利用するようにしてください。
+    <para>さらに、&os; は以下のミラーサイトから
+      anonymous <acronym>FTP</acronym> によって入手できます。
+      &os; を anonymous <acronym>FTP</acronym>
+      から入手する場合には、近くのサイトを利用するようにしてください。
       <quote>一次ミラーサイト</quote> としてあげられているサイトには、
-      &os; の各アーキテクチャで利用可能なすべてのバージョンのアーカイブ一式が用意されています。
+      &os; の各アーキテクチャで利用可能なすべてのバージョンのアーカイブ一式が用意されていますが、
       あなたが住んでいる国や地域には、
-      より高速にダウンロードできるサイトがおそらくあるでしょう。
+      おそらくより高速にダウンロードできるサイトが用意されています。
       各国のミラーサイトには、
       人気のあるアーキテクチャの最新のバージョンが置いてありますが、
       &os; のアーカイブ全体はもしかするとないかもしれません。
@@ -191,16 +191,12 @@ This site doesn't have any products newer than 8.1 which is now EOL'd
 
       <variablelist>
 	<varlistentry>
-	  <term>カリフォルニア、サンフランシスコ近辺、公式なソース</term>
+	  <term>グローバルミラー</term>
 	  <listitem>
 	    <itemizedlist>
 	      <listitem>
 		<para><uri
-		  xlink:href="ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
-	      </listitem>
-	      <listitem>
-		<para><uri
-		  xlink:href="ftp://ftp.FreeBSD.org/pub/FreeBSD/CTM/">ftp://ftp.FreeBSD.org/pub/FreeBSD/CTM/</uri></para>
+		    xlink:href="ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
 	      </listitem>
 	    </itemizedlist>
 	  </listitem>
@@ -212,7 +208,7 @@ This site doesn't have any products newer than 8.1 which is now EOL'd
 	    <itemizedlist>
 	      <listitem>
 		<para><uri
-		  xlink:href="ftp://ftp.za.FreeBSD.org/pub/FreeBSD/CTM/">ftp://ftp.za.FreeBSD.org/pub/FreeBSD/CTM/</uri></para>
+		    xlink:href="ftp://ftp.za.FreeBSD.org/pub/FreeBSD/CTM/">ftp://ftp.za.FreeBSD.org/pub/FreeBSD/CTM/</uri></para>
 	      </listitem>
 	    </itemizedlist>
 	  </listitem>
@@ -225,17 +221,17 @@ This site doesn't have any products newer than 8.1 which is now EOL'd
 	    <itemizedlist>
 	      <listitem>
 		<para><uri
-		  xlink:href="ftp://ctm.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
+		    xlink:href="ftp://ctm.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
 	      </listitem>
 
 	      <listitem>
 		<para><uri
-		  xlink:href="ftp://ctm2.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm2.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
+		    xlink:href="ftp://ctm2.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm2.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
 	      </listitem>
 
 	      <listitem>
 		<para><uri
-		  xlink:href="ftp://ctm3.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm3.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
+		    xlink:href="ftp://ctm3.tw.FreeBSD.org/pub/FreeBSD/development/CTM/">ftp://ctm3.tw.FreeBSD.org/pub/FreeBSD/development/CTM/</uri></para>
 	      </listitem>
 	    </itemizedlist>
 	  </listitem>
@@ -462,45 +458,80 @@ Comment out for now until these can be verified.
 
       <para>2012 年 7 月から、&os;
 	はすべてのソースコード、ドキュメント、Ports Collection
-	を管理するメインのバージョン管理システムに
+	を管理するバージョン管理システムに
 	<application>Subversion</application> を使っています。</para>
 
       <note>
 	<para>一般的には <application>Subversion</application>
 	  は開発者向けのツールです。
-	  大部分のユーザは、&os; のベースシステムのアップデートに
+	  ユーザは、&os; のベースシステムのアップデートに
 	  <command>freebsd-update</command> (<xref
 	    linkend="updating-upgrading-freebsdupdate"/>)、
 	  Ports Collection のアップデートには <command>portsnap</command> (<xref
 	    linkend="ports-using"/>)
-	  を使うべきでしょう。</para>
+	  を使うことを好むでしょう。</para>
       </note>
 
-      <para>この章では、&os; システムへの
-	<application>Subversion</application> のインストール方法および、
-	&os; リポジトリをローカルに準備する方法について説明します。
-	また、利用可能な &os; <application>Subversion</application> ミラーの一覧および、
-	<application>Subversion</application>
+      <para>この節では、&os; システムへの
+	<application>Subversion</application> のインストール方法、および
+	&os; リポジトリをローカルに作成する方法について説明します。
+	さらに <application>Subversion</application>
 	を利用するための情報についても紹介します。</para>
+    </sect2>
+
+    <sect2 xml:id="svn-ssl-certificates">
+      <title>ルート <acronym>SSL</acronym> 証明書</title>
+
+      <para><package role="port">security/ca_root_nss</package>
+	をインストールすることで、
+	<application>Subversion</application> は、
+	<acronym>HTTPS</acronym> リポジトリサーバを検証できます。
+	ルート <acronym>SSL</acronym> 証明書は、
+	port からインストールできます。</para>
+
+      <screen>&prompt.root; <userinput>cd /usr/ports/security/ca_root_nss</userinput>
+&prompt.root; <userinput>make install clean</userinput></screen>
+
+      <para>または package からインストールしてください。</para>
+
+       <screen>&prompt.root; <userinput>pkg install ca_root_nss</userinput></screen>
+    </sect2>
+
+    <sect2 xml:id="svn-svnlite">
+      <title><application>Svnlite</application></title>
+
+      <para>&os; には、<application>Subversion</application>
+	より軽い <command>svnlite</command>
+	がインストールされています。
+	<application>Subversion</application> の port または package は、
+	Python もしくは Perl <acronym>API</acronym> が必要な時や、
+	最新の Subversion を使用したい時のみ必要となります。</para>
+	
+      <para>通常の <application>Subversion</application> と、
+	<literal>svnlite</literal> との違いは、
+	使用する時のコマンド名が異なるだけです。</para>
     </sect2>
 
     <sect2 xml:id="svn-install">
       <title>インストール</title>
 
-      <para>リポジトリの中身をチェックアウトできるよう、事前に
-	<application>Subversion</application>
-	をインストールしておく必要があります。
-	もし、すでに ports ツリーが用意してあれば、
-	以下のようにして <application>Subversion</application>
-	をインストールできます。</para>
+      <para><command>svnlite</command> を利用できない場合や、
+	フルバージョンの <application>Subversion</application>
+	を使いたいのであれば、
+	事前に <application>Subversion</application>
+	をインストールしておく必要があります。</para>
+
+      <para><application>Subversion</application> は
+	 Ports Collection からインストールできます。</para>
 
       <screen>&prompt.root; <userinput>cd /usr/ports/devel/subversion</userinput>
 &prompt.root; <userinput>make install clean</userinput></screen>
 
-      <para>もし ports ツリーを利用できなければ、package から
-	<application>Subversion</application> をインストールできます。</para>
+      <para>package を使って
+	<application>Subversion</application>
+	をインストールすることもできます。</para>
 
-      <screen>&prompt.root; <userinput>pkg install devel/subversion</userinput></screen>
+      <screen>&prompt.root; <userinput>pkg install subversion</userinput></screen>
     </sect2>
 
     <sect2 xml:id="svn-usage">
@@ -512,8 +543,8 @@ Comment out for now until these can be verified.
         <emphasis>ローカル作業コピー</emphasis> と呼びます。</para>
 
       <warning>
-	<para><emphasis><command>checkout</command> を使う前に、
-	  ローカルディレクトリを移動するか削除してください。</emphasis></para>
+	<para><command>checkout</command> をはじめて使う前に、
+	  ローカルディレクトリを移動するか削除してください。</para>
 
 	<para><command>svn</command>
 	  以外の方法で用意されたディレクトリでチェックアウトすると、
@@ -525,7 +556,6 @@ Comment out for now until these can be verified.
 	<replaceable>protocol://hostname/path</replaceable> 形式の
 	<acronym>URL</acronym> を用います。
 	以下に記載されているように、
-	ミラーサイトは異なる複数のプロトコルに対応しています。
 	アクセスする &os; リポジトリは、パス (path) の最初で指定します。
 	リポジトリは 3 つあります。
 	<literal>base</literal> は &os; ベースシステムのソースコード、
@@ -538,7 +568,7 @@ Comment out for now until these can be verified.
 
       <para>以下のように入力して、リポジトリからチェックアウトしてください。</para>
 
-      <screen>&prompt.root; <userinput>svn checkout <replaceable>svn-mirror</replaceable>/<replaceable>repository</replaceable>/<replaceable>branch</replaceable> <replaceable>lwcdir</replaceable></userinput></screen>
+      <screen>&prompt.root; <userinput>svn checkout https://svn.FreeBSD.org/<replaceable>repository</replaceable>/<replaceable>branch</replaceable> <replaceable>lwcdir</replaceable></userinput></screen>
 
       <para>ここで、<replaceable>repository</replaceable>,
 	<replaceable>branch</replaceable> および <replaceable>root</replaceable>
@@ -546,15 +576,9 @@ Comment out for now until these can be verified.
 
       <itemizedlist>
 	<listitem>
-	  <para><replaceable>svn-mirror</replaceable> は、
-	    <link linkend="svn-mirrors">Subversion
-	    ミラーサイト</link> のひとつの URL です。</para>
-	</listitem>
-
-	<listitem>
 	  <para><replaceable>repository</replaceable> には、
-	    プロジェクトのリポジトリ、すなわち <literal>base</literal>,
-	    <literal>ports</literal>, または <literal>doc</literal>
+	    プロジェクトリポジトリの <literal>base</literal>,
+	    <literal>ports</literal> または <literal>doc</literal>
 	    のどれかひとつを指定します。</para>
 	</listitem>
 
@@ -583,8 +607,9 @@ Comment out for now until these can be verified.
 	</listitem>
       </itemizedlist>
 
-      <para>以下の例では、Ports Collection を western US リポジトリから
-        <acronym>HTTPS</acronym> プロトコルを使って、チェックアウトします。
+      <para>以下の例では、Ports Collection を
+	<acronym>HTTPS</acronym> プロトコルを使って、
+	&os; リポジトリからチェックアウトします。
 	そしてそれらは、
 	<filename>/usr/ports</filename>
 	のローカル作業コピーに置かれます。
@@ -592,11 +617,12 @@ Comment out for now until these can be verified.
 	それが <command>svn</command> によって生成されたものでなければ、
 	チェックアウトする前に、名前を変更するか削除してください。</para>
 
-      <screen>&prompt.root; <userinput>svn checkout <replaceable>https://svn.FreeBSD.org</replaceable>/ports/head /usr/ports</userinput></screen>
+      <screen>&prompt.root; <userinput>svn checkout https://svn.FreeBSD.org/ports/head /usr/ports</userinput></screen>
 
       <para>初めてチェックアウトする際には、
-	リモートリポジトリのすべてのブランチをダウンロードするので時間がかかります。
-	どうぞ我慢してください。</para>
+	リモートリポジトリのすべてのブランチをダウンロードする必要があるので、
+	時間がかかります。
+	我慢してください。</para>
 
       <para>初めてのチェックアウト後は、
 	以下を実行することでローカル作業コピーをアップデートできます。</para>
@@ -634,9 +660,11 @@ Comment out for now until these can be verified.
 	<secondary>ミラーサイト</secondary>
       </indexterm>
 
-      <para>&os; <application>Subversion</application> リポジトリである
-	<systemitem class="fqdomainname">svn.FreeBSD.org</systemitem> は、
-	公にアクセス可能なミラーネットワークで、
+      <para>&os; <application>Subversion</application> リポジトリは、</para>
+
+      <programlisting>svn.FreeBSD.org</programlisting>
+
+      <para>です。これは、公にアクセス可能なミラーネットワークで、
 	GeoDNS を用いて適切なバックエンドサーバを選択しています。
 	ブラウザを用いて &os; の <application>Subversion</application>
 	リポジトリを参照するには、<link
@@ -647,16 +675,17 @@ Comment out for now until these can be verified.
 	<para>&os; の <application>Subversion</application>
 	  ミラーは、以前はこの節に記載されている自己署名 SSL
 	  証明書を用いていました。
-	  2005 年 7 月 14 日から、すべてのミラーは、<filename
-	    role="package">security/ca_root_nss</filename> port
+	  2005 年 7 月 14 日から、すべてのミラーは、<package
+	    role="package">security/ca_root_nss</package> port
 	  がインストールされている場合には、
 	  <application>Subversion</application> が認識する公式の
 	  SSL 証明書を使うようになりました。
-	  昔の自己署名の証明書はまだ利用可能ですが、推奨されません。</para>
+	  昔の自己署名の証明書およびサーバ名はまだ利用可能ですが、
+	  推奨されませんし、サポートもされません。</para>
       </note>
 
-      <para><filename
-	  role="package">security/ca_root_nss</filename> port
+      <para><package
+	  role="package">security/ca_root_nss</package> port
 	がインストールされていない場合に、
 	SHA1 および SHA256 フィンガープリントは以下のようになります。</para>
 
@@ -696,6 +725,48 @@ Comment out for now until these can be verified.
 	を使ってください。
 	両方を使えない場合には、
 	<literal>http</literal> を使ってください。</para>
+
+      <para>廃止予定のサーバ名がいまだ利用されている環境では、
+	SHA1 および SHA256
+	フィンガープリントは以下のどれかになるでしょう。</para>
+
+      <informaltable>
+	<tgroup cols="2">
+	  <colspec colwidth="1*"/>
+	  <colspec colwidth="1*"/>
+	  <thead>
+	    <row>
+	      <entry>ハッシュ</entry>
+	      <entry>フィンガープリント</entry>
+	    </row>
+	  </thead>
+
+	  <tbody>
+	    <row>
+	      <entry>Legacy-SHA1</entry>
+	      <entry><literal>1C:BD:85:95:11:9F:EB:75:A5:4B:C8:A3:FE:08:E4:02:73:06:1E:61</literal></entry>
+	    </row>
+
+	    <row>
+	      <entry>Legacy-SHA1</entry>
+	      <entry><literal>F6:44:AA:B9:03:89:0E:3E:8C:4D:4D:14:F0:27:E6:C7:C1:8B:17:C5</literal></entry>
+	    </row>
+
+	    <row>
+	      <entry>Legacy-SHA256</entry>
+	      <entry><literal>47:35:A9:09:A3:AB:FA:20:33:36:43:C5:1A:D6:E6:FB:EB:C0:C0:83:37:D4:46:9C:A0:AB:89:7F:C2:9C:4C:A3</literal></entry>
+	    </row>
+
+	    <row>
+	      <entry>Legacy-SHA256</entry>
+	      <entry><literal>48:3C:84:DB:7C:27:1B:FA:D5:0B:A0:D7:E0:4C:79:AA:A3:8E:A3:FA:84:E6:32:34:7D:EB:30:E6:11:01:CF:BE</literal></entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </informaltable>
+
+      <para>これらの古い証明書のフィンガープリントが使われているのを見かけたら、
+	廃止予定のサーバ名が使われている可能性があります。</para>
     </sect2>
 
     <sect2>
@@ -719,8 +790,8 @@ Comment out for now until these can be verified.
       こちらの方が豊富なオプションを備え、送り側と受け側の差分だけを
       転送するという rsync リモート更新プロトコルを使用するという点が異なります。
       rsync を使うと、ネットワーク経由での同期を非常に高速に行なうことが可能です。
-      特に、&os; <acronym>FTP</acronym> サーバや CVS
-      リポジトリのミラーサイトを作成する時に便利でしょう。
+      特に、&os; <acronym>FTP</acronym>
+      サーバのミラーサイトを作成する時に便利でしょう。
       <application>rsync</application> は、多くのオペレーティングシステムで
       利用することができます。&os; 版は、<package>net/rsync</package> の
       port か、package を使ってください。</para>

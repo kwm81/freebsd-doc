@@ -8,7 +8,39 @@
     <name>2015</name>
 
     <month>
+      <name>9</name>
+
+      <day>
+        <name>2</name>
+
+        <advisory>
+          <name>FreeBSD-SA-15:23.bind</name>
+        </advisory>
+      </day>
+    </month>
+
+    <month>
       <name>8</name>
+
+      <day>
+        <name>25</name>
+
+        <advisory>
+          <name>FreeBSD-SA-15:22.openssh</name>
+        </advisory>
+
+        <advisory>
+          <name>FreeBSD-SA-15:21.amd64</name>
+        </advisory>
+      </day>
+
+      <day>
+        <name>18</name>
+
+        <advisory>
+          <name>FreeBSD-SA-15:20.expat</name>
+        </advisory>
+      </day>
 
       <day>
         <name>5</name>
