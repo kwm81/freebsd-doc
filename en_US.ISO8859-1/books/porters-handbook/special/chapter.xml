@@ -2174,13 +2174,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       </tgroup>
     </table>
 
-    <title>Deprecated Components: Do Not Use.</title>
+    <variablelist xml:id="gnome-deprecated">
+      <title>Deprecated Components: Do Not Use.</title>
 
     <para>These components are deprecated.  They are still
       supported, but use is discouraged.</para>
 
-    <!-- XXX HAVE_GNOME text needs more work -->
-    <variablelist xml:id="gnome-deprecated">
       <varlistentry>
 	<term><varname>HAVE_GNOME</varname></term>
 
