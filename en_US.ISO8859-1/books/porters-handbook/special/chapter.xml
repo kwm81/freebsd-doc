@@ -1632,43 +1632,43 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	<tbody>
 	  <row>
 	    <entry><literal>atk</literal></entry>
-	    <entry></entry>
+	    <entry>accessibility/atk</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>atkmm</literal></entry>
-	    <entry></entry>
+	    <entry>accessibility/atkmm</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>cairo</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/cairo</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>cairomm</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/cairomm</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>dconf</literal></entry>
-	    <entry></entry>
+	    <entry>devel/dconf</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>evolutiondataserver3</literal></entry>
-	    <entry></entry>
+	    <entry>databases/evolution-data-server</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gdkpixbuf2</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/gdk-pixbuf2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1686,13 +1686,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gnomecontrolcenter3</literal></entry>
-	    <entry></entry>
+	    <entry>sysutils/gnome-control-center</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomedesktop3</literal></entry>
-	    <entry></entry>
+	    <entry>x11/gnome-desktop</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1704,13 +1704,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gsound</literal></entry>
-	    <entry></entry>
+	    <entry>audio/gsound</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtk-update-icon-cache</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/gtk-update-icon-cache</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1746,25 +1746,25 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview2</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gtksourceview2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview3</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gtksourceview3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceviewmm3</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gtksourceviewmm3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gvfs</literal></entry>
-	    <entry></entry>
+	    <entry>devel/gvfs</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1772,13 +1772,14 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>intltool</literal></entry>
 	    <entry>textproc/intltool</entry>
 	    <entry></entry>
-	    <entry>Tool for internationalizion</entry>
+	    <entry>Tool for internationalization</entry>
 	  </row>
 	  <row>
 	    <entry><literal>intlhack</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
-	    <entry>Same as intltool, but patches to make sure share/locale/ is used.</entry>
+	    <entry>Same as intltool, but patches to make sure
+	      <filename>share/locale/</filename> is used.</entry>
 	  </row>
 	  <row>
 	    <entry><literal>introspection</literal></entry>
@@ -1788,37 +1789,37 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>libgda5</literal></entry>
-	    <entry></entry>
+	    <entry>databases/libgda5</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgda5-ui</literal></entry>
-	    <entry></entry>
+	    <entry>databases/libgda5-ui</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgdamm5</literal></entry>
-	    <entry></entry>
+	    <entry>databases/libgdamm5</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgsf</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libgsf</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>librsvg2</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/librsvg2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libsigc++20</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libsigc++20</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1842,13 +1843,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>metacity</literal></entry>
-	    <entry></entry>
+	    <entry>x11-wm/metacity</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>nautilus3</literal></entry>
-	    <entry></entry>
+	    <entry>x11-fm/nautilus</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1866,13 +1867,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>py3gobject3</literal></entry>
-	    <entry></entry>
+	    <entry>devel/py3-gobject3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygobject3</literal></entry>
-	    <entry></entry>
+	    <entry>devel/py-gobject3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1880,12 +1881,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>referencehack</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
-	    <entry>This is a macro to help splitting off the API or
-	      reference documentation into there own port.</entry>
+	    <entry>This macro is there to help splitting of the API or
+	      reference documentation into its own port.</entry>
 	  </row>
 	  <row>
 	    <entry><literal>vte3</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/vte3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -2206,6 +2207,41 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</listitem>
       </varlistentry>
     </variablelist>
+
+    <table xml:id="gnome-deprecated-test">
+      <title>Deprecated Components: Do Not Use.</title>
+
+
+
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>Component</entry>
+	    <entry>Description</entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row>
+	    <entry><literal>HAVE_GNOME</literal> (Use is discouraged)</entry>
+	    <entry>This macro is used to check if a component is
+	    installed.	This can be used for ports that do not have
+	    <literal>--enable</literal>/<literal>--disable</literal>
+	    switches for their configure script.  But the building of
+	    parts of a port without a implicit request is
+	    discouraged.</entry>
+	  </row>
+	  <row>
+	    <entry><literal>WANT_GNOME</literal> (Use is discouraged)</entry>
+	    <entry>This macro was used by ports that needed
+	    <varname>USE_GNOME</varname> for optional dependencies
+	    defined after <filename>bsd.port.pre.mk</filename>.  Since
+	    <varname>USE_GNOME</varname> can be used after the
+	    inclusion of <filename>bsd.port.options.mk</filename>,
+	    there is little need for this macro any more.</entry>
+	  </row>
+	</tbody>
+      </tgroup>
+    </table> 
   </sect1>
 
   <sect1 xml:id="using-qt">
