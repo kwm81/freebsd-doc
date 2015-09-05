@@ -1623,10 +1623,10 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       <tgroup cols="4">
 	<thead>
 	  <row>
-	    <entry>component</entry>
-	    <entry>associated program</entry>
-	    <entry>implies</entry>
-	    <entry>description</entry>
+	    <entry>Component</entry>
+	    <entry>Associated program</entry>
+	    <entry>Implies</entry>
+	    <entry>Description</entry>
 	  </row>
 	</thead>
 	<tbody>
@@ -1899,10 +1899,10 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       <tgroup cols="4">
 	<thead>
 	  <row>
-	    <entry>component</entry>
-	    <entry>associated program</entry>
-	    <entry>implies</entry>
-	    <entry>description</entry>
+	    <entry>Component</entry>
+	    <entry>Associated program</entry>
+	    <entry>Implies</entry>
+	    <entry>Description</entry>
 	  </row>
 	</thead>
 	<tbody>
@@ -2173,6 +2173,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</tbody>
       </tgroup>
     </table>
+
+    <title>Deprecated Components: Do Not Use.</title>
 
     <para>These components are deprecated.  They are still
       supported, but use is discouraged.</para>
