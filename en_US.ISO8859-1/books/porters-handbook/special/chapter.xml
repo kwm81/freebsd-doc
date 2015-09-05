@@ -1696,12 +1696,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-	  <row>
-	    <entry><literal>gnomeprefix</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
+
 	  <row>
 	    <entry><literal>gsound</literal></entry>
 	    <entry>audio/gsound</entry>
@@ -1772,15 +1767,9 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>intltool</literal></entry>
 	    <entry>textproc/intltool</entry>
 	    <entry></entry>
-	    <entry>Tool for internationalization</entry>
+	    <entry>Tool for internationalization (also see intlhack)</entry>
 	  </row>
-	  <row>
-	    <entry><literal>intlhack</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry>Same as intltool, but patches to make sure
-	      <filename>share/locale/</filename> is used.</entry>
-	  </row>
+
 	  <row>
 	    <entry><literal>introspection</literal></entry>
 	    <entry>devel/gobject-introspection</entry>
@@ -1878,19 +1867,44 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	  </row>
 	  <row>
-	    <entry><literal>referencehack</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry>This macro is there to help splitting of the API or
-	      reference documentation into its own port.</entry>
-	  </row>
-	  <row>
 	    <entry><literal>vte3</literal></entry>
 	    <entry>x11-toolkits/vte3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	</tbody>
+      </tgroup>
+    </table>
+
+    <table>
+      <title>GNOME macro components</title>
+
+      <tgroup col="2">
+	<thead>
+	  <row>
+	    <entry>Component</entry>
+	    <entry>Description</entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row>
+	    <entry><literal>gnomeprefix</literal></entry>
+	    <entry>Supply configure with some default locations.</entry>
+
+	  </row>
+	  <row>
+	    <entry><literal>intlhack</literal></entry>
+	    <entry>Same as intltool, but patches to make sure
+	      <filename>share/locale/</filename> is used. Please only
+		use when <literal>intltool</literal> alone is not
+		enough.</entry>
+	  </row>
+	  <row>
+	    <entry><literal>referencehack</literal></entry>
+	    <entry>This macro is there to help splitting of the API or
+	      reference documentation into its own port.</entry>
+	  </row>
+        </tbody>
       </tgroup>
     </table>
 
