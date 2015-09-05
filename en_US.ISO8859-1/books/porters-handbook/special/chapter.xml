@@ -2175,43 +2175,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       </tgroup>
     </table>
 
-    <variablelist xml:id="gnome-deprecated">
-      <title>Deprecated Components: Do Not Use.</title>
-
-    <para>These components are deprecated.  They are still
-      supported, but use is discouraged.</para>
-
-      <varlistentry>
-	<term><varname>HAVE_GNOME</varname></term>
-
-	<listitem>
-	  <para>This macro is used to check if a component is
-	    installed.	This can be used for ports that do not have
-	    <literal>--enable</literal>/<literal>--disable</literal>
-	    switches for their configure script.  But the building of
-	    parts of a port without a implicit request is
-	    discouraged.</para>
-	</listitem>
-      </varlistentry>
-
-      <varlistentry>
-	<term><varname>WANT_GNOME</varname></term>
-
-	<listitem>
-	  <para>This macro was used by ports that needed
-	    <varname>USE_GNOME</varname> for optional dependencies
-	    defined after <filename>bsd.port.pre.mk</filename>.  Since
-	    <varname>USE_GNOME</varname> can be used after the
-	    inclusion of <filename>bsd.port.options.mk</filename>,
-	    there is little need for this macro any more.</para>
-	</listitem>
-      </varlistentry>
-    </variablelist>
-
-    <table xml:id="gnome-deprecated-test">
-      <title>Deprecated Components: Do Not Use.</title>
-
-
+    <table xml:id="gnome-deprecated">
+      <title>Deprecated Components: Do Not Use</title>
 
       <tgroup cols="2">
 	<thead>
@@ -2222,19 +2187,21 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</thead>
 	<tbody>
 	  <row>
-	    <entry><literal>HAVE_GNOME</literal> (Use is discouraged)</entry>
-	    <entry>This macro is used to check if a component is
-	    installed.	This can be used for ports that do not have
+	    <entry><literal>HAVE_GNOME</literal></entry>
+	    <entry>Deprecated, do not use.  Was used to check if a
+	    component is installed.  This can be used for ports
+	    that do not have
 	    <literal>--enable</literal>/<literal>--disable</literal>
 	    switches for their configure script.  But the building of
 	    parts of a port without a implicit request is
 	    discouraged.</entry>
 	  </row>
 	  <row>
-	    <entry><literal>WANT_GNOME</literal> (Use is discouraged)</entry>
-	    <entry>This macro was used by ports that needed
-	    <varname>USE_GNOME</varname> for optional dependencies
-	    defined after <filename>bsd.port.pre.mk</filename>.  Since
+	    <entry><literal>WANT_GNOME</literal></entry>
+	    <entry>Deprecated, do not use.  Was used by ports that
+	    needed <varname>USE_GNOME</varname> for optional
+	    dependencies defined after
+	    <filename>bsd.port.pre.mk</filename>.  Since
 	    <varname>USE_GNOME</varname> can be used after the
 	    inclusion of <filename>bsd.port.options.mk</filename>,
 	    there is little need for this macro any more.</entry>
