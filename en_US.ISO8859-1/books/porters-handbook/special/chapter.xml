@@ -1666,7 +1666,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>gdkpixbuf2</literal></entry>
 	    <entry></entry>
@@ -1709,7 +1708,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>gtk-update-icon-cache</literal></entry>
 	    <entry></entry>
@@ -1830,7 +1828,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-	  <row>cd 
+	  <row>
 	    <entry><literal>libxml2</literal></entry>
 	    <entry>textproc/libxml2</entry>
 	    <entry></entry>
@@ -1938,7 +1936,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>gdkpixbuf</literal></entry>
 	    <entry></entry>
