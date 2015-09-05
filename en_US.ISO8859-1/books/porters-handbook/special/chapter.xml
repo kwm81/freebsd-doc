@@ -1909,7 +1909,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	<tbody>
 	  <row>
 	    <entry><literal>atspi</literal></entry>
-	    <entry></entry>
+	    <entry>accessibility/at-spi</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1921,25 +1921,25 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gal2</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gal2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gconf2</literal></entry>
-	    <entry></entry>
+	    <entry>devel/gconf2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gconfmm26</literal></entry>
-	    <entry></entry>
+	    <entry>devel/gconfmm26</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gdkpixbuf</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/gdk-pixbuf</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1951,43 +1951,31 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gnomedocutils</literal></entry>
-	    <entry></entry>
+	    <entry>textproc/gnome-doc-utils</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomemimedata</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gnomepanel</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gnomesharp10</literal></entry>
-	    <entry></entry>
+	    <entry>misc/gnome-mime-data</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomesharp20</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gnome-sharp20</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomespeech</literal></entry>
-	    <entry></entry>
+	    <entry>accessibility/gnome-speech</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomevfs2</literal></entry>
-	    <entry></entry>
+	    <entry>devel/gnome-vfs</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1999,175 +1987,169 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gtkhtml3</literal></entry>
-	    <entry></entry>
+	    <entry>www/gtkhtml3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtkhtml4</literal></entry>
-	    <entry></entry>
+	    <entry>www/gtkhtml4</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksharp20</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gtk-sharp20</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/gtksourceview</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libartgpl2</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/libart_lgpl</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libbonobo</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libbonobo</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libbonoboui</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libbonoboui</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgda4</literal></entry>
-	    <entry></entry>
+	    <entry>databases/libgda4</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libglade2</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libglade2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnome</literal></entry>
-	    <entry></entry>
+	    <entry>x11/libgnome</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomecanvas</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>libgnomedb</literal></entry>
-	    <entry></entry>
+	    <entry>graphics/libgnomecanvas</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomekbd</literal></entry>
-	    <entry></entry>
+	    <entry>x11/libgnomekbd</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeprint</literal></entry>
-	    <entry></entry>
+	    <entry>print/libgnomeprint</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeprintui</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libgnomeprintui</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeui</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libgnomeui</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgtkhtml</literal></entry>
-	    <entry></entry>
+	    <entry>www/libgtkhtml</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgtksourceviewmm</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libgtksourceviewmm</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libidl</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libidl</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libsigc++12</literal></entry>
-	    <entry></entry>
+	    <entry>devel/libsigc++12</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libwnck</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libwnck</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>libwnck3</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/libwnck3</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>orbit2</literal></entry>
-	    <entry></entry>
+	    <entry>devel/ORBit2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pangox-compat</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/pangox-compat</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygnome2</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/py-gnome2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygobject</literal></entry>
-	    <entry></entry>
+	    <entry>devel/py-gobject</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygtk2</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/py-gtk2</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygtksourceview</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/py-gtksourceview</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
 	  <row>
 	    <entry><literal>vte</literal></entry>
-	    <entry></entry>
+	    <entry>x11-toolkits/vte</entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
