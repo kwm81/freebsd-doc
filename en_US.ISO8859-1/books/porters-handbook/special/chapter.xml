@@ -1613,6 +1613,10 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       needed.</para>
 
     <!-- update summary -->
+    <para>XXX Diffeded up in basic, gnome, legacy and deprecated components. Basic is "low" level ports, GNOME categorie are used by the GNOME desktop, legacy componenst are components not used by the current GNOME desktop, deprecated components are on there way out.</para>
+
+<para>XXX :build/:run default? of components</para>
+
     <table>
       <title>Basic GNOME Components</title>
 
@@ -1625,52 +1629,214 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>description</entry>
 	  </row>
 	</thead>
-
 	<tbody>
+	  <row>
+	    <entry><literal>atk</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>atkmm</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>cairo</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>cairomm</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>dconf</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gdkpixbuf2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
 	  <row>
 	    <entry><literal>glib20</literal></entry>
 	    <entry>devel/glib20</entry>
 	    <entry></entry>
 	    <entry>core library <literal>glib20</literal></entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>glibmm</literal></entry>
 	    <entry>devel/glibmm</entry>
 	    <entry>glib20 libsigc++20</entry>
 	    <entry>glib c++ bindings</entry>
 	  </row>
-
+	  <row>
+	    <entry><literal>gnomeprefix</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtk-update-icon-cache</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
 	  <row>
 	    <entry><literal>gtk20</literal></entry>
 	    <entry>x11-toolkits/gtk20</entry>
 	    <entry>glib20</entry>
 	    <entry>Gtk+ 2 toolkit</entry>
 	  </row>
-
-	  <row>
-	    <entry><literal>gtkmm20</literal></entry>
-	    <entry>x11-toolkits/gtkmm20</entry>
-	    <entry>gtk20</entry>
-	    <entry>Gtk+ 2 c++ bindings</entry>
-	  </row>
-
 	  <row>
 	    <entry><literal>gtk30</literal></entry>
 	    <entry>x11-toolkits/gtk30</entry>
 	    <entry>glib20</entry>
 	    <entry>Gtk+ 3 toolkit</entry>
 	  </row>
-
+	  <row>
+	    <entry><literal>gtkmm20</literal></entry>
+	    <entry>x11-toolkits/gtkmm20</entry>
+	    <entry>gtk20</entry>
+	    <entry>Gtk+ 2 c++ bindings</entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtkmm24</literal></entry>
+	    <entry>x11-toolkits/gtkmm24</entry>
+	    <entry>gtk20</entry>
+	    <entry>Gtk+ 2.4 c++ bindings</entry>
+	  </row>
 	  <row>
 	    <entry><literal>gtkmm30</literal></entry>
 	    <entry>x11-toolkits/gtkmm30</entry>
 	    <entry>gtk30</entry>
 	    <entry>Gtk+ 3 c++ bindings</entry>
 	  </row>
-
 	  <row>
-	    <entry><literal></literal></entry>
+	    <entry><literal>gtksourceview2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gvfs</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>intltool</literal></entry>
+	    <entry>textproc/intltool</entry>
+	    <entry></entry>
+	    <entry>Tool for internationalizion</entry>
+	  </row>
+	  <row>
+	    <entry><literal>intlhack</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry>Same as intltool, but patches to make sure share/locale/ is used.</entry>
+	  </row>
+	  <row>
+	    <entry><literal>introspection</literal></entry>
+	    <entry>devel/gobject-introspection</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgda5</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgda5-ui</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgdamm5</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgsf</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>librsvg2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libsigc++20</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libxml++26</literal></entry>
+	    <entry>textproc/libxml++26</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libxml2</literal></entry>
+	    <entry>textproc/libxml2</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libxslt</literal></entry>
+	    <entry>textproc/libxslt</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pango</literal></entry>
+	    <entry>x11-toolkits/pango</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pangomm</literal></entry>
+	    <entry>x11-toolkits/pangomm</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>py3gobject3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pygobject3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>referencehack</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry>This is a macro to help splitting off the API or
+	      reference documentation into there own port.</entry>
+	  </row>
+	  <row>
+	    <entry><literal>vte3</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
@@ -1693,10 +1859,52 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</thead>
 	<tbody>
 	  <row>
-	    <entry><literal>gnome-session</literal></entry>
-	    <entry>x11/gnome-session</entry>
-	    <entry>gtk30</entry>
-	    <entry>GNOME session handler</entry>
+	    <entry><literal>evolutiondataserver3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomecontrolcenter3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomedesktop3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gsound</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksourceview3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksourceviewmm3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>metacity</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>nautilus3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
 	  </row>
 	</tbody>
       </tgroup>
@@ -1716,17 +1924,251 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</thead>
 	<tbody>
 	  <row>
-	    <entry><literal>glib12</literal></entry>
-	    <entry>devel/glib12</entry>
+	    <entry><literal>atspi</literal></entry>
 	    <entry></entry>
-	    <entry>Old glib core library</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gal2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gconf2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gconfmm26</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
 	  </row>
 
 	  <row>
-	    <entry><literal>gtk12</literal></entry>
-	    <entry>x11-toolkits/gtk12</entry>
-	    <entry>glib12</entry>
-	    <entry>Gtk+ 1.2 toolkit</entry>
+	    <entry><literal>gdkpixbuf</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomedocutils</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomemimedata</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomepanel</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomesharp10</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomesharp20</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomespeech</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomevfs2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtkhtml3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtkhtml4</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksharp20</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksourceview</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libartgpl2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libbonobo</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libbonoboui</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgda4</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libglade2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnome</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomecanvas</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomedb</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomekbd</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomeprint</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomeprintui</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgnomeui</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgtkhtml</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libgtksourceviewmm</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libidl</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libsigc++12</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libwnck</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>libwnck3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>orbit2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pangox-compat</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pygnome2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pygobject</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pygtk2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>pygtksourceview</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>vte</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
 	  </row>
 	</tbody>
       </tgroup>
@@ -1770,14 +2212,30 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       <tgroup cols="2">
 	<thead>
 	  <row>
-	    <entry>Name</entry>
-	    <entry>Description</entry>
+	    <entry>component</entry>
+	    <entry>associated program</entry>
+	    <entry>implies</entry>
+	    <entry>description</entry>
 	  </row>
 	</thead>
 	<tbody>
 	  <row>
+	    <entry><literal>esound</literal></entry>
+	    <entry>audio/esound</entry>
 	    <entry></entry>
+	    <entry>Enlightenment sound package</entry>
+	  </row>
+	  <row>
+	    <entry><literal>glib12</literal></entry>
+	    <entry>devel/glib12</entry>
 	    <entry></entry>
+	    <entry>glib 1.2 core library</entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtk12</literal></entry>
+	    <entry>x11-toolkits/gtk12</entry>
+	    <entry>glib12</entry>
+	    <entry>Gtk+ 1.2 toolkit</entry>
 	  </row>
 	</tbody>
       </tgroup>
