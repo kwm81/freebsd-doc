@@ -1617,7 +1617,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 
 <para>XXX :build/:run default? of components</para>
 
-    <table>
+    <table xml:id="gnome-components-list">
       <title>GNOME Components</title>
 
       <tgroup cols="4">
@@ -1876,10 +1876,10 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       </tgroup>
     </table>
 
-    <table>
+    <table xml:id="gnome-components-macro">
       <title>GNOME macro components</title>
 
-      <tgroup col="2">
+      <tgroup cols="2">
 	<thead>
 	  <row>
 	    <entry>Component</entry>
@@ -1908,7 +1908,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       </tgroup>
     </table>
 
-    <table>
+    <table xml:id="gnome-components-legacy">
       <title>GNOME Legacy Components</title>
 
       <tgroup cols="4">
@@ -2171,7 +2171,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       </tgroup>
     </table>
 
-    <table xml:id="gnome-deprecated">
+    <table xml:id="gnome-components-deprecated">
       <title>Deprecated Components: Do Not Use</title>
 
       <tgroup cols="2">
