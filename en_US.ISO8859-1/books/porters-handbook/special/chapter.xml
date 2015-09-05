@@ -1610,15 +1610,15 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	ports</link> for examples.  The
       <link xlink:href="&url.base;/gnome/">&os; GNOME
 	page</link> has contact information if more help is
-      needed.</para>
+        needed.</para>
 
-    <!-- update summary -->
-    <para>XXX Diffeded up in basic, gnome, legacy and deprecated components. Basic is "low" level ports, GNOME categorie are used by the GNOME desktop, legacy componenst are components not used by the current GNOME desktop, deprecated components are on there way out.</para>
+    <para>The components are divided into GNOME components that are
+      currently in use and legacy components.</para>
 
 <para>XXX :build/:run default? of components</para>
 
     <table>
-      <title>Basic GNOME Components</title>
+      <title>GNOME Components</title>
 
       <tgroup cols="4">
 	<thead>
@@ -1661,6 +1661,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	  </row>
 	  <row>
+	    <entry><literal>evolutiondataserver3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+
+	  <row>
 	    <entry><literal>gdkpixbuf2</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
@@ -1679,11 +1686,30 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>glib c++ bindings</entry>
 	  </row>
 	  <row>
+	    <entry><literal>gnomecontrolcenter3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gnomedesktop3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
 	    <entry><literal>gnomeprefix</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
+	  <row>
+	    <entry><literal>gsound</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+
 	  <row>
 	    <entry><literal>gtk-update-icon-cache</literal></entry>
 	    <entry></entry>
@@ -1722,6 +1748,18 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview2</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksourceview3</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtksourceviewmm3</literal></entry>
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
@@ -1792,7 +1830,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-	  <row>
+	  <row>cd 
 	    <entry><literal>libxml2</literal></entry>
 	    <entry>textproc/libxml2</entry>
 	    <entry></entry>
@@ -1801,6 +1839,18 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>libxslt</literal></entry>
 	    <entry>textproc/libxslt</entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>metacity</literal></entry>
+	    <entry></entry>
+	    <entry></entry>
+	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>nautilus3</literal></entry>
+	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
@@ -1846,71 +1896,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     </table>
 
     <table>
-      <title>GNOME Desktop Components</title>
-
-      <tgroup cols="4">
-	<thead>
-	  <row>
-	    <entry>component</entry>
-	    <entry>associated program</entry>
-	    <entry>implies</entry>
-	    <entry>description</entry>
-	  </row>
-	</thead>
-	<tbody>
-	  <row>
-	    <entry><literal>evolutiondataserver3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gnomecontrolcenter3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gnomedesktop3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gsound</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gtksourceview3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>gtksourceviewmm3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>metacity</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	  <row>
-	    <entry><literal>nautilus3</literal></entry>
-	    <entry></entry>
-	    <entry></entry>
-	    <entry></entry>
-	  </row>
-	</tbody>
-      </tgroup>
-    </table>
-
-    <table>
       <title>GNOME Legacy Components</title>
 
       <tgroup cols="4">
@@ -1928,6 +1913,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>esound</literal></entry>
+	    <entry>audio/esound</entry>
+	    <entry></entry>
+	    <entry>Enlightenment sound package</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gal2</literal></entry>
@@ -1953,6 +1944,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>glib12</literal></entry>
+	    <entry>devel/glib12</entry>
+	    <entry></entry>
+	    <entry>glib 1.2 core library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomedocutils</literal></entry>
@@ -1995,6 +1992,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	    <entry></entry>
+	  </row>
+	  <row>
+	    <entry><literal>gtk12</literal></entry>
+	    <entry>x11-toolkits/gtk12</entry>
+	    <entry>glib12</entry>
+	    <entry>Gtk+ 1.2 toolkit</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtkhtml3</literal></entry>
@@ -2205,41 +2208,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	</listitem>
       </varlistentry>
     </variablelist>
-
-    <table>
-      <title>Deprecated GNOME Components</title>
-
-      <tgroup cols="2">
-	<thead>
-	  <row>
-	    <entry>component</entry>
-	    <entry>associated program</entry>
-	    <entry>implies</entry>
-	    <entry>description</entry>
-	  </row>
-	</thead>
-	<tbody>
-	  <row>
-	    <entry><literal>esound</literal></entry>
-	    <entry>audio/esound</entry>
-	    <entry></entry>
-	    <entry>Enlightenment sound package</entry>
-	  </row>
-	  <row>
-	    <entry><literal>glib12</literal></entry>
-	    <entry>devel/glib12</entry>
-	    <entry></entry>
-	    <entry>glib 1.2 core library</entry>
-	  </row>
-	  <row>
-	    <entry><literal>gtk12</literal></entry>
-	    <entry>x11-toolkits/gtk12</entry>
-	    <entry>glib12</entry>
-	    <entry>Gtk+ 1.2 toolkit</entry>
-	  </row>
-	</tbody>
-      </tgroup>
-    </table>
   </sect1>
 
   <sect1 xml:id="using-qt">
