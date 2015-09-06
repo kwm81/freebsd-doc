@@ -1696,7 +1696,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry></entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>gsound</literal></entry>
 	    <entry>audio/gsound</entry>
@@ -1769,7 +1768,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry></entry>
 	    <entry>Tool for internationalization (also see intlhack)</entry>
 	  </row>
-
 	  <row>
 	    <entry><literal>introspection</literal></entry>
 	    <entry>devel/gobject-introspection</entry>
@@ -1890,7 +1888,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>gnomeprefix</literal></entry>
 	    <entry>Supply configure with some default locations.</entry>
-
 	  </row>
 	  <row>
 	    <entry><literal>intlhack</literal></entry>
