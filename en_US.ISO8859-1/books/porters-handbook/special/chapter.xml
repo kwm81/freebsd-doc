@@ -1639,79 +1639,81 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>atk</literal></entry>
 	    <entry>accessibility/atk</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>Accessibility toolkit (ATK)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>atkmm</literal></entry>
 	    <entry>accessibility/atkmm</entry>
 	    <entry>atk glibmm</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for atk</entry>
 	  </row>
 	  <row>
 	    <entry><literal>cairo</literal></entry>
 	    <entry>graphics/cairo</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>Vector graphics library with cross-device output support</entry>
 	  </row>
 	  <row>
 	    <entry><literal>cairomm</literal></entry>
 	    <entry>graphics/cairomm</entry>
 	    <entry>cairo libxml++26</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for cairo</entry>
 	  </row>
 	  <row>
 	    <entry><literal>dconf</literal></entry>
 	    <entry>devel/dconf</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>Configuration database system (both,build,run)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>evolutiondataserver3</literal></entry>
 	    <entry>databases/evolution-data-server</entry>
 	    <entry>gtk30 libxml2</entry>
-	    <entry></entry>
+	    <entry>Data backends for the Evolution integrated mail/PIM suite</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gdkpixbuf2</literal></entry>
 	    <entry>graphics/gdk-pixbuf2</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>Graphics library for GTK+</entry>
 	  </row>
 	  <row>
 	    <entry><literal>glib20</literal></entry>
 	    <entry>devel/glib20</entry>
 	    <entry></entry>
-	    <entry>core library <literal>glib20</literal></entry>
+	    <entry>GNOME core library <literal>glib20</literal></entry>
 	  </row>
 	  <row>
 	    <entry><literal>glibmm</literal></entry>
 	    <entry>devel/glibmm</entry>
 	    <entry>glib20 libsigc++20</entry>
-	    <entry>glib c++ bindings</entry>
+	    <entry>c++ bindings for glib20</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomecontrolcenter3</literal></entry>
 	    <entry>sysutils/gnome-control-center</entry>
 	    <entry>gnomedesktop3 gnomemenus3 libxml2</entry>
-	    <entry></entry>
+	    <entry>GNOME 3 Control Center</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomedesktop3</literal></entry>
 	    <entry>x11/gnome-desktop</entry>
 	    <entry>gtk30</entry>
-	    <entry></entry>
+	    <entry>GNOME 3 desktop UI library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gsound</literal></entry>
 	    <entry>audio/gsound</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>GObject library for playing system sounds
+	      (both,build,run)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtk-update-icon-cache</literal></entry>
 	    <entry>graphics/gtk-update-icon-cache</entry>
 	    <entry>atk gdkpixbuf2 pango</entry>
-	    <entry></entry>
+	    <entry>Gtk-update-icon-cache utility from the Gtk+
+	      toolkit</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtk20</literal></entry>
@@ -1729,151 +1731,163 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>gtkmm20</literal></entry>
 	    <entry>x11-toolkits/gtkmm20</entry>
 	    <entry>gtk20</entry>
-	    <entry>Gtk+ 2 c++ bindings</entry>
+	    <entry>c++ bindings 2.0 for the gtk20 toolkit</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtkmm24</literal></entry>
 	    <entry>x11-toolkits/gtkmm24</entry>
 	    <entry>atkmm gtk20 pangomm</entry>
-	    <entry>Gtk+ 2.4 c++ bindings</entry>
+	    <entry>c++ bindings 2.4 for the gtk20 toolkit</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtkmm30</literal></entry>
 	    <entry>x11-toolkits/gtkmm30</entry>
 	    <entry>atkmm cairomm glibmm gtk30 pangomm</entry>
-	    <entry>Gtk+ 3 c++ bindings</entry>
+	    <entry>c++ bindings 3.0 for the gtk30 toolkit</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview2</literal></entry>
 	    <entry>x11-toolkits/gtksourceview2</entry>
 	    <entry>gconf2 gtk20 libxml2</entry>
-	    <entry></entry>
+	    <entry>Widget that adds syntax highlighting to
+	      GtkTextView</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview3</literal></entry>
 	    <entry>x11-toolkits/gtksourceview3</entry>
 	    <entry>gtk30 libxml2</entry>
-	    <entry></entry>
+	    <entry>Text widget that adds syntax highlighting to
+	      the GtkTextView widget</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceviewmm3</literal></entry>
 	    <entry>x11-toolkits/gtksourceviewmm3</entry>
 	    <entry>gtkmm30 gtksourceview3</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for the gtksourceview3 library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gvfs</literal></entry>
 	    <entry>devel/gvfs</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>GNOME virtual file system</entry>
 	  </row>
 	  <row>
 	    <entry><literal>intltool</literal></entry>
 	    <entry>textproc/intltool</entry>
 	    <entry></entry>
-	    <entry>Tool for internationalization (also see intlhack)</entry>
+	    <entry>Tool for internationalization (also see
+	      intlhack)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>introspection</literal></entry>
 	    <entry>devel/gobject-introspection</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>Basic introspection bindings and tools to
+	      generate introspection bindings.  Most of the time
+	      :build is enough, :both/:run is only need for
+	      applications that use introspection bindings.
+	      (both,build,run)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgda5</literal></entry>
 	    <entry>databases/libgda5</entry>
 	    <entry>glib20 libxslt</entry>
-	    <entry></entry>
+	    <entry>Provides uniform access to different kinds of
+	      data sources</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgda5-ui</literal></entry>
 	    <entry>databases/libgda5-ui</entry>
 	    <entry>gnomedocutils gtk30 libgda5</entry>
-	    <entry></entry>
+	    <entry>UI library from the libgda5 library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgdamm5</literal></entry>
 	    <entry>databases/libgdamm5</entry>
 	    <entry>glibmm libgda5</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for the libgda5 library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgsf</literal></entry>
 	    <entry>devel/libgsf</entry>
 	    <entry>gdkpixbuf2 libxml2</entry>
-	    <entry></entry>
+	    <entry>Extensible I/O abstraction for dealing with
+	      structured file formats</entry>
 	  </row>
 	  <row>
 	    <entry><literal>librsvg2</literal></entry>
 	    <entry>graphics/librsvg2</entry>
 	    <entry>gdkpixbuf2 libgsf libxml2 pango</entry>
-	    <entry></entry>
+	    <entry>Library for parsing and rendering SVG
+	      vector-graphic files</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libsigc++20</literal></entry>
 	    <entry>devel/libsigc++20</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>Callback Framework for C++</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libxml++26</literal></entry>
 	    <entry>textproc/libxml++26</entry>
 	    <entry>glibmm libxml2</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for the libxml2 library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libxml2</literal></entry>
 	    <entry>textproc/libxml2</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>XML parser library (both,build,run)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libxslt</literal></entry>
 	    <entry>textproc/libxslt</entry>
 	    <entry>libxml2</entry>
-	    <entry></entry>
+	    <entry>XSLT C library (both,build,run)</entry>
 	  </row>
 	  <row>
 	    <entry><literal>metacity</literal></entry>
 	    <entry>x11-wm/metacity</entry>
 	    <entry>gtk30</entry>
-	    <entry></entry>
+	    <entry>Window manager from GNOME</entry>
 	  </row>
 	  <row>
 	    <entry><literal>nautilus3</literal></entry>
 	    <entry>x11-fm/nautilus</entry>
 	    <entry>gnomedesktop3 gvfs libxml2</entry>
-	    <entry></entry>
+	    <entry>GNOME file manager</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pango</literal></entry>
 	    <entry>x11-toolkits/pango</entry>
 	    <entry>cairo glib20</entry>
-	    <entry></entry>
+	    <entry>Open-source framework for the layout and
+	      rendering of i18n text</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pangomm</literal></entry>
 	    <entry>x11-toolkits/pangomm</entry>
 	    <entry>cairomm glibmm pango</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for the pango library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>py3gobject3</literal></entry>
 	    <entry>devel/py3-gobject3</entry>
 	    <entry>glib20 introspection</entry>
-	    <entry></entry>
+	    <entry>Python 3, GObject 3.0 bindings</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygobject3</literal></entry>
 	    <entry>devel/py-gobject3</entry>
 	    <entry>glib20 introspection</entry>
-	    <entry></entry>
+	    <entry>Python 2, GObject 3.0 bindings</entry>
 	  </row>
 	  <row>
 	    <entry><literal>vte3</literal></entry>
 	    <entry>x11-toolkits/vte3</entry>
 	    <entry>gtk30</entry>
-	    <entry></entry>
+	    <entry>Terminal widget with improved accessibility and
+	      I18N support</entry>
 	  </row>
 	</tbody>
       </tgroup>
@@ -1927,7 +1941,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>atspi</literal></entry>
 	    <entry>accessibility/at-spi</entry>
 	    <entry>gconf2 gtk20 libbonobo</entry>
-	    <entry></entry>
+	    <entry>Assistive Technology Service Provider
+	      Interface</entry>
 	  </row>
 	  <row>
 	    <entry><literal>esound</literal></entry>
@@ -1939,25 +1954,26 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>gal2</literal></entry>
 	    <entry>x11-toolkits/gal2</entry>
 	    <entry>libgnomeprintui libgnomeui</entry>
-	    <entry></entry>
+	    <entry>Collection of widgets taken from GNOME 2
+	      gnumeric</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gconf2</literal></entry>
 	    <entry>devel/gconf2</entry>
 	    <entry>gtk20 libxml2 orbit2</entry>
-	    <entry></entry>
+	    <entry>Configuration database system for GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gconfmm26</literal></entry>
 	    <entry>devel/gconfmm26</entry>
 	    <entry>gconf2 glibmm</entry>
-	    <entry></entry>
+	    <entry>c++ bindings for gconf2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gdkpixbuf</literal></entry>
 	    <entry>graphics/gdk-pixbuf</entry>
 	    <entry>gtk12</entry>
-	    <entry></entry>
+	    <entry>Graphics library for GTK+</entry>
 	  </row>
 	  <row>
 	    <entry><literal>glib12</literal></entry>
@@ -1969,32 +1985,32 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>gnomedocutils</literal></entry>
 	    <entry>textproc/gnome-doc-utils</entry>
 	    <entry>libxslt</entry>
-	    <entry></entry>
+	    <entry>GNOME doc utils</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomemimedata</literal></entry>
 	    <entry>misc/gnome-mime-data</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>MIME and Application database for GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomesharp20</literal></entry>
 	    <entry>x11-toolkits/gnome-sharp20</entry>
 	    <entry>gnomevfs2 gtksharp20 libgnomeprintui libgnomeui
 	      librsvg2 vte</entry>
-	    <entry></entry>
+	    <entry>GNOME 2 interfaces for the .NET runtime</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomespeech</literal></entry>
 	    <entry>accessibility/gnome-speech</entry>
 	    <entry>libbonobo</entry>
-	    <entry></entry>
+	    <entry>GNOME 2 text-to-speech API</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gnomevfs2</literal></entry>
 	    <entry>devel/gnome-vfs</entry>
 	    <entry>gconf2 gnomemimedata</entry>
-	    <entry></entry>
+	    <entry>GNOME 2 Virtual File System</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtk12</literal></entry>
@@ -2006,133 +2022,146 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>gtkhtml3</literal></entry>
 	    <entry>www/gtkhtml3</entry>
 	    <entry>gconf2 gtk20</entry>
-	    <entry></entry>
+	    <entry>Lightweight HTML rendering/printing/editing
+	      engine</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtkhtml4</literal></entry>
 	    <entry>www/gtkhtml4</entry>
 	    <entry>gtk30</entry>
-	    <entry></entry>
+	    <entry>Lightweight HTML rendering/printing/editing
+	      engine</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksharp20</literal></entry>
 	    <entry>x11-toolkits/gtk-sharp20</entry>
 	    <entry>gtk20 libglade2</entry>
-	    <entry></entry>
+	    <entry>GTK+ and GNOME 2 interfaces for the .NET
+	      runtime</entry>
 	  </row>
 	  <row>
 	    <entry><literal>gtksourceview</literal></entry>
 	    <entry>x11-toolkits/gtksourceview</entry>
 	    <entry>libgnome libgnomeprintui</entry>
-	    <entry></entry>
+	    <entry>Widget that adds syntax highlighting to
+	      GtkTextView</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libartgpl2</literal></entry>
 	    <entry>graphics/libart_lgpl</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>Library for high-performance 2D graphics</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libbonobo</literal></entry>
 	    <entry>devel/libbonobo</entry>
 	    <entry>libxml2 orbit2</entry>
-	    <entry></entry>
+	    <entry>Component and compound document system for
+	      GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libbonoboui</literal></entry>
 	    <entry>x11-toolkits/libbonoboui</entry>
 	    <entry>libgnome libgnomecanvas</entry>
-	    <entry></entry>
+	    <entry>GUI frontend to the libbonobo component of
+	      GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgda4</literal></entry>
 	    <entry>databases/libgda4</entry>
 	    <entry>glib20 libxslt</entry>
-	    <entry></entry>
+	    <entry>Provides uniform access to different kinds of
+	      data sources</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libglade2</literal></entry>
 	    <entry>devel/libglade2</entry>
 	    <entry>gtk20 libxml2</entry>
-	    <entry></entry>
+	    <entry>GNOME 2 glade library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnome</literal></entry>
 	    <entry>x11/libgnome</entry>
 	    <entry>esound gnomevfs2 libbonobo</entry>
-	    <entry></entry>
+	    <entry>Libraries for GNOME 2, a GNU desktop
+	      environment</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomecanvas</literal></entry>
 	    <entry>graphics/libgnomecanvas</entry>
 	    <entry>libartlgpl2 libglade2</entry>
-	    <entry></entry>
+	    <entry>Graphics library for GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomekbd</literal></entry>
 	    <entry>x11/libgnomekbd</entry>
 	    <entry>gtk30 libxml2</entry>
-	    <entry></entry>
+	    <entry>GNOME 2 keyboard shared library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeprint</literal></entry>
 	    <entry>print/libgnomeprint</entry>
 	    <entry>glib20 libartlgpl2 libxml2 pango</entry>
-	    <entry></entry>
+	    <entry>Gnome 2 print support library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeprintui</literal></entry>
 	    <entry>x11-toolkits/libgnomeprintui</entry>
 	    <entry>libgnomecanvas libgnomeprint</entry>
-	    <entry></entry>
+	    <entry>Gnome 2 print support library</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgnomeui</literal></entry>
 	    <entry>x11-toolkits/libgnomeui</entry>
 	    <entry>libbonoboui gvfs</entry>
-	    <entry></entry>
+	    <entry>Libraries for the GNOME 2 GUI, a GNU desktop
+	      environment</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgtkhtml</literal></entry>
 	    <entry>www/libgtkhtml</entry>
 	    <entry>gnomevfs2 libxslt</entry>
-	    <entry></entry>
+	    <entry>Lightweight HTML rendering/printing/editing
+	      engine</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libgtksourceviewmm</literal></entry>
 	    <entry>x11-toolkits/libgtksourceviewmm</entry>
 	    <entry>gtkmm24 gtksourceview2</entry>
-	    <entry></entry>
+	    <entry>c++ binding of GtkSourceView</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libidl</literal></entry>
 	    <entry>devel/libIDL</entry>
 	    <entry>glib20</entry>
-	    <entry></entry>
+	    <entry>Library for creating trees of CORBA IDL file</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libsigc++12</literal></entry>
 	    <entry>devel/libsigc++12</entry>
 	    <entry></entry>
-	    <entry></entry>
+	    <entry>Callback Framework for C++</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libwnck</literal></entry>
 	    <entry>x11-toolkits/libwnck</entry>
 	    <entry>gtk20</entry>
-	    <entry></entry>
+	    <entry>Library used for writing pagers and
+	      taskslists</entry>
 	  </row>
 	  <row>
 	    <entry><literal>libwnck3</literal></entry>
 	    <entry>x11-toolkits/libwnck3</entry>
 	    <entry>gtk30</entry>
-	    <entry></entry>
+	    <entry>Library used for writing pagers and
+	      taskslists</entry>
 	  </row>
 	  <row>
 	    <entry><literal>orbit2</literal></entry>
 	    <entry>devel/ORBit2</entry>
 	    <entry>libidl</entry>
-	    <entry></entry>
+	    <entry>High-performance CORBA ORB with support for the
+	      C language</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pangox-compat</literal></entry>
@@ -2145,31 +2174,32 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry><literal>pygnome2</literal></entry>
 	    <entry>x11-toolkits/py-gnome2</entry>
 	    <entry>libgnomeui pygtk2</entry>
-	    <entry></entry>
+	    <entry>Python bindings for GNOME 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygobject</literal></entry>
 	    <entry>devel/py-gobject</entry>
 	    <entry>glib20 introspection</entry>
-	    <entry></entry>
+	    <entry>Python 2, GObject 2.0 bindings</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygtk2</literal></entry>
 	    <entry>x11-toolkits/py-gtk2</entry>
 	    <entry>libglade2 pygobject</entry>
-	    <entry></entry>
+	    <entry>Set of Python bindings for GTK+</entry>
 	  </row>
 	  <row>
 	    <entry><literal>pygtksourceview</literal></entry>
 	    <entry>x11-toolkits/py-gtksourceview</entry>
 	    <entry>gtksourceview2 pygtk2</entry>
-	    <entry></entry>
+	    <entry>Python bindings for GtkSourceView 2</entry>
 	  </row>
 	  <row>
 	    <entry><literal>vte</literal></entry>
 	    <entry>x11-toolkits/vte</entry>
 	    <entry>gtk20</entry>
-	    <entry></entry>
+	    <entry>Terminal widget with improved accessibility and
+	      I18N support</entry>
 	  </row>
 	</tbody>
       </tgroup>
