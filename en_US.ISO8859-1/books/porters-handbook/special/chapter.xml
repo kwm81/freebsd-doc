@@ -1404,16 +1404,16 @@ USE_XORG=	x11 xpm</programlisting>
     <sect2>
       <title>Introduction</title>
 
-      <para>This chapter will explain the <acronym>GNOME</acronym>
+      <para>This chapter explains the <acronym>GNOME</acronym>
 	framework as used by ports.  The framework can be loosely
 	divided into the base components, <acronym>GNOME</acronym>
 	desktop components, and a few special macros that simplify the
 	work of port maintainers.</para>
 
-      <para>While developing a port or changing one, please consider
-	setting <programlisting><varname>DEVELOPER</varname>=<literal>yes</literal></programlisting>
+      <para>While developing a port or changing one, please set
+	<programlisting><varname>DEVELOPER</varname>=<literal>yes</literal></programlisting>
 	in the environment or in <filename>/etc/make.conf</filename>.
-	This will cause the ports framework to enable additional
+	This causes the ports framework to enable additional
 	checks.</para>
     </sect2>
 
@@ -1428,23 +1428,23 @@ USE_XORG=	x11 xpm</programlisting>
 	<acronym>GNOME</acronym> applications under &os; use the
 	<varname>USE_GNOME</varname> infrastructure.  Include all the
 	needed components as a space-separated list.  The
-	<varname>USE_GNOME</varname> components are divided into the
-	following virtual lists: basic components, GNOME 3 components
-	and legacy components.	If the port needs only GTK3 libraries,
+	<varname>USE_GNOME</varname> components are divided into
+	these virtual lists: basic components, GNOME 3 components
+	and legacy components.  If the port needs only GTK3 libraries,
 	this is the shortest way to define it:</para>
 
       <programlisting>USE_GNOME=gtk30</programlisting>
 
-      <para>The above USE_GNOME component will automatically add other
+      <para>The USE_GNOME component will automatically add other
 	<varname>USE_GNOME</varname> components it needs.  Please see
-	the <link xlink:href="gnome-components.html">USE_GNOME
-	  components</link> page for the full list of all
+	the <xref linked="gnome-components">USE_GNOME
+	  components</xref> page for the full list of all
 	<varname>USE_GNOME</varname> components and which other
 	components they imply.</para>
 
       <para>Here is an example <filename>Makefile</filename> for a
-	GNOME port that uses many of the tricks outlined in this
-	document.  Please use it as a guide for creating your own
+	GNOME port that uses many of the techniques outlined in this
+	document.  Please use it as a guide for creating new
 	ports.</para>
 
       <programlisting># &dollar;FreeBSD&dollar;
@@ -1470,7 +1470,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 
       <note>
 	<para>The <varname>USE_GNOME</varname> macro without any
-	  arguments does not add any dependacies to the port.
+	  arguments does not add any dependencies to the port.
 	  <varname>USE_GNOME</varname> can be set after
 	  <filename>bsd.port.options.mk</filename> has been
 	  included, but not after
@@ -1498,10 +1498,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	      <filename>icon-theme.cache</filename>.  Do not include
 	      that file in <filename>pkg-plist</filename>.  This macro
 	      handles that automatically.  This macro is not needed
-	      for <acronym>QT</acronym>-based applications which use a
+	      for <acronym><xref linked="using-qt">Qt</xref></acronym>-based applications, which use a
 	      different method.</para>
-	      <!-- WB: link to the QT method, KWM: this is done
-	      internaly I think, but checking. -->
 	  </listitem>
 	</varlistentry>
 
@@ -1615,12 +1613,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <para>The components are divided into GNOME components that are
       currently in use and legacy components.</para>
 
-    <para>The implies colon lists other <literal>USE_GNOME</literal>
-      dependencies the port depends on as a run dependency.  If
-      the components supports arguments it listed
-      between () in the description.  The first is what is defaulted
-      to.  "Both" is used if the component defaults to adding to
-      build and run dependency.</para>
+    <para>The <quote>Implies</quote> colomn lists other
+      <literal>USE_GNOME</literal> dependencies the port depends
+      on as a run dependency.  If the component supports argument,
+      they are listed between <literal>()</literal> in the
+      description.  The first the default.  "Both" is shown if the
+      component defaults to adding to both build and run
+      dependencies.</para>
 
     <table xml:id="gnome-components-list">
       <title>GNOME Components</title>
@@ -1634,6 +1633,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Description</entry>
 	  </row>
 	</thead>
+
 	<tbody>
 	  <row>
 	    <entry><literal>atk</literal></entry>
@@ -1641,73 +1641,85 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>glib20</entry>
 	    <entry>Accessibility toolkit (ATK)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>atkmm</literal></entry>
 	    <entry>accessibility/atkmm</entry>
 	    <entry>atk glibmm</entry>
 	    <entry>c++ bindings for atk</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>cairo</literal></entry>
 	    <entry>graphics/cairo</entry>
 	    <entry></entry>
 	    <entry>Vector graphics library with cross-device output support</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>cairomm</literal></entry>
 	    <entry>graphics/cairomm</entry>
 	    <entry>cairo libxml++26</entry>
 	    <entry>c++ bindings for cairo</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>dconf</literal></entry>
 	    <entry>devel/dconf</entry>
 	    <entry>glib20</entry>
-	    <entry>Configuration database system (both,build,run)</entry>
+	    <entry>Configuration database system (both, build, run)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>evolutiondataserver3</literal></entry>
 	    <entry>databases/evolution-data-server</entry>
 	    <entry>gtk30 libxml2</entry>
 	    <entry>Data backends for the Evolution integrated mail/PIM suite</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gdkpixbuf2</literal></entry>
 	    <entry>graphics/gdk-pixbuf2</entry>
 	    <entry>glib20</entry>
 	    <entry>Graphics library for GTK+</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>glib20</literal></entry>
 	    <entry>devel/glib20</entry>
 	    <entry></entry>
 	    <entry>GNOME core library <literal>glib20</literal></entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>glibmm</literal></entry>
 	    <entry>devel/glibmm</entry>
 	    <entry>glib20 libsigc++20</entry>
 	    <entry>c++ bindings for glib20</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomecontrolcenter3</literal></entry>
 	    <entry>sysutils/gnome-control-center</entry>
 	    <entry>gnomedesktop3 gnomemenus3 libxml2</entry>
 	    <entry>GNOME 3 Control Center</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomedesktop3</literal></entry>
 	    <entry>x11/gnome-desktop</entry>
 	    <entry>gtk30</entry>
 	    <entry>GNOME 3 desktop UI library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gsound</literal></entry>
 	    <entry>audio/gsound</entry>
 	    <entry>glib20</entry>
 	    <entry>GObject library for playing system sounds
-	      (both,build,run)</entry>
+	      (both, build, run)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtk-update-icon-cache</literal></entry>
 	    <entry>graphics/gtk-update-icon-cache</entry>
@@ -1715,36 +1727,42 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Gtk-update-icon-cache utility from the Gtk+
 	      toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtk20</literal></entry>
 	    <entry>x11-toolkits/gtk20</entry>
 	    <entry>atk gdkpixbuf2</entry>
 	    <entry>Gtk+ 2 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtk30</literal></entry>
 	    <entry>x11-toolkits/gtk30</entry>
 	    <entry>glib20</entry>
 	    <entry>Gtk+ 3 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtkmm20</literal></entry>
 	    <entry>x11-toolkits/gtkmm20</entry>
 	    <entry>gtk20</entry>
 	    <entry>c++ bindings 2.0 for the gtk20 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtkmm24</literal></entry>
 	    <entry>x11-toolkits/gtkmm24</entry>
 	    <entry>atkmm gtk20 pangomm</entry>
 	    <entry>c++ bindings 2.4 for the gtk20 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtkmm30</literal></entry>
 	    <entry>x11-toolkits/gtkmm30</entry>
 	    <entry>atkmm cairomm glibmm gtk30 pangomm</entry>
 	    <entry>c++ bindings 3.0 for the gtk30 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtksourceview2</literal></entry>
 	    <entry>x11-toolkits/gtksourceview2</entry>
@@ -1752,6 +1770,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Widget that adds syntax highlighting to
 	      GtkTextView</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtksourceview3</literal></entry>
 	    <entry>x11-toolkits/gtksourceview3</entry>
@@ -1759,18 +1778,21 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Text widget that adds syntax highlighting to
 	      the GtkTextView widget</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtksourceviewmm3</literal></entry>
 	    <entry>x11-toolkits/gtksourceviewmm3</entry>
 	    <entry>gtkmm30 gtksourceview3</entry>
 	    <entry>c++ bindings for the gtksourceview3 library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gvfs</literal></entry>
 	    <entry>devel/gvfs</entry>
 	    <entry>glib20</entry>
 	    <entry>GNOME virtual file system</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>intltool</literal></entry>
 	    <entry>textproc/intltool</entry>
@@ -1778,6 +1800,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Tool for internationalization (also see
 	      intlhack)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>introspection</literal></entry>
 	    <entry>devel/gobject-introspection</entry>
@@ -1786,8 +1809,9 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	      generate introspection bindings.  Most of the time
 	      :build is enough, :both/:run is only need for
 	      applications that use introspection bindings.
-	      (both,build,run)</entry>
+	      (both, build, run)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgda5</literal></entry>
 	    <entry>databases/libgda5</entry>
@@ -1795,18 +1819,21 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Provides uniform access to different kinds of
 	      data sources</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgda5-ui</literal></entry>
 	    <entry>databases/libgda5-ui</entry>
 	    <entry>gnomedocutils gtk30 libgda5</entry>
 	    <entry>UI library from the libgda5 library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgdamm5</literal></entry>
 	    <entry>databases/libgdamm5</entry>
 	    <entry>glibmm libgda5</entry>
 	    <entry>c++ bindings for the libgda5 library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgsf</literal></entry>
 	    <entry>devel/libgsf</entry>
@@ -1814,6 +1841,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Extensible I/O abstraction for dealing with
 	      structured file formats</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>librsvg2</literal></entry>
 	    <entry>graphics/librsvg2</entry>
@@ -1821,42 +1849,49 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Library for parsing and rendering SVG
 	      vector-graphic files</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libsigc++20</literal></entry>
 	    <entry>devel/libsigc++20</entry>
 	    <entry></entry>
 	    <entry>Callback Framework for C++</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libxml++26</literal></entry>
 	    <entry>textproc/libxml++26</entry>
 	    <entry>glibmm libxml2</entry>
 	    <entry>c++ bindings for the libxml2 library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libxml2</literal></entry>
 	    <entry>textproc/libxml2</entry>
 	    <entry></entry>
-	    <entry>XML parser library (both,build,run)</entry>
+	    <entry>XML parser library (both, build, run)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libxslt</literal></entry>
 	    <entry>textproc/libxslt</entry>
 	    <entry>libxml2</entry>
-	    <entry>XSLT C library (both,build,run)</entry>
+	    <entry>XSLT C library (both, build, run)</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>metacity</literal></entry>
 	    <entry>x11-wm/metacity</entry>
 	    <entry>gtk30</entry>
 	    <entry>Window manager from GNOME</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>nautilus3</literal></entry>
 	    <entry>x11-fm/nautilus</entry>
 	    <entry>gnomedesktop3 gvfs libxml2</entry>
 	    <entry>GNOME file manager</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pango</literal></entry>
 	    <entry>x11-toolkits/pango</entry>
@@ -1864,24 +1899,28 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Open-source framework for the layout and
 	      rendering of i18n text</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pangomm</literal></entry>
 	    <entry>x11-toolkits/pangomm</entry>
 	    <entry>cairomm glibmm pango</entry>
 	    <entry>c++ bindings for the pango library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>py3gobject3</literal></entry>
 	    <entry>devel/py3-gobject3</entry>
 	    <entry>glib20 introspection</entry>
 	    <entry>Python 3, GObject 3.0 bindings</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pygobject3</literal></entry>
 	    <entry>devel/py-gobject3</entry>
 	    <entry>glib20 introspection</entry>
 	    <entry>Python 2, GObject 3.0 bindings</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>vte3</literal></entry>
 	    <entry>x11-toolkits/vte3</entry>
@@ -1894,7 +1933,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     </table>
 
     <table xml:id="gnome-components-macro">
-      <title>GNOME macro components</title>
+      <title>GNOME Macro Components</title>
 
       <tgroup cols="2">
 	<thead>
@@ -1903,11 +1942,14 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Description</entry>
 	  </row>
 	</thead>
+
 	<tbody>
 	  <row>
 	    <entry><literal>gnomeprefix</literal></entry>
-	    <entry>Supply configure with some default locations.</entry>
+	    <entry>Supply <buildtarget>configure</buildtarget> with
+	      some default locations.</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>intlhack</literal></entry>
 	    <entry>Same as intltool, but patches to make sure
@@ -1915,6 +1957,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 		use when <literal>intltool</literal> alone is not
 		enough.</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>referencehack</literal></entry>
 	    <entry>This macro is there to help splitting of the API or
@@ -1936,6 +1979,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Description</entry>
 	  </row>
 	</thead>
+
 	<tbody>
 	  <row>
 	    <entry><literal>atspi</literal></entry>
@@ -1944,12 +1988,14 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Assistive Technology Service Provider
 	      Interface</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>esound</literal></entry>
 	    <entry>audio/esound</entry>
 	    <entry></entry>
 	    <entry>Enlightenment sound package</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gal2</literal></entry>
 	    <entry>x11-toolkits/gal2</entry>
@@ -1957,42 +2003,49 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Collection of widgets taken from GNOME 2
 	      gnumeric</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gconf2</literal></entry>
 	    <entry>devel/gconf2</entry>
 	    <entry>gtk20 libxml2 orbit2</entry>
 	    <entry>Configuration database system for GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gconfmm26</literal></entry>
 	    <entry>devel/gconfmm26</entry>
 	    <entry>gconf2 glibmm</entry>
 	    <entry>c++ bindings for gconf2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gdkpixbuf</literal></entry>
 	    <entry>graphics/gdk-pixbuf</entry>
 	    <entry>gtk12</entry>
 	    <entry>Graphics library for GTK+</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>glib12</literal></entry>
 	    <entry>devel/glib12</entry>
 	    <entry></entry>
 	    <entry>glib 1.2 core library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomedocutils</literal></entry>
 	    <entry>textproc/gnome-doc-utils</entry>
 	    <entry>libxslt</entry>
 	    <entry>GNOME doc utils</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomemimedata</literal></entry>
 	    <entry>misc/gnome-mime-data</entry>
 	    <entry></entry>
 	    <entry>MIME and Application database for GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomesharp20</literal></entry>
 	    <entry>x11-toolkits/gnome-sharp20</entry>
@@ -2000,24 +2053,28 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	      librsvg2 vte</entry>
 	    <entry>GNOME 2 interfaces for the .NET runtime</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomespeech</literal></entry>
 	    <entry>accessibility/gnome-speech</entry>
 	    <entry>libbonobo</entry>
 	    <entry>GNOME 2 text-to-speech API</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gnomevfs2</literal></entry>
 	    <entry>devel/gnome-vfs</entry>
 	    <entry>gconf2 gnomemimedata</entry>
 	    <entry>GNOME 2 Virtual File System</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtk12</literal></entry>
 	    <entry>x11-toolkits/gtk12</entry>
 	    <entry>glib12</entry>
 	    <entry>Gtk+ 1.2 toolkit</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtkhtml3</literal></entry>
 	    <entry>www/gtkhtml3</entry>
@@ -2025,6 +2082,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Lightweight HTML rendering/printing/editing
 	      engine</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtkhtml4</literal></entry>
 	    <entry>www/gtkhtml4</entry>
@@ -2032,6 +2090,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Lightweight HTML rendering/printing/editing
 	      engine</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtksharp20</literal></entry>
 	    <entry>x11-toolkits/gtk-sharp20</entry>
@@ -2039,6 +2098,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>GTK+ and GNOME 2 interfaces for the .NET
 	      runtime</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>gtksourceview</literal></entry>
 	    <entry>x11-toolkits/gtksourceview</entry>
@@ -2046,12 +2106,14 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Widget that adds syntax highlighting to
 	      GtkTextView</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libartgpl2</literal></entry>
 	    <entry>graphics/libart_lgpl</entry>
 	    <entry></entry>
 	    <entry>Library for high-performance 2D graphics</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libbonobo</literal></entry>
 	    <entry>devel/libbonobo</entry>
@@ -2059,6 +2121,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Component and compound document system for
 	      GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libbonoboui</literal></entry>
 	    <entry>x11-toolkits/libbonoboui</entry>
@@ -2066,6 +2129,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>GUI frontend to the libbonobo component of
 	      GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgda4</literal></entry>
 	    <entry>databases/libgda4</entry>
@@ -2073,12 +2137,14 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Provides uniform access to different kinds of
 	      data sources</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libglade2</literal></entry>
 	    <entry>devel/libglade2</entry>
 	    <entry>gtk20 libxml2</entry>
 	    <entry>GNOME 2 glade library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnome</literal></entry>
 	    <entry>x11/libgnome</entry>
@@ -2086,30 +2152,35 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Libraries for GNOME 2, a GNU desktop
 	      environment</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnomecanvas</literal></entry>
 	    <entry>graphics/libgnomecanvas</entry>
 	    <entry>libartlgpl2 libglade2</entry>
 	    <entry>Graphics library for GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnomekbd</literal></entry>
 	    <entry>x11/libgnomekbd</entry>
 	    <entry>gtk30 libxml2</entry>
 	    <entry>GNOME 2 keyboard shared library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnomeprint</literal></entry>
 	    <entry>print/libgnomeprint</entry>
 	    <entry>glib20 libartlgpl2 libxml2 pango</entry>
 	    <entry>Gnome 2 print support library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnomeprintui</literal></entry>
 	    <entry>x11-toolkits/libgnomeprintui</entry>
 	    <entry>libgnomecanvas libgnomeprint</entry>
 	    <entry>Gnome 2 print support library</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgnomeui</literal></entry>
 	    <entry>x11-toolkits/libgnomeui</entry>
@@ -2117,6 +2188,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Libraries for the GNOME 2 GUI, a GNU desktop
 	      environment</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgtkhtml</literal></entry>
 	    <entry>www/libgtkhtml</entry>
@@ -2124,24 +2196,28 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Lightweight HTML rendering/printing/editing
 	      engine</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libgtksourceviewmm</literal></entry>
 	    <entry>x11-toolkits/libgtksourceviewmm</entry>
 	    <entry>gtkmm24 gtksourceview2</entry>
 	    <entry>c++ binding of GtkSourceView</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libidl</literal></entry>
 	    <entry>devel/libIDL</entry>
 	    <entry>glib20</entry>
 	    <entry>Library for creating trees of CORBA IDL file</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libsigc++12</literal></entry>
 	    <entry>devel/libsigc++12</entry>
 	    <entry></entry>
 	    <entry>Callback Framework for C++</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libwnck</literal></entry>
 	    <entry>x11-toolkits/libwnck</entry>
@@ -2149,6 +2225,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Library used for writing pagers and
 	      taskslists</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>libwnck3</literal></entry>
 	    <entry>x11-toolkits/libwnck3</entry>
@@ -2156,6 +2233,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Library used for writing pagers and
 	      taskslists</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>orbit2</literal></entry>
 	    <entry>devel/ORBit2</entry>
@@ -2163,6 +2241,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>High-performance CORBA ORB with support for the
 	      C language</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pangox-compat</literal></entry>
 	    <entry>x11-toolkits/pangox-compat</entry>
@@ -2170,30 +2249,35 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Deprecated pangoX support that was split off
 	      from the main pango package.</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pygnome2</literal></entry>
 	    <entry>x11-toolkits/py-gnome2</entry>
 	    <entry>libgnomeui pygtk2</entry>
 	    <entry>Python bindings for GNOME 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pygobject</literal></entry>
 	    <entry>devel/py-gobject</entry>
 	    <entry>glib20 introspection</entry>
 	    <entry>Python 2, GObject 2.0 bindings</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pygtk2</literal></entry>
 	    <entry>x11-toolkits/py-gtk2</entry>
 	    <entry>libglade2 pygobject</entry>
 	    <entry>Set of Python bindings for GTK+</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>pygtksourceview</literal></entry>
 	    <entry>x11-toolkits/py-gtksourceview</entry>
 	    <entry>gtksourceview2 pygtk2</entry>
 	    <entry>Python bindings for GtkSourceView 2</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>vte</literal></entry>
 	    <entry>x11-toolkits/vte</entry>
@@ -2215,22 +2299,24 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>Description</entry>
 	  </row>
 	</thead>
+
 	<tbody>
 	  <row>
 	    <entry><literal>HAVE_GNOME</literal></entry>
 	    <entry>Deprecated, do not use.  Was used to check if a
-	    component is installed.  This can be used for ports
-	    that do not have
+	    component was installed.  This was used for ports
+	    that did not have
 	    <literal>--enable</literal>/<literal>--disable</literal>
 	    switches for their configure script.  But the building of
 	    parts of a port without a implicit request is
 	    discouraged.</entry>
 	  </row>
+
 	  <row>
 	    <entry><literal>WANT_GNOME</literal></entry>
 	    <entry>Deprecated, do not use.  Was used by ports that
 	    needed <varname>USE_GNOME</varname> for optional
-	    dependencies defined after
+	    dependencies, which where defined after
 	    <filename>bsd.port.pre.mk</filename>.  Since
 	    <varname>USE_GNOME</varname> can be used after the
 	    inclusion of <filename>bsd.port.options.mk</filename>,
