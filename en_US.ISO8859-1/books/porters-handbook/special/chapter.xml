@@ -1498,7 +1498,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	      <filename>icon-theme.cache</filename>.  Do not include
 	      that file in <filename>pkg-plist</filename>.  This macro
 	      handles that automatically.  This macro is not needed
-	      for <acronym><xref linked="using-qt"/></acronym>, which use a
+	      for <acronym><xref linkend="using-qt"/></acronym>, which use a
 	      different method.</para>
 	  </listitem>
 	</varlistentry>
