@@ -1424,7 +1424,8 @@ USE_XORG=	x11 xpm</programlisting>
 	the macros and components defined in
 	<filename>bsd.gnome.mk</filename>.  The code in
 	<filename>bsd.gnome.mk</filename> adds the needed
-	BUILD/LIB/RUN dependencies or the handling of special files.
+	<literal>BUILD</literal>/<literal>LIB</literal>/<literal>RUN</literal>
+	dependencies or the handling of special files.
 	<acronym>GNOME</acronym> applications under &os; use the
 	<varname>USE_GNOME</varname> infrastructure.  Include all the
 	needed components as a space-separated list.  The
@@ -1433,14 +1434,13 @@ USE_XORG=	x11 xpm</programlisting>
 	and legacy components.  If the port needs only GTK3 libraries,
 	this is the shortest way to define it:</para>
 
-      <programlisting>USE_GNOME=gtk30</programlisting>
+      <programlisting>USE_GNOME=	gtk30</programlisting>
 
-      <para>The USE_GNOME component will automatically add other
-	<varname>USE_GNOME</varname> components it needs.  Please see
-	the <xref linked="gnome-components">USE_GNOME
-	  components</xref> page for the full list of all
-	<varname>USE_GNOME</varname> components and which other
-	components they imply.</para>
+      <para>The <varname>USE_GNOME</varname> components will automatically
+	add the dependencies they need. Please see
+	<xref linkend="gnome-components"/> page for an exhaustive list of
+	all <varname>USE_GNOME</varname> components and which other
+	components they imply and their dependencies.</para>
 
       <para>Here is an example <filename>Makefile</filename> for a
 	GNOME port that uses many of the techniques outlined in this
@@ -1471,9 +1471,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       <note>
 	<para>The <varname>USE_GNOME</varname> macro without any
 	  arguments does not add any dependencies to the port.
-	  <varname>USE_GNOME</varname> can be set after
-	  <filename>bsd.port.options.mk</filename> has been
-	  included, but not after
+	  <varname>USE_GNOME</varname> can not be set after
 	  <filename>bsd.port.pre.mk</filename>.</para>
       </note>
     </sect2>
@@ -1481,9 +1479,10 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <sect2>
       <title>Variables</title>
 
-      <para>This section explains which macros are available and what
-	their usage.  The next section has a more in-depth explanation
-	and an example <filename>Makefile</filename>.</para>
+      <para>This section explains which macros are available and how they
+	are used.  The <xref linkend="gnome-components"/> has a more
+	in-depth explanation and an example
+	<filename>Makefile</filename>.</para>
 
       <variablelist>
 	<varlistentry>
@@ -1491,14 +1490,15 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    xml:id="gnome-icons"><varname>INSTALLS_ICONS</varname></term>
 
 	  <listitem>
-	    <para>GTK+ ports which install Freedesktop-style icons to
+	    <para><application>GTK+</application> ports which install
+	      <application>Freedesktop</application>-style icons to
 	      <filename>${LOCALBASE}/share/icons</filename> should use
 	      this macro to ensure that the icons are cached and will
 	      display correctly.  The cache file is named
 	      <filename>icon-theme.cache</filename>.  Do not include
 	      that file in <filename>pkg-plist</filename>.  This macro
 	      handles that automatically.  This macro is not needed
-	      for <acronym><xref linked="using-qt">Qt</xref></acronym>-based applications, which use a
+	      for <acronym><xref linked="using-qt"/></acronym>, which use a
 	      different method.</para>
 	  </listitem>
 	</varlistentry>
@@ -1616,8 +1616,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <para>The <quote>Implies</quote> colomn lists other
       <literal>USE_GNOME</literal> dependencies the port depends
       on as a run dependency.  If the component supports argument,
-      they are listed between <literal>()</literal> in the
-      description.  The first the default.  "Both" is shown if the
+      they are listed between parenthesis in the
+      description.  The first is the default.  "Both" is shown if the
       component defaults to adding to both build and run
       dependencies.</para>
 
@@ -2243,14 +2243,6 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  </row>
 
 	  <row>
-	    <entry><literal>pangox-compat</literal></entry>
-	    <entry>x11-toolkits/pangox-compat</entry>
-	    <entry>glib20 pango</entry>
-	    <entry>Deprecated pangoX support that was split off
-	      from the main pango package.</entry>
-	  </row>
-
-	  <row>
 	    <entry><literal>pygnome2</literal></entry>
 	    <entry>x11-toolkits/py-gnome2</entry>
 	    <entry>libgnomeui pygtk2</entry>
@@ -2322,6 +2314,13 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    inclusion of <filename>bsd.port.options.mk</filename>,
 	    there is little need for this macro any more.</entry>
 	  </row>
+
+	  <row>
+	    <entry><literal>pangox-compat</literal></entry>
+	    <entry>pangox support provided by x11-toolkits/pangox-compat.
+	      Which is deprecated and split off from the pango package.</entry>
+	  </row>
+
 	</tbody>
       </tgroup>
     </table> 
