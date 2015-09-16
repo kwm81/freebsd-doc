@@ -1625,7 +1625,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <table xml:id="gnome-components-list">
       <title>GNOME Components</title>
 
-      <tgroup cols="4">
+      <tgroup cols="3">
 	<thead>
 	  <row>
 	    <entry>Component</entry>
@@ -1930,7 +1930,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <table xml:id="gnome-components-legacy">
       <title>GNOME Legacy Components</title>
 
-      <tgroup cols="4">
+      <tgroup cols="3">
 	<thead>
 	  <row>
 	    <entry>Component</entry>
