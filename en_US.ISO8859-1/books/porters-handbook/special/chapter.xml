@@ -1410,8 +1410,11 @@ USE_XORG=	x11 xpm</programlisting>
 	desktop components, and a few special macros that simplify the
 	work of port maintainers.</para>
 
-      <para>While developing a port or changing one, please set
-	<programlisting><varname>DEVELOPER</varname>=<literal>yes</literal></programlisting>
+      <para>While developing a port or changing one, please set</para>
+
+      <programlisting>DEVELOPER=yes</programlisting>
+
+      <para>
 	in the environment or in <filename>/etc/make.conf</filename>.
 	This causes the ports framework to enable additional
 	checks.</para>
@@ -1437,10 +1440,10 @@ USE_XORG=	x11 xpm</programlisting>
       <programlisting>USE_GNOME=	gtk30</programlisting>
 
       <para><varname>USE_GNOME</varname> components automatically
-	add the dependencies they need. Please see
-	<xref linkend="gnome-components"/> page for an exhaustive list of
-	all <varname>USE_GNOME</varname> components and which other
-	components they imply and their dependencies.</para>
+	add the dependencies they need.  Please see
+	<xref linkend="gnome-components"/> for an exhaustive
+	list of all <varname>USE_GNOME</varname> components and which
+	other components they imply and their dependencies.</para>
 
       <para>Here is an example <filename>Makefile</filename> for a
 	GNOME port that uses many of the techniques outlined in this
@@ -1470,7 +1473,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 
       <note>
 	<para>The <varname>USE_GNOME</varname> macro without any
-	  arguments does not add any dependencies to the port.  And
+	  arguments does not add any dependencies to the port.
 	  <varname>USE_GNOME</varname> can not be set after
 	  <filename>bsd.port.pre.mk</filename>.</para>
       </note>
@@ -1479,8 +1482,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
     <sect2>
       <title>Variables</title>
 
-      <para>This section explains which macros are available and how they
-	are used.  Like they are used in the above example.  The
+      <para>This section explains which macros are available and how
+	they are used.  Like they are used in the above example.  The
 	<xref linkend="gnome-components"/> has a more in-depth
 	explanation.  <varname>USE_GNOME</varname> has to be set for
 	these macro's to be of use.</para>
@@ -1592,7 +1595,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	      automatically scans <filename>pkg-plist</filename> and
 	      adds appropriate <literal>@exec</literal> and
 	      <literal>@unexec</literal> directives for each
-	      <filename>.omf</filename> file to track in the
+	      <filename>.omf</filename> to track in the
 	      <acronym>OMF</acronym> registration database.</para>
 	  </listitem>
 	</varlistentry>
@@ -1609,18 +1612,12 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	ports</link> for examples.  The
       <link xlink:href="&url.base;/gnome/">&os; GNOME
 	page</link> has contact information if more help is
-        needed.</para>
-
-    <para>The components are divided into GNOME components that are
-      currently in use and legacy components.</para>
-
-    <para>The <quote>Implies</quote> colomn lists other
-      <literal>USE_GNOME</literal> dependencies the port depends
-      on as a run dependency.  If the component supports argument,
-      they are listed between parenthesis in the
-      description.  The first is the default.  "Both" is shown if the
-      component defaults to adding to both build and run
-      dependencies.</para>
+      needed.  The components are divided into GNOME components
+      that are currently in use and legacy components.  If the
+      component supports argument, they are listed between
+      parenthesis in the description.  The first is the default.
+      "Both" is shown if the component defaults to adding to both
+      build and run dependencies.</para>
 
     <table xml:id="gnome-components-list">
       <title>GNOME Components</title>
@@ -1650,7 +1647,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>cairo</literal></entry>
 	    <entry>graphics/cairo</entry>
-	    <entry>Vector graphics library with cross-device output support</entry>
+	    <entry>Vector graphics library with cross-device output
+	      support</entry>
 	  </row>
 
 	  <row>
@@ -1662,13 +1660,15 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>dconf</literal></entry>
 	    <entry>devel/dconf</entry>
-	    <entry>Configuration database system (both, build, run)</entry>
+	    <entry>Configuration database system
+	      (both, build, run)</entry>
 	  </row>
 
 	  <row>
 	    <entry><literal>evolutiondataserver3</literal></entry>
 	    <entry>databases/evolution-data-server</entry>
-	    <entry>Data backends for the Evolution integrated mail/PIM suite</entry>
+	    <entry>Data backends for the Evolution integrated
+	      mail/PIM suite</entry>
 	  </row>
 
 	  <row>
@@ -1680,7 +1680,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>glib20</literal></entry>
 	    <entry>devel/glib20</entry>
-	    <entry>GNOME core library <literal>glib20</literal></entry>
+	    <entry>GNOME core library
+	      <literal>glib20</literal></entry>
 	  </row>
 
 	  <row>
@@ -1913,9 +1914,9 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>intlhack</literal></entry>
 	    <entry>Same as intltool, but patches to make sure
-	      <filename>share/locale/</filename> is used. Please only
-		use when <literal>intltool</literal> alone is not
-		enough.</entry>
+	      <filename>share/locale/</filename> is used.  Please
+	      only use when <literal>intltool</literal> alone is
+	      not enough.</entry>
 	  </row>
 
 	  <row>
@@ -1923,7 +1924,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	    <entry>This macro is there to help splitting of the API or
 	      reference documentation into its own port.</entry>
 	  </row>
-        </tbody>
+	</tbody>
       </tgroup>
     </table>
 
@@ -2135,7 +2136,8 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>libidl</literal></entry>
 	    <entry>devel/libIDL</entry>
-	    <entry>Library for creating trees of CORBA IDL file</entry>
+	    <entry>Library for creating trees of CORBA IDL
+	      file</entry>
 	  </row>
 
 	  <row>
@@ -2214,34 +2216,35 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
 	  <row>
 	    <entry><literal>HAVE_GNOME</literal></entry>
 	    <entry>Deprecated, do not use.  Was used to check if a
-	    component was installed.  This was used for ports
-	    that did not have
-	    <literal>--enable</literal>/<literal>--disable</literal>
-	    switches for their configure script.  But the building of
-	    parts of a port without a implicit request is
-	    discouraged.</entry>
+	      component was installed.  This was used for ports
+	      that did not have
+	      <literal>--enable</literal>/<literal>--disable</literal>
+	      switches for their configure script.  But the building
+	      of parts of a port without a implicit request is
+	      discouraged.</entry>
 	  </row>
 
 	  <row>
 	    <entry><literal>WANT_GNOME</literal></entry>
 	    <entry>Deprecated, do not use.  Was used by ports that
-	    needed <varname>USE_GNOME</varname> for optional
-	    dependencies, which where defined after
-	    <filename>bsd.port.pre.mk</filename>.  Since
-	    <varname>USE_GNOME</varname> can be used after the
-	    inclusion of <filename>bsd.port.options.mk</filename>,
-	    there is little need for this macro any more.</entry>
+	      needed <varname>USE_GNOME</varname> for optional
+	      dependencies, which where defined after
+	      <filename>bsd.port.pre.mk</filename>.  Since
+	      <varname>USE_GNOME</varname> can be used after the
+	      inclusion of <filename>bsd.port.options.mk</filename>,
+	      there is little need for this macro any more.</entry>
 	  </row>
 
 	  <row>
 	    <entry><literal>pangox-compat</literal></entry>
-	    <entry>pangox support provided by x11-toolkits/pangox-compat.
-	      Which is deprecated and split off from the pango package.</entry>
+	    <entry><application>pangox-compat</application> has been
+	      deprecated and split off from the
+	      <application>pango</application> package.</entry>
 	  </row>
 
 	</tbody>
       </tgroup>
-    </table> 
+    </table>
   </sect1>
 
   <sect1 xml:id="using-qt">
