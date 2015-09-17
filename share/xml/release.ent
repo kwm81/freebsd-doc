@@ -97,6 +97,6 @@
 <!ENTITY u.rel3.installation '&base;/releases/&rel3.current;R/installation.html'>
 <!ENTITY u.rel3.readme '&base;/releases/&rel3.current;R/readme.html'>
 
-<!ENTITY gnomeoldver '2.32'>
+<!ENTITY gnomeoldver '3.14'>
 <!ENTITY gnomever '3.16'>
 <!ENTITY gnomedevelver '3.17'>
