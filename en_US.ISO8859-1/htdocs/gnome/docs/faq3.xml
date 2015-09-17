@@ -309,6 +309,8 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 	      (x11/gnome3), then you can use <a href="&url.books.handbook;/pkgng-intro.html#pkgng-autoremove">pkg autoremove</a>
 	      to deinstall all the gnome components that are not used by other ports.
 	      </p>
+&url.doc.langbase;/books/handbook
+
 <!-- XXX run pkg autoremove into man page link -->
 
 	  </li>
