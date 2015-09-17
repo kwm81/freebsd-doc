@@ -92,7 +92,7 @@
 		    <li>mate (full MATE desktop)</li>
 		    <li>mate-lite (minimal MATE desktop)</li>
 		    <li>cinnamon</li>
-		  </ul>
+		  </ul><br/>
 		  The easiest way of installing is to do 'pkg install gnome3' for example.
 		</p>
 
