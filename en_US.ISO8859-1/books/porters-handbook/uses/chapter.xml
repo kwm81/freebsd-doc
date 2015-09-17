@@ -8,7 +8,7 @@
 
 <!--
 
-  Document up-to date with r381632 revision of the ports tree.
+  Document up-to date with r396872 revision of the ports tree.
 
   This file documents the values of the USES make variable.  The
   format is easy to grasp from the already-added entries below (or use
@@ -334,14 +334,16 @@
   <sect1 xml:id="uses-display">
     <title><literal>display</literal></title>
 
-    <para>Possible arguments: (none), ARGS</para>
+    <para>Possible arguments: (none),
+      <replaceable>ARGS</replaceable></para>
 
     <para>Set up a virtual display environment.  If the environment
       variable <varname>DISPLAY</varname> is not set, then
       <application>Xvfb</application> is added as a build dependency,
       and <varname>CONFIGURE_ENV</varname> is extended with the port
       number of the currently running instance of
-      <application>Xvfb</application>.  The <literal>ARGS</literal>
+      <application>Xvfb</application>.  The
+      <replaceable>ARGS</replaceable>
       parameter defaults to <literal>install</literal> and controls
       the phase around which to start and stop the virtual
       display.</para>
@@ -418,7 +420,8 @@
   <sect1 xml:id="uses-fam">
     <title><literal>fam</literal></title>
 
-    <para>Possible arguments: (none), fam, gamin</para>
+    <para>Possible arguments: (none), <literal>fam</literal>,
+      <literal>gamin</literal></para>
 
     <para>Uses a File Alteration Monitor as a library dependency,
       either <package role="port">devel/fam</package> or <package
@@ -438,16 +441,24 @@
   <sect1 xml:id="uses-fonts">
     <title><literal>fonts</literal></title>
 
-    <para>Possible arguments: (none)</para>
+    <para>Possible arguments: (none), <literal>fc</literal>,
+      <literal>fcfontsdir</literal> (default),
+      <literal>fontsdir</literal>, <literal>none</literal></para>
 
-    <para>Adds a runtime dependency on tools needed to register fonts,
-      and add an <literal><link
+    <para>Adds a runtime dependency on tools needed to register fonts.
+      Depending on the argument, add a <literal><link
+	  linkend="plist-keywords-fc">@fc</link> ${FONTSDIR}</literal>
+      line, <literal><link
 	  linkend="plist-keywords-fcfontsdir">@fcfontsdir</link>
-	${FONTSDIR}</literal> para to the plist.
+	${FONTSDIR}</literal> line, <literal><link
+	  linkend="plist-keywords-fontsdir">@fontsdir</link>
+	${FONTSDIR}</literal> line, or no line if the argument is
+      <literal>none</literal>, to the plist.
       <varname>FONTSDIR</varname> defaults to
-      <filename>${PREFIX}/lib/X11/fonts/${FONTNAME}</filename> and
-      <varname>FONTNAME</varname> to
-      <literal>${PORTNAME}</literal>.</para>
+      <filename>${PREFIX}/share/fonts/${FONTNAME}</filename> and
+      <varname>FONTNAME</varname> to <literal>${PORTNAME}</literal>.
+      Add <literal>FONTSDIR</literal> to <varname>PLIST_SUB</varname>
+      and <varname>SUB_LIST</varname></para>
   </sect1>
 
   <sect1 xml:id="uses-fortran">

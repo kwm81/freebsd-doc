@@ -3,7 +3,7 @@
      The FreeBSD Documentation Project
      The FreeBSD Japanese Documentation Project
 
-     Original revision: r28164
+     Original revision: r32070
      $FreeBSD$
 -->
 <appendix xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="eresources">
@@ -52,6 +52,14 @@
       メーリングリストの S/N 比を高くする保つように励んでいます。
       そうしないと、結果的に、メーリングリストがプロジェクトにとって
       事実上のコミュニケーションの手段になってしまうでしょう。</para>
+
+    <note>
+      <para><emphasis>&os;
+	メーリングリストにメールを送信できるかどうかを確認したければ、
+	&a.test.name; にテストメッセージを送信してください。</emphasis>
+	他のメーリングリストには、
+	テストメッセージを送信しないでください。</para>
+    </note>
 
     <para>どのメーリングリストに質問を投稿すべきか迷った場合には、
       <link xlink:href="&url.articles.freebsd-questions.en;">How to get best
@@ -267,6 +275,12 @@
 	    </row>
 
 	    <row>
+	      <entry>&a.eol.name;</entry>
+	      <entry>FreeBSD プロジェクトによるサポートが終了した
+		FreeBSD に関連したソフトウェアのピアサポート</entry>
+	    </row>
+
+	    <row>
 	      <entry>&a.emulation.name;</entry>
 	      <entry>Linux/&ms-dos;/&windows;
 		のような他のシステムのエミュレーション</entry>
@@ -333,6 +347,11 @@
 	    <row>
 	      <entry>&a.isdn.name;</entry>
 	      <entry>ISDN 開発者</entry>
+	    </row>
+
+	    <row>
+	      <entry>&a.jail.name;</entry>
+	      <entry>&man.jail.8; に関する議論</entry>
 	    </row>
 
 	    <row>
@@ -461,6 +480,11 @@
 	    </row>
 
 	    <row>
+	      <entry>&a.ruby.name;</entry>
+	      <entry>FreeBSD 固有の Ruby に関する議論</entry>
+	    </row>
+
+	    <row>
 	      <entry>&a.scsi.name;</entry>
 	      <entry>SCSI サブシステム</entry>
 	    </row>
@@ -495,6 +519,11 @@
 	    <row>
 	      <entry>&a.standards.name;</entry>
 	      <entry>C99 および &posix; 標準への FreeBSD の適合について</entry>
+	    </row>
+
+	    <row>
+	      <entry>&a.sun4v.name;</entry>
+	      <entry>FreeBSD の &ultrasparc; T1 ベースシステムへの移植</entry>
 	    </row>
 
 	    <row>
@@ -1140,6 +1169,20 @@
 	</varlistentry>
 
 	<varlistentry>
+	  <term>&a.eol.name;</term>
+
+	  <listitem>
+	    <para><emphasis>FreeBSD プロジェクトによるサポートが終了した
+	      FreeBSD に関連したソフトウェアのピアサポート</emphasis></para>
+
+	    <para>FreeBSD プロジェクトによる (たとえば、
+	      セキュリティアドバイザリおよびパッチ形式による)
+	      公式サポートを終えた FreeBSD
+	      関連ソフトウェアのピアサポートを提供したり利用することに興味を持っている人達のためのメーリングリストです。</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
 	  <term>&a.firewire.name;</term>
 
 	  <listitem>
@@ -1540,6 +1583,22 @@
 	</varlistentry>
 
 	<varlistentry>
+	  <term>&a.ruby.name;</term>
+
+	  <listitem>
+	    <para><emphasis>FreeBSD 固有の Ruby
+	      に関する議論</emphasis></para>
+
+	    <para>FreeBSD での Ruby
+	      サポートに関連した議論を行うためのメーリングリストです。
+	      これは技術的なメーリングリストです。Ruby ports,
+	      サードパーティライブラリおよびフレームワークについて作業を行っている人達を対象としています。</para>
+
+	    <para>技術的な議論に興味を持つ方の参加も歓迎されます。</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
 	  <term>&a.scsi.name;</term>
 
 	  <listitem>
@@ -1804,6 +1863,11 @@
 	<listitem>
 	  <para><link
 	    xlink:href="news:it.comp.os.freebsd">it.comp.os.freebsd</link> (イタリア)</para>
+	</listitem>
+
+	<listitem>
+	  <para><link
+	    xlink:href="news:tw.bbs.comp.386bsd">tw.bbs.comp.386bsd</link> (繁体字中国語)</para>
 	</listitem>
       </itemizedlist>
     </sect2>

@@ -1474,7 +1474,7 @@ GLIB_SCHEMAS=	 org.regexxer.gschema.xml
       <note>
 	<para>The <varname>USE_GNOME</varname> macro without any
 	  arguments does not add any dependencies to the port.
-	  <varname>USE_GNOME</varname> can not be set after
+	  <varname>USE_GNOME</varname> cannot be set after
 	  <filename>bsd.port.pre.mk</filename>.</para>
       </note>
     </sect2>
