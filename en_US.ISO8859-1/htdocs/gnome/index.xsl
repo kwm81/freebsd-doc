@@ -126,6 +126,7 @@ URL to our bugzilla? or link to a debugging page? -->
 
 		<h2>Resources</h2>
 		<ul>
+		  <li><a href="https://wiki.freebsd.org/Gnome">FreeBSD GNOME's wiki page</a></li>
 		  <li><a href="http://www.gnome.org/">GNOME Project</a></li>
 		  <li><a href="http://news.gnome.org">GNOME Project news</a></li>
 		  <li><a href="http://developer.gnome.org">GNOME development platform</a></li>

@@ -31,6 +31,7 @@ Note: links for existing questions should NEVER be changed.
             <li> <a href="#install">How do I get GNOME &gnomever; for &os;?</a></li>
 	    <li> <a href="#full-gnome">How do I get the most out of
 	      GNOME?</a></li>
+
             <li> <a href="#failing">GNOME &gnomever; is failing to build from ports.
 	      What do I do?</a></li>
             <li> <a href="#upgrade">What is the best way to upgrade from GNOME
@@ -82,6 +83,7 @@ Note: links for existing questions should NEVER be changed.
 	    <li style="padding-bottom: 0.5em"><a name="install"></a>
 	    <p><b>How do I get GNOME &gnomever; for FreeBSD?</b></p>
 <!-- A Install -->
+<!-- XXX mention mate and cinnamon -->
 	    <p>There are two ways to install GNOME &gnomever; on FreeBSD.  One way is to use
 	      <a href="http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/pkgng-intro.html">
 	        packages</a>, and the other way is to use
@@ -249,7 +251,7 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 	      up-to-date?</b></p>
 <!-- A update -->
 		<p>Package users can keep there installed packages update
-		  with the pkg command as mentioned in <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/pkgng-intro.html">binary package management handbook chapter</a>.</p>
+		  with the pkg command as mentioned in <a href="&url.books.handbook;/pkgng-intro.html">binary package management handbook chapter</a>.</p>
 		<p>Port users are emphatically encouraged to use <tt>portupgrade</tt>
 		  or <tt>portmaster</tt> to keep your GNOME
 		  &gnomever; components and applications up-to-date.</p>
@@ -304,7 +306,7 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 
 	    <p>This will remove the GNOME Meta port. If you installed
 	      GNOME via ports or packages via the meta port
-	      (x11/gnome3), then you can use <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/pkgng-intro.html#pkgng-autoremove">pkg autoremove</a>
+	      (x11/gnome3), then you can use <a href="&url.books.handbook;/pkgng-intro.html#pkgng-autoremove">pkg autoremove</a>
 	      to deinstall all the gnome components that are not used by other ports.
 	      </p>
 <!-- XXX run pkg autoremove into man page link -->
