@@ -64,8 +64,8 @@
 
 		<h2>What software does the GNOME Team maintain?</h2>
 
-		<p>The GNOME team maintains the GNOME, MATE and Cinnamon
-		  desktop enviroments.</p>
+		<p>The GNOME team maintains the GNOME, MATE and the
+		  Cinnamon desktop enviroments.</p>
 
 		<h2>What is GNOME?</h2>
 
@@ -74,61 +74,37 @@
 
 		<p>GNOME is a complete graphical desktop for X,
 	       	   including everything from a window manager to
-	       	   web browsers, audio players, office programs, and
-	       	   more.</p>
+		   web browsers, audio players, office programs,
+		   graphical login program and more.  MATE is
+		   a continuation of the old GNOME 2 desktop
+		   enviroment.  Cinnamon is originally a fork
+		   of GNOME 3's gnome-shell, but grew into its own
+		   desktop enviroment.</p>
 
-		<p>The &os; GNOME Project is a team of devoted
-		  developers and users that manage the
-		  integration of GNOME and &os;.</p>
+		<h2>How to install these desktop enviroments?</h2>
 
-		<h2>How to install GNOME</h2>
+		<p>There are some so called meta ports available for
+		  installing these desktop enviroments or parts of
+		  them. There are:
+		  <ul>
+		    <li>gnome3 (full GNOME desktop)</li>
+		    <li>gnome3-lite (minimal GNOME desktop)</li>
+		    <li>mate (full MATE desktop)</li>
+		    <li>mate-lite (minimal MATE desktop)</li>
+		    <li>cinnamon</li>
+		  </ul>
+		  The easiest way of installing is to do 'pkg install gnome3' for example.
+		</p>
 
-		<p>The easiest way to install GNOME is to install either of
-		the following ports:</p>
-		<ul>
-		  <li>x11/gnome3 (the full desktop)</li>
-		  <li>x11/gnome3-lite (the minimum desktop environment)</li>
-		</ul>
-<!--
-	      <h2>Upgrading to GNOME 3.12?</h2>
-
-	      <p>If you are upgrading from GNOME 2.32 to GNOME 3.12, read the
-		<a href="docs/faq312.html">Upgrade FAQ</a> for upgrade
-		instructions.</p>
--->
-	      <h2>What is MATE?</h2>
-
-		<p>bla bla.</p>
-
-		<h2>How to install Mate</h2>
-
-	      <p>The easiest way to install Mate is to install either of
-		the following ports:</p>
-		<ul>
-		  <li>x11/mate (the full desktop)</li>
-		  <li>x11/mate-base (the minimum desktop environment)</li>
-		</ul>
-
-		<h2>What is Cinnamon?</h2>
-
-		<p>bla bla cinnamon</p>
-
-		<h2>How to install Cinnamon</h2>
-
-		<p>The easiest way to install Cinnamon is to install the
-		  followin port:</p>
-		<ul>
-		  <li>x11/cinnamon (the full desktop)</li>
-		</ul>
 
 		<h2>State of the port</h2>
 
-	      <p>GNOME/MATE/CINNAMON for &os; are currently fully supported on
-		9.3, and 9.3-STABLE, 10.2, 10.1 and 10.1-STABLE while 11.0-CURRENT is provided on a best effort basis.
-		There is still <a href="docs/volunteer.html">plenty left to be done</a>!</p>
+		<p>GNOME/MATE/CINNAMON for &os; are currently fully supported on
+		  9.3, and 9.3-STABLE, 10.2, 10.1 and 10.1-STABLE while 11.0-CURRENT is provided on a best effort basis.
+		  There is still <a href="docs/volunteer.html">plenty left to be done</a>!</p>
 
-	      <p>GNOME is simple and easy to build using the &os; ports system, but
-	        sometimes things simply go wrong.</p>
+		<p>GNOME is simple and easy to build using the &os; ports system, but
+	          sometimes things simply go wrong.</p>
 
 		<h2>Resources</h2>
 		<ul>
