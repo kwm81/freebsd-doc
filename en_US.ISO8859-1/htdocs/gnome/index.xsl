@@ -99,9 +99,15 @@
 
 		<h2>State of the port</h2>
 
-		<p>GNOME/MATE/CINNAMON for &os; are currently fully supported on
-		  9.3, and 9.3-STABLE, 10.2, 10.1 and 10.1-STABLE while 11.0-CURRENT is provided on a best effort basis.
-		  There is still <a href="docs/volunteer.html">plenty left to be done</a>!</p>
+		<p>GNOME, MATE and Cinnamon for &os; are currently
+		  fully supported on 10.2, 10.1 and 10.1-STABLE while
+		  9.3, 9.3-STABLE and 11.0-CURRENT is provided on a
+		  best effort basis. There is still
+<!--		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
+		</p>
+
+<!-- euh ..., I think this needs more content, just dumping the links isn't enough.
+URL to our bugzilla? or link to a debugging page? -->
 
 		<p>GNOME is simple and easy to build using the &os; ports system, but
 	          sometimes things simply go wrong.</p>
