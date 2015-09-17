@@ -93,9 +93,21 @@
 		    <li>mate-lite (minimal MATE desktop)</li>
 		    <li>cinnamon</li>
 		  </ul><br/>
-		  The easiest way of installing is to do 'pkg install gnome3' for example.
+		  The easiest way of installing is to run the
+		  following command and replace gnome3 with the DE of
+		  choice:
+		  <pre>
+# pkg install gnome3
+		  </pre>
+		  Or if you prefer to build from source:
+		  <pre>
+# cd /usr/ports/x11/gnome3
+# make clean
+# make install clean
+		  </pre>
 		</p>
-
+<!-- instead of copying text, link to the faq3.xml which has a item
+for how to geting stuff -->
 
 		<h2>State of the port</h2>
 
