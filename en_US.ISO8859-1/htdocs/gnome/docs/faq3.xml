@@ -251,7 +251,7 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 	      up-to-date?</b></p>
 <!-- A update -->
 		<p>Package users can keep there installed packages update
-		  with the pkg command as mentioned in <a href="&url.books.handbook;/pkgng-intro.html">binary package management handbook chapter</a>.</p>
+		  with the pkg command as mentioned in <a href="&base;/../books/handbook/pkgng-intro.html">binary package management handbook chapter</a>.</p>
 		<p>Port users are emphatically encouraged to use <tt>portupgrade</tt>
 		  or <tt>portmaster</tt> to keep your GNOME
 		  &gnomever; components and applications up-to-date.</p>
@@ -306,10 +306,9 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 
 	    <p>This will remove the GNOME Meta port. If you installed
 	      GNOME via ports or packages via the meta port
-	      (x11/gnome3), then you can use <a href="&url.books.handbook;/pkgng-intro.html#pkgng-autoremove">pkg autoremove</a>
+	      (x11/gnome3), then you can use <a href="&base;/../books/handbook/pkgng-intro.html#pkgng-autoremove">pkg autoremove</a>
 	      to deinstall all the gnome components that are not used by other ports.
 	      </p>
-&url.doc.langbase;/books/handbook
 
 <!-- XXX run pkg autoremove into man page link -->
 
