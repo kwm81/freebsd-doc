@@ -64,8 +64,8 @@
 
 		<h2>What software does the GNOME Team maintain?</h2>
 
-		<p>The GNOME team maintains the GNOME, MATE, and
-		  Cinnamon desktop enviroments.</p>
+		<p>The GNOME Team maintains the GNOME, MATE, and
+		  Cinnamon desktop environments.</p>
 
 		<h2>What is GNOME?</h2>
 
@@ -75,17 +75,17 @@
 		<p>GNOME is a complete graphical desktop for X,
 	       	   including everything from a window manager to
 		   web browsers, audio players, office programs,
-		   graphical login program and more.  MATE is
+		   graphical login programs and more.  MATE is
 		   a continuation of the old GNOME 2 desktop
-		   enviroment.  Cinnamon is originally a fork
+		   environment.  Cinnamon is originally a fork
 		   of GNOME 3's gnome-shell, but grew into its own
-		   desktop enviroment.</p>
+		   desktop environment.</p>
 
-		<h2>How to install these desktop enviroments?</h2>
+		<h2>How to install these desktop environments?</h2>
 
 		<p>There are some so called meta ports available for
-		  installing these desktop enviroments or parts of
-		  them. There are:
+		  installing these desktop environments or parts of
+		  them.  They are:
 		  <ul>
 		    <li>gnome3 (full GNOME desktop)</li>
 		    <li>gnome3-lite (minimal GNOME desktop)</li>
@@ -96,18 +96,17 @@
 		  Read our <link xlink:href="&base;/gnome/docs/faq3.html#install">
 		  install guide</link> for installation instructions.</p>
 
-		<h2>State of the port</h2>
+		<h2>State of the port:</h2>
 
-		<p>GNOME, MATE and Cinnamon for &os; are currently
-		  fully supported on 10.2, 10.1 and 10-STABLE while
-		  support for 9.3, 9-STABLE and 11.0-CURRENT is provided
+		<p>GNOME, MATE, and Cinnamon for &os; are currently
+		  fully supported on 10.2, 10.1, and 10-STABLE while
+		  support for 9.3, 9-STABLE, and 11.0-CURRENT is provided
 		  on a best effort basis. <!-- xxx volunteer page needs
 		  updating. There is still
-		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
-		</p>
+		  <a href="docs/volunteer.html">plenty left to be done</a>!--></p>
 
 		<p>GNOME is simple and easy to build using the &os; ports
-		  system, but sometimes things simply go wrong. Please
+		  system, but sometimes things simply go wrong.  Please
 		  see our <a href="&base;/gnome/docs/bugging.html">Bug reporting</a>
 		  page for more info.</p>
 
