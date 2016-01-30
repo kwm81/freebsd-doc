@@ -119,9 +119,6 @@ for how to geting stuff -->
 		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
 		</p>
 
-<!-- euh ..., I think this needs more content, just dumping the links isn't enough.
-URL to our bugzilla? or link to a debugging page? -->
-
 		<p>GNOME is simple and easy to build using the &os; ports
 		  system, but sometimes things simply go wrong. Please
 		  see our <a href="&base;/gnome/docs/bugging.html">Bug reporting</a>
