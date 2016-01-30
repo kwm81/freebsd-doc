@@ -112,17 +112,20 @@ for how to geting stuff -->
 		<h2>State of the port</h2>
 
 		<p>GNOME, MATE and Cinnamon for &os; are currently
-		  fully supported on 10.2, 10.1 and 10.1-STABLE while
+		  fully supported on 10.2, 10.1 and 10-STABLE while
 		  9.3, 9.3-STABLE and 11.0-CURRENT is provided on a
-		  best effort basis. There is still
-<!--		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
+		  best effort basis. <!-- xxx volunteer page needs
+		  updating. There is still
+		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
 		</p>
 
 <!-- euh ..., I think this needs more content, just dumping the links isn't enough.
 URL to our bugzilla? or link to a debugging page? -->
 
-		<p>GNOME is simple and easy to build using the &os; ports system, but
-	          sometimes things simply go wrong.</p>
+		<p>GNOME is simple and easy to build using the &os; ports
+		  system, but sometimes things simply go wrong. Please
+		  see our <a href="&base;/gnome/docs/bugging.html">Bug reporting</a>
+		  page for more info.</p>
 
 		<h2>Resources</h2>
 		<ul>
