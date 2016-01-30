@@ -13,6 +13,8 @@
 
     <body class="navinclude.gnome">
 
+	<!-- XXX https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=179246 -->
+
           <p>This document assumes that you already know how the port system works,
 	    and therefore only provides GNOME-specific hints and tips.  General
 	    instructions can be found in the

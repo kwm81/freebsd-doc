@@ -14,6 +14,8 @@
 
     <body class="navinclude.gnome">
 
+	<!-- XXX https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=179246 -->
+
 	  <p>The following is an example Makefile for a FreeBSD GNOME port.</p>
 
 	  <pre>
