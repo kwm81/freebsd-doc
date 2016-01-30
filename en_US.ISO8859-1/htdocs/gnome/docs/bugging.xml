@@ -12,6 +12,8 @@
       <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
     </head>
 
+<!-- have links to the mailinglist for searching, and a link to our bugzilla. -->
+
     <body class="navinclude.gnome">
 
 		  <h2>1. When should I make a bug report?</h2>
