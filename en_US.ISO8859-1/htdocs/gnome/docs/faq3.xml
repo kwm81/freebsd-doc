@@ -22,15 +22,16 @@ Note: links for existing questions should NEVER be changed.
       <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
     </head>
 
-<!-- Link to gnome3 cheat sheet -->
+<!-- xxx Link to gnome3 cheat sheet -->
 
     <body class="navinclude.gnome">
 
         <h2>Contents</h2>
           <ol>
-            <li> <a href="#install">How do I get GNOME &gnomever; for &os;?</a></li>
-	    <li> <a href="#full-gnome">How do I get the most out of
-	      GNOME?</a></li>
+            <li> <a href="#install">How do I get GNOME, MATE, or CINNAMON for &os;?</a></li>
+<!-- xxx search and chagne #full-gnome -> #full-desktop -->
+	    <li> <a href="#full-desktop">How do I get the most out of
+	      the desktop??</a></li>
 
             <li> <a href="#failing">GNOME &gnomever; is failing to build from ports.
 	      What do I do?</a></li>
@@ -81,82 +82,93 @@ Note: links for existing questions should NEVER be changed.
           <ol>
 <!-- Q Install -->
 	    <li style="padding-bottom: 0.5em"><a name="install"></a>
-	    <p><b>How do I get GNOME &gnomever; for FreeBSD?</b></p>
+	    <p><b>How do I get GNOME, MATE, or CINNAMON for &os;?</b></p>
 <!-- A Install -->
-<!-- XXX mention mate and cinnamon -->
-	    <p>There are two ways to install GNOME &gnomever; on FreeBSD.  One way is to use
+	    <p>There are two ways to install software on FreeBSD.  One way is to use
 	      <a href="http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/pkgng-intro.html">
 	        packages</a>, and the other way is to use
 	      <a href="http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html">
-	        ports</a>.  Before doing either installation, you should
-		first familiarize yourself with the GNOME &gnomever;
+	        ports</a>.  For more information about GNOME &gnomever; 
 		<a href="http://www.gnome.org/start/&gnomever;/notes/en/">
-		release notes</a>.</p>
-<!-- XXX check this url -->
+		release notes</a>.  For more information about MATE 
+		<a href="http://mate-desktop.org/">MATE desktop</a> website.</p>
 
-		<p><u>Install GNOME &gnomever; from packages.</u></p>
+	    <p>The easiest way of installing is to run the following
+	      command and replace xxx with either gnome3, gnome3-lite,
+	      mate, mate-lite, or cinnamon:</p>
 
-	    <p>To install GNOME &gnomever; from packages, use the command:</p>
+            <pre>
+# pkg install xxx
+	    </pre> 
 
-	    <tt># pkg add gnome3</tt>
+	    <p>This will download the latest packages available from
+	      the &os; package server near you, and proceed to install
+	      them on your system.</p>
 
-	    <p>This will download the latest GNOME &gnomever; packages from the
-	      FreeBSD package server near you, and proceed to install them on your system.
-	    </p>
-
-	    <p>To build GNOME &gnomever; from ports, you must first obtain the
+	    <p>To build from ports, you must first obtain the
 	      latest ports tree skeleton.  This is most easily
 	      accomplished with <tt>portsnap(8)</tt>
 	      Then:</p>
 
-	    <pre>
-# cd /usr/ports/x11/gnome3
+	    <pre> 
+# cd /usr/ports/x11/xxx
 # make clean
 # make install clean
-	    </pre>
+	    </pre> 
 
-	    <p>After either step, you still need to <a href="#full-gnome">
-	      enable the GNOME services</a> to run e.g. the graphical login
-	      automatically on system startup.</p> </li>
+	    <p>After either step, you still need to enable the 
+	      <a href="#full-gnome">services</a> the desktop
+	      environments needs to run e.g. the graphical login
+	      automatically on system startup.</p>
+	    </li>
 
-<!-- Q Full-GNOME -->
-	    <li style="padding-bottom: 0.5em"><a name="full-gnome"></a>
-	    <p><b>How do I get the most out of GNOME?</b></p>
-<!-- A Full-GNOME -->
-	    <p>In order to make the most of your new GNOME Desktop,
-	      you will want to start all of the GNOME-related services
-	      at boot-time.  If you wish to take full advantage of
-	      GNOME, add the following to <tt>/etc/rc.conf</tt>:</p>
+<!-- Q Full-desktop -->
+	    <li style="padding-bottom: 0.5em"><a name="full-desktop"></a>
+	    <p><b>How do I get the most out of the desktop?</b></p>
+<!-- A Full-desktop -->
+	    <p>In order to make the most of your new desktop,
+	      you will want to start <tt>dbus</tt> at the bare minimum.
+	      If you have chosen to install GNOME or CINNAMON you also
+	      need to start <tt>hald</tt>.  If you want to use GNOME's
+	      graphical login manager then you will have to start
+	      <tt>gdm</tt> as well.  <tt>Avahi</tt> provides support
+	      to find network discoverable services.</p>
+
+	    <p> To make all these services start at boot time add the
+	      following to <tt>/etc/rc.conf</tt>:</p>
 
 	    <pre>
 gnome_enable="YES"
 	    </pre>
 
-	    <p>This will enable services such as GDM, HAL, D-BUS, and
-	      Avahi on system startup.  If you do not want to run all
-	      of these services, you should forget the
-	      <em>gnome_enable</em> property, and manually enable the
-	      services you want. Please note that dbus is required.</p>
+	    <p>If you do not want to run all of these services, you
+	      should forget the <em>gnome_enable</em> property, and
+	      manually enable the services you want. Please note
+	      that dbus is required.</p>
 
 	    <p>If you do not want to reboot immediately after the
 	      installation, you can invoke the following commands:</p>
 
 	    <pre>
-# /usr/local/etc/rc.d/dbus start
-# /usr/local/etc/rc.d/avahi-daemon start
-# /usr/local/etc/rc.d/avahi-dnsconfd start
-# /usr/local/etc/rc.d/hald start
-# /usr/local/etc/rc.d/gdm start
+# service dbus start
+# service avahi-daemon start
+# service avahi-dnsconfd start
+# service hald start
+# service gdm start
 	    </pre>
 
-	    <p>To start GNOME &gnomever; under X without using GDM,
+	    <p>To start the desktop under X without using GDM,
 	      add the following line to <tt>~/.xsession</tt> or
 	      <tt>~/.xinitrc</tt>, as appropriate (see
 	      <tt>startx(1)</tt>):</p>
 
 	    <pre>
-exec ck-launch-session gnome-session
+exec ck-launch-session xxx
 	    </pre>
+
+	    <p>Where the xxx should be replaced with
+	      <tt>gnome-session</tt> for GNOME, <tt>mate-session</tt>
+	      for MATE, and <tt>cinnamon-session</tt> for CINNAMON.</p>
 	    </li>
 
 <!-- Q Failing -->
