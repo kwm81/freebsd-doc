@@ -5,10 +5,10 @@
 
      $FreeBSD$
      $FreeBSDde$
-     basiert auf: r39098
+     basiert auf: r42827
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="bsdinstall">
-  <info><title>&os;&nbsp;9.<replaceable>x</replaceable> (und neuer)
+  <info><title>&os;&nbsp;9.<replaceable>X</replaceable> (und neuer)
     installieren</title>
     <authorgroup>
       <author><personname><firstname>Jim</firstname><surname>Mock</surname></personname><contrib>Restructured, reorganized, and parts
@@ -274,7 +274,8 @@
         zur Veränderung der Partitionsgrössen</link> sind
         verfügbar. <link xlink:href="http://gparted.sourceforge.net/livecd.php">GParted
         Live</link> ist eine freie Live-CD, die den
-        GParted-Partitionseditor enthält.  GParted ist auch in
+	<application>GParted</application>-Partitionseditor enthält.
+	<application>GParted</application> ist auch in
         einer Vielzahl von anderen Linux Live-CD Distributionen
         enthalten.</para>
 
@@ -316,7 +317,7 @@
 		  eine 20&nbsp;GB Partition einzurichten und eine weitere
 		  20&nbsp;GB-Partition für &os; bereitzustellen.</para>
 
-		<para>Es gibt zwei Wege, dieses Ziel zu erreichen.</para>
+		<para>Es gibt zwei Wege, dieses Ziel zu erreichen:</para>
 
 		<orderedlist>
 		  <listitem>
@@ -393,7 +394,7 @@
         Veröffentlichungsprozess einschleichen.  In sehr seltenen
         Fällen betreffen diese Fehler den Installationsvorgang.
         Wenn diese Probleme entdeckt und behoben sind, werden dazu
-        Hinweise in der <link xlink:href="&url.base;/releases/9.0R/errata.html">FreeBSD Errata</link>
+        Hinweise in der <link xlink:href="&url.base;/releases/&rel.current;R/errata.html">FreeBSD Errata</link>
         auf der &os; Webseite veröffentlicht.  Prüfen Sie die
         Errata vor der Installation, um sicherzustellen, dass es keine
         Probleme gibt, welche die Installation betreffen.</para>
@@ -443,7 +444,7 @@
       <para>Um einen startfähigen USB-Stick zu erstellen,
         führen Sie die folgenden Schritte durch:</para>
 
-      <procedure>
+      <procedure xml:id="bsdinstall-installation-media-memory-stick">
 		<step>
 		  <title>Das Image für den USB-Stick herunterladen</title>
 
@@ -946,14 +947,14 @@ Trying to mount root from cd9660:/dev/iso9660/FREEBSD_INSTALL [ro]...</screen>
       <para>Prüfen Sie die Ergebnisse der Geräteerkennung genau,
         um sicher zu stellen, dass &os; alle Geräte, die Sie
         erwarten, auch gefunden hat.  Falls ein Gerät nicht gefunden
-        wurde, wird es auch nicht aufgelistet.  <link linkend="kernelconfig-modules">Kernelmodule</link> erlauben es,
+        wurde, wird es auch nicht aufgelistet.  <link linkend="kernelconfig-custom-kernel">Kernelmodule</link> erlauben es,
         Unterstützung für Geräte, die nicht im
         <filename>GENERIC</filename>-Kernel vorhanden sind,
         hinzuzufügen.</para>
 
       <para>Nach der Geräteerkennungsprozedur, werden Sie <xref linkend="bsdinstall-choose-mode"/> sehen.  Das Installationsmedium
         kann auf drei Arten verwendet werden: um &os; zu installieren,
-        als eine "live CD" oder um einfach eine &os;-Shell zu öffnen.
+	als eine <link linkend="using-live-cd">Live-CD</link> oder um einfach eine &os;-Shell zu öffnen.
         Benutzen Sie die Pfeiltasten, um eine Option auszuwählen und
         druücken Sie <keycap>Enter</keycap> zum
         bestätigen.</para>
@@ -977,11 +978,12 @@ Trying to mount root from cd9660:/dev/iso9660/FREEBSD_INSTALL [ro]...</screen>
     <title>Das <application>bsdinstall</application>-Werkzeug</title>
 
     <para><application>bsdinstall</application> ist ein textbasiertes
-	  &os; Installationsprogramm, geschrieben von &a.nwhitehorn; und
-	  im Jahr 2011 für &os;&nbsp;9.0 vorgestellt wurde.</para>
+      &os; Installationsprogramm, das von &a.nwhitehorn.email;
+      geschrieben und im Jahr 2011 für &os;&nbsp;9.0 vorgestellt
+      wurde.</para>
 
     <note>
-      <para>&a.kmoore;s <application>pc-sysinstall</application> ist
+      <para>&a.kmoore.email;s <application>pc-sysinstall</application> ist
         in <link xlink:href="http://pcbsd.org">PC-BSD</link> enthalten und
         kann ebenfalls verwendet werden, um <link xlink:href="http://wiki.pcbsd.org/index.php/Use_PC-BSD_Installer_to_Install_FreeBSD">&os; zu installieren</link>.  Obwohl es
         manchmal mit <application>bsdinstall</application> verwechselt
@@ -1201,7 +1203,6 @@ Trying to mount root from cd9660:/dev/iso9660/FREEBSD_INSTALL [ro]...</screen>
 	  Schliesslich gbt es noch die Option eine Shell zu starten, auf der
 	  Kommandozeilenprogramme wie &man.gpart.8;, &man.fdisk.8; und
 	  &man.bsdlabel.8; direkt ausgeführt werden können.</para>
-      <!-- WB: mention ZFS here? -->
 
     <figure xml:id="bsdinstall-part-guided-manual">
 	<title>Geführte oder manuelle Partitionierung auswählen</title>
@@ -1386,16 +1387,16 @@ Trying to mount root from cd9660:/dev/iso9660/FREEBSD_INSTALL [ro]...</screen>
 	    </listitem>
 
 	    <listitem>
-	      <para><literal>freebsd-zfs</literal> - Ein &os;
-		ZFS-Dateisystem.
-		Siehe <xref linkend="zfs"/>.</para>
-	    </listitem>
-
-	    <listitem>
 	      <para><literal>freebsd-swap</literal> - &os; Auslagerungsbereich
 	        (swap space).</para>
 	    </listitem>
       </itemizedlist>
+
+      <para>Ein weiter Partitionstyp ist
+	<literal>freebsd-zfs</literal>.  Dieser Typ ist für
+	Partitionen bestimmt, die ein &os; ZFS-Dateisystem verwenden
+	sollen.  &man.gpart.8; beschreibt weitere verfügbare
+	Partitionstypen.</para>
 
       <para>Mehere Dateisystempartitionen können benutzt werden und
         manche Leute ziehen es vor, ein traditionelles Layout mit
@@ -1405,10 +1406,6 @@ Trying to mount root from cd9660:/dev/iso9660/FREEBSD_INSTALL [ro]...</screen>
         <filename>/usr</filename> zu erstellen.  Lesen Sie dazu
         <xref linkend="bsdinstall-part-manual-splitfs"/>, um ein
         Beispiel zu erhalten.</para>
-
-      <para>Lesen Sie &man.gpart.8; für eine vollständige Liste
-        von verfügbaren
-        <acronym>GPT</acronym>-Partitionstypen.</para>
 
       <para>Grössenangaben können mit gängigen
         Abkürzungen eingegeben werden: <emphasis>K</emphasis>
@@ -2690,5 +2687,44 @@ login:</screen>
 	    </qandaentry>
       </qandaset>
     </sect2>
+  </sect1>
+
+  <sect1 xml:id="using-live-cd">
+    <title>Verwendung der Live-<acronym>CD</acronym></title>
+
+    <para>Neben dem Installationsprogramm steht auch die
+      Live-<acronym>CD</acronym> von &os; auf der
+      <acronym>CD</acronym> zur Verfügung.  Die
+      Live-<acronym>CD</acronym> ist für Benutzer, die sich fragen, ob
+      &os; das richtige Betriebssystem für sie ist und die vor der
+      Installation noch einige Merkmale und Eigenschaften testen
+      wollen.</para>
+
+    <note>
+      <para>Die folgenden Punkte sollten beachtet werden, während die
+	Live-<acronym>CD</acronym> benutzt wird:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>Um Zugriff auf das System zu bekommen, wird eine
+	    Authentifizierung benötigt.  Der Benutzername ist
+	    <systemitem class="username">root</systemitem> und das
+	    Kennwort bleibt leer.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Da das System direkt von der <acronym>CD</acronym>
+	    ausgeführt wird, ist die Geschwindigkeit deutlich
+	    langsamer als bei einem System, das auf einer Festplatte
+	    installiert ist.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Die Live-<acronym>CD</acronym> enthält nur eine
+	    Eingabeaufforderung und keine graphische
+	    Oberfläche.</para>
+	</listitem>
+      </itemizedlist>
+    </note>
   </sect1>
 </chapter>

@@ -189,6 +189,9 @@
 <!ENTITY a.attilio "Attilio Rao">
 <!ENTITY a.attilio.email "&a.attilio; <email xmlns='http://docbook.org/ns/docbook'>attilio@FreeBSD.org</email>">
 
+<!ENTITY a.araujo "Marcelo Araujo">
+<!ENTITY a.araujo.email "&a.araujo; <email xmlns='http://docbook.org/ns/docbook'>araujo@FreeBSD.org</email>">
+
 <!ENTITY a.avatar "Tai-hwa Liang">
 <!ENTITY a.avatar.email "&a.avatar; <email xmlns='http://docbook.org/ns/docbook'>avatar@FreeBSD.org</email>">
 
@@ -200,6 +203,9 @@
 
 <!ENTITY a.avl "Alexander Logvinov">
 <!ENTITY a.avl.email "&a.avl; <email xmlns='http://docbook.org/ns/docbook'>avl@FreeBSD.org</email>">
+
+<!ENTITY a.avos "Andriy Voskoboinyk">
+<!ENTITY a.avos.email "&a.avos; <email xmlns='http://docbook.org/ns/docbook'>avos@FreeBSD.org</email>">
 
 <!ENTITY a.awebster "Andrew Webster">
 <!ENTITY a.awebster.email "&a.awebster; <email xmlns='http://docbook.org/ns/docbook'>awebster@pubnix.net</email>">
@@ -1128,6 +1134,9 @@
 <!ENTITY a.jtc "J.T. Conklin">
 <!ENTITY a.jtc.email "&a.jtc; <email xmlns='http://docbook.org/ns/docbook'>jtc@FreeBSD.org</email>">
 
+<!ENTITY a.jtl "Jonathan T. Looney">
+<!ENTITY a.jtl.email "&a.jtl; <email xmlns='http://docbook.org/ns/docbook'>jtl@FreeBSD.org</email>">
+
 <!ENTITY a.julian "Julian Elischer">
 <!ENTITY a.julian.email "&a.julian; <email xmlns='http://docbook.org/ns/docbook'>julian@FreeBSD.org</email>">
 
@@ -1253,6 +1262,9 @@
 
 <!ENTITY a.lev "Lev Serebryakov">
 <!ENTITY a.lev.email "&a.lev; <email xmlns='http://docbook.org/ns/docbook'>lev@FreeBSD.org</email>">
+
+<!ENTITY a.lidl "Kurt Lidl">
+<!ENTITY a.lidl.email "&a.lidl; <email xmlns='http://docbook.org/ns/docbook'>lidl@FreeBSD.org</email>">
 
 <!ENTITY a.lile "Larry Lile">
 <!ENTITY a.lile.email "&a.lile; <email xmlns='http://docbook.org/ns/docbook'>lile@FreeBSD.org</email>">
@@ -1469,6 +1481,9 @@
 
 <!ENTITY a.mm "Martin Matuska">
 <!ENTITY a.mm.email "&a.mm; <email xmlns='http://docbook.org/ns/docbook'>mm@FreeBSD.org</email>">
+
+<!ENTITY a.mmel "Michal Meloun">
+<!ENTITY a.mmel.email "&a.mmel; <email xmlns='http://docbook.org/ns/docbook'>mmel@FreeBSD.org</email>">
 
 <!ENTITY a.mmoll "Michael Moll">
 <!ENTITY a.mmoll.email "&a.mmoll; <email xmlns='http://docbook.org/ns/docbook'>mmoll@FreeBSD.org</email>">
@@ -1980,6 +1995,9 @@
 <!ENTITY a.sjg "Simon J. Gerraty">
 <!ENTITY a.sjg.email "&a.sjg; <email xmlns='http://docbook.org/ns/docbook'>sjg@FreeBSD.org</email>">
 
+<!ENTITY a.skra "Svatopluk Kraus">
+<!ENTITY a.skra.email "&a.skra; <email xmlns='http://docbook.org/ns/docbook'>skra@FreeBSD.org</email>">
+
 <!ENTITY a.skreuzer "Steven Kreuzer">
 <!ENTITY a.skreuzer.email "&a.skreuzer; <email xmlns='http://docbook.org/ns/docbook'>skreuzer@FreeBSD.org</email>">
 
@@ -2280,6 +2298,9 @@
 <!ENTITY a.wkoszek "Wojciech A. Koszek">
 <!ENTITY a.wkoszek.email "&a.wkoszek; <email xmlns='http://docbook.org/ns/docbook'>wkoszek@FreeBSD.org</email>">
 
+<!ENTITY a.wma "Wojciech Macek">
+<!ENTITY a.wma.email "&a.wma; <email xmlns='http://docbook.org/ns/docbook'>wma@FreeBSD.org</email>">
+
 <!ENTITY a.wolf "Wolfgang Stanglmeier">
 <!ENTITY a.wolf.email "&a.wolf; <email xmlns='http://docbook.org/ns/docbook'>wolf@FreeBSD.org</email>">
 
@@ -2393,5 +2414,6 @@
 
 <!-- FreeBSD Security Officer -->
 <!ENTITY a.so '&a.delphij;'>
+<!ENTITY a.so.email '&a.delphij.email;'>
 
 <!ENTITY a.so-team '&a.mnag;, &a.remko;, &a.gnn;, &a.simon;, &a.philip;, &a.cperciva;, &a.csjp;, &a.des;, &a.rwatson;, &a.bz;'>

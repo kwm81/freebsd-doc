@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//FreeBSD//DTD DocBook XML V5.0-Based Extension//EN"
 	"http://www.FreeBSD.org/XML/share/xml/freebsd50.dtd" [
 <!ENTITY bibliography SYSTEM "../../../share/xml/bibliography.xml">
-<!ENTITY rel.numbranch "4">  <!-- number of branches that follow in this list -->
+<!ENTITY rel.numbranch "3">  <!-- number of branches that follow in this list -->
 <!ENTITY rel.head "<emphasis xmlns='http://docbook.org/ns/docbook'>11-CURRENT</emphasis>">
 <!ENTITY rel.head.relx "11.<replaceable xmlns='http://docbook.org/ns/docbook'>X</replaceable>">
 <!ENTITY rel.head.releng "<symbol xmlns='http://docbook.org/ns/docbook'>head/</symbol>">
@@ -346,16 +346,6 @@
 	    is the latest release from the &rel2.stable; branch; it
 	    was released in &rel2.current.date;.</para>
 
-	  <para>Briefly, <emphasis>-STABLE</emphasis> is aimed at the
-	    ISP, corporate user, or any user who wants stability and a
-	    minimal number of changes compared to the new (and
-	    possibly unstable) features of the latest
-	    <emphasis>-CURRENT</emphasis> snapshot.  Releases can come
-	    from either branch, but <emphasis>-CURRENT</emphasis>
-	    is meant for users who are prepared for its increased
-	    volatility, relative to
-	    <emphasis>-STABLE</emphasis>.</para>
-
 	  <para>Releases are made <link linkend="release-freq">every
 	      few months</link>.  While many people stay more
 	    up-to-date with the &os; sources (see the questions on
@@ -435,8 +425,7 @@
 	    <emphasis>-CURRENT</emphasis> snapshot can be considered
 	    <quote>production quality</quote> for any purpose.
 	    If a stable and fully tested system is needed,
-	    stick to full releases or use the
-	    <emphasis>-STABLE</emphasis> snapshots.</para>
+	    stick to full releases.</para>
 
 	  <para>Snapshot releases are directly available from <link
 	      xlink:href="&url.base;/snapshots/">snapshot</link>.</para>
@@ -458,11 +447,16 @@
 	      xlink:href="&url.books.handbook;/current-stable.html#stable">-STABLE</link>,
 	    one <link
 	      xlink:href="&url.books.handbook;/current-stable.html#current">-CURRENT</link>.
-	    <emphasis>&os;-STABLE</emphasis> is intended for Internet
-	    Service Providers and other commercial enterprises for
-	    whom sudden shifts or experimental features are quite
-	    undesirable.  It receives only well-tested bug fixes and
-	    other small incremental enhancements.
+	    <emphasis>&os;-STABLE</emphasis> is the development branch
+	    from which major releases are made.  Changes go into this
+	    branch at a slower pace and with the general assumption
+	    that they have first been tested in &os;-CURRENT.
+	    However, at any given time, the sources for &os;-STABLE
+	    may or may not be suitable for general use, as it may
+	    uncover bugs and corner cases that were not yet found in
+	    &os;-CURRENT.  Users who do not have the resources to
+	    perform testing should instead run the most recent release
+	    of &os;.
 	    <emphasis>&os;-CURRENT</emphasis>, on the other hand, has
 	    been one unbroken line since 2.0 was released, leading
 	    towards &rel.current;-RELEASE and beyond.  For more
@@ -1557,8 +1551,8 @@
 	  <answer>
 	    <para>Yes.  &os; divides support into multiple tiers.
 	      Tier 1 architectures, such as i386 or amd64; are fully
-	      supported.  Tiers 2 and 3 are supported on an
-	      if-possible basis.  A full explanation of the tier
+	      supported.  Tiers 2 and 3 are supported on a
+	      best-effort basis.  A full explanation of the tier
 	      system is available in the <link
 		xlink:href="&url.articles.committers-guide;/archs.html">Committer's
 		Guide.</link></para>
@@ -2314,8 +2308,8 @@ kern.timecounter.hardware: TSC -&gt; i8254</screen>
 
 	  <note>
 	    <para>Problematic <acronym>LOR</acronym>s tend to get
-	      fixed quickly, so check &a.current.url; before posting
-	      to the mailing lists.</para>
+	      fixed quickly, so check the &a.current; before posting
+	      to it.</para>
 	  </note>
 	</answer>
       </qandaentry>
@@ -2651,17 +2645,22 @@ kern.timecounter.hardware: TSC -&gt; i8254</screen>
 
 	<answer>
 	  <para><literal>GENERIC</literal> kernels shipped with &os;
-	    and later are compiled in <emphasis>debug mode</emphasis>.
-	    Kernels built in debug mode contain many symbols in
-	    separate files that are used for debugging, thus greatly
-	    increasing the size of <filename>/boot/kernel/</filename>.
+	    are compiled in <emphasis>debug mode</emphasis>.
+	    Kernels built in debug mode contain debug data in
+	    separate files that are used for debugging.
+	    &os; releases prior to 11.0 store these debug files in
+	    the same directory as the kernel itself,
+	    <filename>/boot/kernel/</filename>.
+	    In &os; 11.0 and later the debug files are stored in
+	    <filename>/usr/lib/debug/boot/kernel/</filename>.
 	    Note that there will be little or no performance loss from
 	    running a debug kernel, and it is useful to keep one
 	    around in case of a system panic.</para>
 
-	  <para>However, when running low on disk space, there
+	  <para>When running low on disk space, there
 	    are different options to reduce the size of
-	    <filename>/boot/kernel/</filename>.</para>
+	    <filename>/boot/kernel/</filename> and
+	    <filename>/usr/lib/debug/</filename>.</para>
 
 	  <para>To not install the symbol files,
 	    make sure the following line exists in
@@ -2671,8 +2670,8 @@ kern.timecounter.hardware: TSC -&gt; i8254</screen>
 
 	  <para>For more information see &man.src.conf.5;.</para>
 
-	  <para>If you do not want to build a debug kernel, make sure
-	    that both of the following are true:</para>
+	  <para>If you want to avoid building debug files altogether,
+	    make sure that both of the following are true:</para>
 
 	  <itemizedlist>
 	    <listitem>
@@ -2713,9 +2712,9 @@ kern.timecounter.hardware: TSC -&gt; i8254</screen>
 	      xlink:href="&url.books.handbook;/kernelconfig-building.html">build
 	      and install</link> the new kernel.</para>
 
-	  <para>Most kernels
-	    (<filename>/boot/kernel/kernel</filename>) tend to be
-	    around 12&nbsp;MB to 16&nbsp;MB.</para>
+	  <para>For reference, the &os; 11 &arch.amd64; kernel
+	    (<filename>/boot/kernel/kernel</filename>) is
+	    approximately 25&nbsp;MB.</para>
 	</answer>
       </qandaentry>
 
@@ -3362,12 +3361,12 @@ kern.sched.name: ULE</screen>
 	    deleted, the file is not really removed from the file
 	    system until the program stops using it.  The file is
 	    immediately deleted from the directory listing, however.
-	    As an example, consider a file that is large enough that
-	    its presence affects the output of
-	    <command>du</command> and <command>df</command>.  If this
-	    file is deleted while using <command>more</command> on it,
-	    <command>more</command> does not immediately choke and
-	    complain that it cannot view the file.  The entry is
+	    As an example, consider a file large enough
+	    to affect the output of
+	    <command>du</command> and <command>df</command>.  A
+	    file being viewed with <command>more</command> can be
+	    deleted wihout causing an error.
+	    The entry is
 	    removed from the directory so no other program or user can
 	    access it.  However, <command>du</command> shows that it
 	    is gone as it has walked the directory tree and the
@@ -3454,12 +3453,13 @@ kern.sched.name: ULE</screen>
 	</question>
 
 	<answer>
-	  <para>&os; does a short memory test early in the boot
-	    process.  This test usually only takes several seconds,
-	    however if the system has many 10s or 100s of gigabytes
-	    of memory it can take up to a few minutes.  This test can
-	    be disabled by setting <literal>hw.memtest.tests</literal>
-	    to <literal>0</literal> in
+	  <para>&os; 10.1 and earlier executes a memory test early
+	    in the boot process.
+	    When the system has a small amount of memory, the test
+	    takes a few seconds.  Computers with tens or hundreds of
+	    gigabytes of memory can take several minutes to complete
+	    the test.  The memory test can be disabled by adding
+	    <literal>hw.memtest.tests=0</literal> to
 	    <filename>/boot/loader.conf</filename>.</para>
 
 	  <para>For more details, see &man.loader.conf.5;.</para>
@@ -3490,7 +3490,7 @@ kern.sched.name: ULE</screen>
 	  </question>
 
 	  <answer>
-	    <para>The <acronym>ZIL</acronym> ((<acronym>ZFS</acronym>
+	    <para>The <acronym>ZIL</acronym> (<acronym>ZFS</acronym>
 	      intent log) is a write log used to implement posix write
 	      commitment semantics across crashes.  Normally writes
 	      are bundled up into transaction groups and written to

@@ -504,6 +504,11 @@
 	    </row>
 
 	    <row>
+	      <entry>&a.pkgbase.name;</entry>
+	      <entry>Packaging the &os; base system</entry>
+	    </row>
+
+	    <row>
 	      <entry>&a.platforms.name;</entry>
 	      <entry>Concerning ports to non &intel; architecture
 		platforms</entry>
@@ -638,6 +643,12 @@
 	    <row>
 	      <entry>&a.translators.name;</entry>
 	      <entry>Translating &os; documents and programs</entry>
+	    </row>
+
+	    <row>
+	      <entry>&a.transport.name;</entry>
+	      <entry>Discussions of transport level network protocols
+		in &os;</entry>
 	    </row>
 
 	    <row>
@@ -1740,6 +1751,18 @@
 	</varlistentry>
 
 	<varlistentry>
+	  <term>&a.pkgbase.name;</term>
+
+	  <listitem>
+	    <para><emphasis>Packaging the &os; base
+		system.</emphasis></para>
+
+	    <para>Discussions surrounding implementation and issues
+	      regarding packaging the &os; base system.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
 	  <term>&a.platforms.name;</term>
 
 	  <listitem>
@@ -2012,6 +2035,22 @@
 	      This could include the state of Clang and GCC, but also
 	      pieces of software such as assemblers, linkers and
 	      debuggers.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>&a.transport.name;</term>
+
+	  <listitem>
+	    <para><emphasis>Discussions of transport level network
+		protocols in &os;</emphasis></para>
+
+	    <para>The transport mailing list exists for the discussion
+	      of issues and designs around the transport level
+	      protocols in the &os; network stack, including TCP,
+	      SCTP and UDP.  Other networking topics, including
+	      driver specific and network protocol issues should be
+	      discussed on the &a.net;.</para>
 	  </listitem>
 	</varlistentry>
 

@@ -23,7 +23,7 @@
 	would like to work on.  ***
 
     $FreeBSD$
-    Original revision: r47218
+    Original revision: r48073
 -->
 <news>
   <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">
@@ -31,7 +31,117 @@
   </cvs:keyword>
 
   <year>
+    <name>2016</name>
+
+    <month>
+      <name>1</name>
+
+      <day>
+	<name>18</name>
+
+	<event>
+	  <p>新コミッタ就任:
+	    <a href="mailto:wma@FreeBSD.org">Wojciech Macek</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>6</name>
+
+	<event>
+	  <title>&os;&nbsp;Foundation のハラスメントに関する声明</title>
+
+	  <p>&os;&nbsp;Foundation は、&os; コミュニティのハラスメントに関する
+	    <a
+	      href="http://freebsdfoundation.blogspot.com/2016/01/freebsd-foundation-statement-on.html">最初の声明</a> を発表しました。</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <p>&os; コアチームは、&os; コミュニティのハラスメントに関する
+	    <a
+	      href="&lists.announce;/2016-January/001691.html">最初の声明</a>
+	    を発表しました。</p>
+	</event>
+      </day>
+    </month>
+  </year>
+
+  <year>
     <name>2015</name>
+
+    <month>
+       <name>11</name>
+
+      <day>
+	<name>1</name>
+
+	<event>
+	  <p>新コミッタ就任:
+	    <a href="mailto:mmel@FreeBSD.org">Michal Meloun</a> (src)</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+       <name>10</name>
+
+      <day>
+	<name>26</name>
+
+	<event>
+	  <p>新コミッタ就任:
+	    <a href="mailto:jtl@FreeBSD.org">Jonathan T. Looney</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>25</name>
+
+	<event>
+	  <title>開発進捗レポート (2015 年 7 月 &ndash; 9 月) 公開</title>
+
+	  <p><a
+	      href="&enbase;/news/status/report-2015-07-2015-09.html">2015 年
+	      7 月 &ndash; 9 月開発進捗レポート</a>
+	    が公開されました。</p>
+	</event>
+      </day>
+
+      <day>
+         <name>23</name>
+
+         <event>
+	  <p>新コミッタ就任:
+             <a href="mailto:skra@FreeBSD.org">Svatopluk Kraus</a> (src)</p>
+         </event>
+      </day>
+
+       <day>
+         <name>21</name>
+
+         <event>
+	  <p>新コミッタ就任:
+             <a href="mailto:lidl@FreeBSD.org">Kurt Lidl</a> (src)</p>
+         </event>
+       </day>
+    </month>
+
+    <month>
+      <name>9</name>
+
+      <day>
+	<name>24</name>
+
+	<event>
+	  <p>新コミッタ就任:
+	    <a href="mailto:avos@FreeBSD.org">Andriy Voskoboinyk</a> (src)</p>
+	</event>
+      </day>
+    </month>
 
     <month>
       <name>8</name>

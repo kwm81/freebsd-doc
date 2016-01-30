@@ -3,7 +3,7 @@
      The FreeBSD Documentation Project
      The FreeBSD Japanese Documentation Project
 
-     Original revision: r47332
+     Original revision: r47746
      $FreeBSD$
 -->
 <appendix xmlns="http://docbook.org/ns/docbook"
@@ -590,7 +590,6 @@ Comment out for now until these can be verified.
 	    <literal>base</literal> リポジトリでは、<literal>head</literal>
 	    ブランチで -CURRENT の最新バージョンを管理しています。
 	    -STABLE ブランチの最新バージョンは、
-	    8.<replaceable>x</replaceable> は <literal>stable/8</literal>,
 	    9.<replaceable>x</replaceable> は <literal>stable/9</literal>,
 	    そして
 	    10.<replaceable>x</replaceable> は <literal>stable/10</literal>
@@ -668,7 +667,7 @@ Comment out for now until these can be verified.
 	GeoDNS を用いて適切なバックエンドサーバを選択しています。
 	ブラウザを用いて &os; の <application>Subversion</application>
 	リポジトリを参照するには、<link
-	  xlink:href="http://svnweb.FreeBSD.org/">http://svnweb.FreeBSD.org/</link>
+	  xlink:href="https://svnweb.FreeBSD.org/">https://svnweb.FreeBSD.org/</link>
 	を利用してください。</para>
 
       <note>

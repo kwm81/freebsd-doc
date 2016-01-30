@@ -160,7 +160,7 @@ $i_topbar = qq`
 		<ul>
 		  <li><a href="$hsty_base/commercial/commercial.html">Vendors</a></li>
 		  <li><a href="//security.FreeBSD.org/">Security Information</a></li>
-		  <li><a href="https://bugs.freebsd.org/bugzilla/search/">Bug Reports</a></li>
+		  <li><a href="https://bugs.freebsd.org/search/">Bug Reports</a></li>
 		  <li><a href="$hsty_base/support.html">Submit Bug-report</a></li>
 		</ul>
 	      </li>
@@ -238,7 +238,7 @@ sub html_footer {
     return qq`
 	</div>
         <div id="footer">
-          <a href="$hsty_base/copyright/">Legal Notices</a> | &copy; 1995-2015
+          <a href="$hsty_base/copyright/">Legal Notices</a> | &copy; 1995-2016
           The FreeBSD Project. All rights reserved.<br />
 	  <address>$hsty_author<br />$hsty_date</address>
         </div>

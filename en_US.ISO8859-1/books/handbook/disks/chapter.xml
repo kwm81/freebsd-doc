@@ -135,10 +135,12 @@
     </note>
 
     <para>The partition scheme is created, and then a single partition
-      is added:</para>
+      is added.  To improve performance on newer disks with larger
+      hardware block sizes, the partition is aligned to one megabyte
+      boundaries:</para>
 
     <screen>&prompt.root; <userinput>gpart create -s GPT ada1</userinput>
-&prompt.root; <userinput>gpart add -t freebsd-ufs ada1</userinput></screen>
+&prompt.root; <userinput>gpart add -t freebsd-ufs -a 1M ada1</userinput></screen>
 
     <para>Depending on use, several smaller partitions may be desired.
       See &man.gpart.8; for options to create partitions smaller than
@@ -508,6 +510,68 @@ da0 at umass-sim0 bus 0 scbus4 target 0 lun 0
 da0: &lt;STECH Simple Drive 1.04&gt; s/n WD-WXE508CAN263          detached
 (da0:umass-sim0:0:0:0): Periph destroyed</screen>
     </sect2>
+
+    <sect2>
+      <title>Automounting Removable Media</title>
+
+      <note>
+        <para>&man.autofs.5; supports automatic mounting of
+	  removable media starting with &os;&nbsp;10.2-RELEASE.</para>
+      </note>
+
+      <para><acronym>USB</acronym> devices can be automatically
+        mounted by uncommenting this line in
+	<filename>/etc/auto_master</filename>:</para>
+
+      <screen>/media		-media		-nosuid</screen>
+
+      <para>Then add these lines to
+	<filename>/etc/devd.conf</filename>:</para>
+
+      <screen>notify 100 {
+	match "system" "GEOM";
+	match "subsystem" "DEV";
+	action "/usr/sbin/automount -c";
+};
+</screen>
+
+      <para>Reload the configuration if &man.autofs.5;
+        and &man.devd.8; are already running:</para>
+
+      <screen>&prompt.root; <userinput>service automount reload</userinput>
+&prompt.root; <userinput>service devd restart</userinput></screen>
+
+      <para>&man.autofs.5; can be set to start at boot by adding this
+        line to <filename>/etc/rc.conf</filename>:</para>
+
+      <programlisting>autofs_enable="YES"</programlisting>
+
+      <para>&man.autofs.5; requires &man.devd.8; to be enabled, as it
+        is by default.</para>
+
+      <para>Start the services immediately with:</para>
+
+      <screen>&prompt.root; <userinput>service automount start</userinput>
+&prompt.root; <userinput>service automountd start</userinput>
+&prompt.root; <userinput>service autounmountd start</userinput>
+&prompt.root; <userinput>service devd start</userinput></screen>
+
+      <para>Each file system that can be automatically mounted appears
+        as a directory in <filename>/media/</filename>.  The directory
+	is named after the file system label.  If the label is
+	missing, the directory is named after the device node.</para>
+
+      <para>The file system is transparently mounted on the first
+        access, and unmounted after a period of inactivity.
+	Automounted drives can also be unmounted manually:</para>
+
+      <screen>&prompt.root; <userinput>automount -fu</userinput></screen>
+
+      <para>This mechanism is typically used for memory cards and
+        <acronym>USB</acronym> memory sticks.  It can be used with
+	any block device, including optical drives or
+	<acronym>iSCSI</acronym> <acronym>LUN</acronym>s.</para>
+    </sect2>
   </sect1>
 
   <sect1 xml:id="creating-cds">
@@ -653,14 +717,6 @@ cd0: Attempt to query device size failed: NOT READY, Medium not present - tray c
       <para>In &os;, <command>cdrecord</command> can be used to burn
 	<acronym>CD</acronym>s.  This command is installed with the
 	<package>sysutils/cdrtools</package> package or port.</para>
-
-      <note>
-	<para>&os; 8.x includes the built-in
-	  <command>burncd</command> utility for burning
-	  <acronym>CD</acronym>s using an <acronym>ATAPI</acronym>
-	  <acronym>CD</acronym> burner.  Refer to the manual page for
-	  <command>burncd</command> for usage examples.</para>
-      </note>
 
       <para>While <command>cdrecord</command> has many options, basic
 	usage is simple.  Specify the name of the
@@ -2877,7 +2933,7 @@ geli_da2_flags="-p -k /root/<replaceable>da2.key</replaceable>"</programlisting>
 
     <para>This section demonstrates how to configure an encrypted
       swap partition using &man.gbde.8; or &man.geli.8; encryption.
-      It assumes a <acronym>UFS</acronym> file system where
+      It assumes that
       <filename>/dev/ada0s1b</filename> is the swap partition.</para>
 
     <sect2>
@@ -2905,8 +2961,9 @@ geli_da2_flags="-p -k /root/<replaceable>da2.key</replaceable>"</programlisting>
 /dev/ada0s1b.eli	none		swap	sw		0	0</programlisting>
 
       <para>By default, &man.geli.8; uses the <acronym>AES</acronym>
-	algorithm with a key length of 256 bits.  These defaults can
-	be altered in the options field in
+	algorithm with a key length of 128 bits.  Normally the default
+	settings will suffice.  If desired, these defaults can be
+	altered in the options field in
 	<filename>/etc/fstab</filename>.  The possible flags
 	are:</para>
 
@@ -3597,8 +3654,8 @@ esac</programlisting>
 	  changes to the data.  This problem must be corrected
 	  manually by the system administrator.</para>
 
-	<para>The administrator must decide which node has more
-	  important changes or merge them manually.  Then, let
+	<para>The administrator must either decide which node has more
+	  important changes, or perform the merge manually.  Then, let
 	  <acronym>HAST</acronym> perform full synchronization of the
 	  node which has the broken data.  To do this, issue these
 	  commands on the node which needs to be

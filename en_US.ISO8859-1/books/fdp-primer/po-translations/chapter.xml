@@ -34,7 +34,7 @@
       option was not enabled, display the options menu and enable
       it, then reinstall the port:</para>
 
-      <screen>&prompt.root; <userinput>cd /usr/ports/textproc/docproj</userinput>
+    <screen>&prompt.root; <userinput>cd /usr/ports/textproc/docproj</userinput>
 &prompt.root; <userinput>make config</userinput>
 &prompt.root; <userinput>make clean deinstall install clean</userinput></screen>
 
@@ -117,7 +117,8 @@
       </step>
     </procedure>
 
-    <procedure xml:id="po-translations-quick-generating-a-translated-document">
+    <procedure
+      xml:id="po-translations-quick-generating-a-translated-document">
       <title>Generating a Translated Document</title>
 
       <step>
@@ -412,7 +413,7 @@ A         Makefile</screen>
 	    <filename>book.xml</filename>:</para>
 
 	  <programlisting>#
-# $FreeBSD$
+# &dollar;FreeBSD&dollar;
 #
 # Build the FreeBSD Porter's Handbook.
 #
@@ -455,8 +456,6 @@ IMAGES_LIB+=    callouts/21.png
 URL_RELPREFIX?= ../../../..
 DOC_PREFIX?= ${.CURDIR}/../../..
 
-SYMLINKS=       ${DESTDIR} index.html handbook.html
-
 .include "${DOC_PREFIX}/share/mk/doc.project.mk"</programlisting>
 
 	  <para>Now the document structure is ready for the translator
@@ -471,7 +470,8 @@ SYMLINKS=       ${DESTDIR} index.html handbook.html
 	<acronym>PGP</acronym> Keys Article</title>
 
       <para>Create a new French translation of the
-	<link xlink:href="&url.articles.pgpkeys;"><acronym>PGP</acronym>
+	<link
+	  xlink:href="&url.articles.pgpkeys;"><acronym>PGP</acronym>
 	  Keys article</link>.  The original is an article in
 	<filename>~/doc/en_US.ISO8859-1/articles/pgpkeys/</filename>.</para>
 
@@ -498,11 +498,11 @@ A         Makefile</screen>
 	    <filename>Makefile</filename>.  Because this is a simple
 	    article, in this case the <filename>Makefile</filename>
 	    can be used unchanged.  The <literal>$&os;...$</literal>
-	    version string on the third line will be replaced by the
+	    version string on the second line will be replaced by the
 	    version control system when this file is committed.</para>
 
 	  <programlisting>#
-# $FreeBSD$
+# &dollar;FreeBSD&dollar;
 #
 # Article: PGP Keys
 
@@ -524,8 +524,8 @@ DOC_PREFIX?=    ${.CURDIR}/../../..
 .include "${DOC_PREFIX}/share/mk/doc.project.mk"</programlisting>
 
 	  <para>With the document structure complete, the
-	  <acronym>PO</acronym> file can be created with
-	  <command>make po</command>.</para>
+	    <acronym>PO</acronym> file can be created with
+	    <command>make po</command>.</para>
 	</step>
       </procedure>
     </example>
@@ -676,6 +676,38 @@ DOC_PREFIX?=    ${.CURDIR}/../../..
       </itemizedlist>
     </sect2>
 
+    <sect2 xml:id="po-translations-literal-dollar">
+      <title><literal>&dollar;FreeBSD&dollar;</literal>
+	Strings</title>
+
+      <para>The &dollar;FreeBSD&dollar; version strings used in
+	files require special handling.  In examples like
+	<xref linkend="po-translations-creating-example"/>, these
+	strings are not meant to be expanded.  The English documents
+	use <literal>&amp;dollar;</literal> entities to avoid
+	including actual literal dollar signs in the file:</para>
+
+      <programlisting>&amp;dollar;FreeBSD&amp;dollar;</programlisting>
+
+      <para>The <literal>&amp;dollar;</literal> entities are not seen
+	as dollar signs by the version control system and so the
+	string is not expanded into a version string.</para>
+
+      <para>When a <acronym>PO</acronym> file is created, the
+	<literal>&amp;dollar;</literal> entities used in examples are
+	replaced with actual dollar signs.  The resulting literal
+	<literal>&dollar;FreeBSD&dollar;</literal> string will be
+	wrongly expanded by the version control system when the file
+	is committed.</para>
+
+      <para>The same technique as used in the English documents can be
+	used in the translation.  The <literal>&amp;dollar;</literal>
+	is used to replace the dollar sign in the translation entered
+	into the <acronym>PO</acronym> editor:</para>
+
+      <programlisting>&amp;dollar;FreeBSD&amp;dollar;</programlisting>
+    </sect2>
+
     <!--
     <sect2 xml:id="po-translations-tips-makefile">
       <title>Modifying the <filename>Makefile</filename></title>
@@ -754,6 +786,157 @@ DOC_PREFIX?=    ${.CURDIR}/../../..
 
 	  <screen>&prompt.user; <userinput>make FORMATS=html</userinput>
 &prompt.user; <userinput>firefox book.html</userinput></screen>
+	</step>
+      </procedure>
+    </example>
+  </sect1>
+
+  <sect1 xml:id="po-translations-submitting">
+    <title>Submitting the New Translation</title>
+
+    <para>Prepare the new translation files for submission.  This
+      includes adding the files to the version control system, setting
+      additional properties on them, then creating a diff for
+      submission.</para>
+
+    <para>The diff files created by these examples can be attached to
+      a <link
+	xlink:href="https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Documentation">documentation
+	bug report</link> or <link
+	xlink:href="https://reviews.freebsd.org/">code
+	review</link>.</para>
+
+    <example xml:id="po-translations-submitting-spanish">
+      <title>Spanish Translation of the NanoBSD Article</title>
+
+      <procedure>
+	<step>
+	  <para>Add a &os; version string comment as the first
+	    line of the <acronym>PO</acronym> file:</para>
+
+	  <programlisting>#&dollar;FreeBSD&dollar;</programlisting>
+	</step>
+
+	<step>
+	  <para>Add the <filename>Makefile</filename>, the
+	    <acronym>PO</acronym> file, and the generated
+	    <acronym>XML</acronym> translation to
+	    version control:</para>
+
+	  <screen>&prompt.user; <userinput>cd ~/doc/es_ES.ISO8859-1/articles/nanobsd/</userinput>
+&prompt.user; <userinput>ls</userinput>
+Makefile	article.xml	es_ES.po
+&prompt.user; <userinput>svn add Makefile article.xml es_ES.po</userinput>
+A         Makefile
+A         article.xml
+A         es_ES.po</screen>
+	</step>
+
+	<step>
+	  <para>Set the
+	    <application>Subversion</application>
+	    <literal>svn:keywords</literal> properties on these files
+	    to <literal>FreeBSD=%H</literal> so
+	    <literal>&dollar;FreeBSD&dollar;</literal> strings are
+	    expanded into the path, revision, date, and author when
+	    committed:</para>
+
+	  <screen>&prompt.user; <userinput>svn propset svn:keywords FreeBSD=%H Makefile article.xml es_ES.po</userinput>
+property 'svn:keywords' set on 'Makefile'
+property 'svn:keywords' set on 'article.xml'
+property 'svn:keywords' set on 'es_ES.po'</screen>
+	</step>
+
+	<step>
+	  <para>Set the <acronym>MIME</acronym> types of the files.
+	    These are <literal>text/xml</literal> for books and
+	    articles, and
+	    <literal>text/x-gettext-translation</literal> for the
+	    <acronym>PO</acronym> file.</para>
+
+	  <screen>&prompt.user; <userinput>svn propset svn:mime-type text/x-gettext-translation es_ES.po</userinput>
+property 'svn:mime-type' set on 'es_ES.po'
+&prompt.user; <userinput>svn propset svn:mime-type text/xml article.xml</userinput>
+property 'svn:mime-type' set on 'article.xml'</screen>
+	</step>
+
+	<step>
+	  <para>Create a diff of the new files from the
+	    <filename>~/doc/</filename> base directory so the full
+	    path is shown with the filenames.  This helps committers
+	    identify the target language directory.</para>
+
+	  <screen>&prompt.user; <userinput>cd ~/doc</userinput>
+<userinput>svn diff es_ES.ISO8859-1/articles/nanobsd/ > /tmp/es_nanobsd.diff</userinput></screen>
+	</step>
+      </procedure>
+    </example>
+
+    <example xml:id="po-translations-submitting-korean-utf8">
+      <title>Korean <acronym>UTF-8</acronym> Translation of the
+	Explaining-BSD Article</title>
+
+      <procedure>
+	<step>
+	  <para>Add a &os; version string comment as the first
+	    line of the <acronym>PO</acronym> file:</para>
+
+	  <programlisting>#&dollar;FreeBSD&dollar;</programlisting>
+	</step>
+
+	<step>
+	  <para>Add the <filename>Makefile</filename>, the
+	    <acronym>PO</acronym> file, and the generated
+	    <acronym>XML</acronym> translation to
+	    version control:</para>
+
+	  <screen>&prompt.user; <userinput>cd ~/doc/ko_KR.UTF-8/articles/explaining-bsd/</userinput>
+&prompt.user; <userinput>ls</userinput>
+Makefile	article.xml	ko_KR.po
+&prompt.user; <userinput>svn add Makefile article.xml ko_KR.po</userinput>
+A         Makefile
+A         article.xml
+A         ko_KR.po</screen>
+	</step>
+
+	<step>
+	  <para>Set the <application>Subversion</application>
+	    <literal>svn:keywords</literal> properties on these files
+	    to <literal>FreeBSD=%H</literal> so
+	    <literal>&dollar;FreeBSD&dollar;</literal> strings are
+	    expanded into the path, revision, date, and author when
+	    committed:</para>
+
+	  <screen>&prompt.user; <userinput>svn propset svn:keywords FreeBSD=%H Makefile article.xml ko_KR.po</userinput>
+property 'svn:keywords' set on 'Makefile'
+property 'svn:keywords' set on 'article.xml'
+property 'svn:keywords' set on 'ko_KR.po'</screen>
+	</step>
+
+	<step>
+	  <para>Set the <acronym>MIME</acronym> types of the files.
+	    Because these files use the <acronym>UTF-8</acronym>
+	    character set, that is also specified.  To prevent the
+	    version control system from mistaking these files for
+	    binary data, the <literal>fbsd:notbinary</literal>
+	    property is also set:</para>
+
+	  <screen>&prompt.user; <userinput>svn propset svn:mime-type 'text/x-gettext-translation; charset=UTF-8' ko_KR.po</userinput>
+property 'svn:mime-type' set on 'ko_KR.po'
+&prompt.user; <userinput>svn propset fbsd:notbinary yes ko_KR.po</userinput>
+property 'fbsd:notbinary' set on 'ko_KR.po'
+&prompt.user; <userinput>svn propset svn:mime-type 'text/xml; charset=UTF-8' article.xml</userinput>
+property 'svn:mime-type' set on 'article.xml'
+&prompt.user; <userinput>svn propset fbsd:notbinary yes article.xml</userinput>
+property 'fbsd:notbinary' set on 'article.xml'</screen>
+	</step>
+
+	<step>
+	  <para>Create a diff of these new files from the
+	    <filename>~/doc/</filename> base directory:</para>
+
+	  <screen>&prompt.user; <userinput>cd ~/doc</userinput>
+<userinput>svn diff ko_KR.UTF-8/articles/explaining-bsd > /tmp/ko-explaining.diff</userinput></screen>
 	</step>
       </procedure>
     </example>

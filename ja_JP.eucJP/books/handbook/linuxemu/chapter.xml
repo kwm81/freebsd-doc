@@ -3,7 +3,7 @@
      The FreeBSD Documentation Project
      The FreeBSD Japanese Documentation Project
 
-     Original revision: r10823
+     Original revision: r12908
      $FreeBSD$
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="linuxemu">
@@ -145,7 +145,9 @@ Id Refs Address    Size     Name
 	<indexterm><primary>ports collection</primary></indexterm>
 
 	<para>ランタイムライブラリをインストールするには最も簡単な方法です。
-	  <link xlink:href="http://www.FreeBSD.org/ja/ports/">Ports Collection</link> から他の port
+	  <link
+	    xlink:href="file://localhost/usr/ports/">Ports Collection</link>
+	  から他の port
 	  をインストールするのと全く同じようにできます。</para>
 
 	<screen>&prompt.root; <userinput>cd /usr/ports/emulators/linux_base</userinput>
@@ -192,7 +194,8 @@ Id Refs Address    Size     Name
 	  Linux のバイナリがどのシェアードライブラリを必要とし、
 	  そしてどこで入手できるか、どのように探したらよいでしょうか?
 	  基本的には、以下の 2 種類の方法があります (以下の手順に従う場合には、
-	  必要なインストール作業をおこなう FreeBSD システム上で root
+	  必要なインストール作業をおこなう FreeBSD システム上で
+	  <systemitem class="username">root</systemitem>
 	  として作業をおこなう必要があります)。</para>
 
 	<para>Linux システムにアクセス可能ならば、
@@ -318,12 +321,24 @@ multi on</programlisting>
     </sect2>
   </sect1>
 
-  <sect1 xml:id="linuxemu-mathematicau">
-    <title>Mathematica のインストール</title>
+  <sect1 xml:id="linuxemu-mathematica">
+    <info><title>Mathematica のインストール</title>
+      <authorgroup>
+	<author><personname>
+	  <firstname>Murray</firstname>
+	  <surname>Stokely</surname></personname>
+	  <contrib>Mathematica 4.X 向けの改訂: </contrib>
+	</author>
+      </authorgroup>
+      <authorgroup>
+	<author><personname>
+	  <firstname>Bojan</firstname>
+	  <surname>Bistrovic</surname></personname>
+	  <contrib>マージ作業: </contrib>
+	</author>
+      </authorgroup>
+    </info>
 
-    <para><emphasis><application>Mathematica</application> 4.X 用に &a.murray;
-      がアップデートし、Bojan Bistrovic <email>bojanb@physics.odu.edu</email>
-      がマージしました。</emphasis></para>
     <indexterm>
       <primary>アプリケーション</primary>
       <secondary><application>Mathematica</application></secondary>
@@ -463,6 +478,169 @@ disco.example.com 7115-70839-20412</screen>
 	上記例の <filename>MathType1</filename> を
 	<filename>Type1</filename>
 	とすることができます。</para>
+    </sect2>
+  </sect1>
+
+  <sect1 xml:id="linuxemu-maple">
+    <info><title>Maple のインストール</title>
+      <authorgroup>
+	<author><personname>
+	  <firstname>Aaron</firstname>
+	  <surname>Kaplan</surname></personname>
+<!--	  <address><email>aaron@lo-res.org</email></address>-->
+	  <contrib>寄稿: </contrib>
+	</author>
+      </authorgroup>
+      <authorgroup>
+	<author><personname>
+	  <firstname>Robert</firstname>
+	  <surname>Getschmann</surname>
+	  </personname>
+<!--	  <address><email>rob@getschmann.org</email></address>-->
+	  <contrib>感謝: </contrib>
+	</author>
+      </authorgroup>
+    </info>
+
+    <indexterm>
+      <primary>applications</primary>
+      <secondary><application>Maple</application></secondary>
+    </indexterm>
+
+    <para>Maple は Mathematica に似た商用の数式処理プログラムです。
+      ソフトウェアを <link
+      xlink:href="http://www.maplesoft.com/">http://www.maplesoft.com/</link>
+      で購入し、
+      ライセンスファイルの登録手続きを行ってください。
+      このソフトウェアを FreeBSD にインストールするには、
+      以下のステップに従ってください。</para>
+
+      <procedure>
+	<step><para>製品の配布物から <filename>INSTALL</filename>
+	  シェルスクリプトを実行してください。
+	  インストールプログラムからの質問には、
+	  <quote>RedHat</quote> オプションを選択してください。
+	  一般的なインストールのディレクトリは、<filename
+	  class="directory">/usr/local/maple</filename> です。</para></step>
+
+        <step><para>ライセンスがなければ、
+	  Maple Waterloo Software (http://register.maplesoft.com) で登録し、
+	  <filename>/usr/local/maple/license/license.dat</filename>
+	  にコピーしてください。</para></step>
+
+	<step><para><application>Maple</application> についてくる
+	  <filename>INSTALL_LIC</filename>
+	  というインストールシェルスクリプトを実行し、
+	  <application>FLEXlm</application>
+	  ラインセンスマネージャをインストールしてください。
+	  ライセンスサーバに対して、
+	  コンピュータのホスト名を設定してください。</para></step>
+
+        <step><para>以下のパッチを
+          <filename>usr/local/maple/bin/maple.system.type</filename>
+          ファイルにあててください。</para>
+<programlisting>   ----- snip ------------------
+*** maple.system.type.orig      Sun Jul  8 16:35:33 2001
+--- maple.system.type   Sun Jul  8 16:35:51 2001
+***************
+*** 72,77 ****
+--- 72,78 ----
+          # the IBM RS/6000 AIX case
+          MAPLE_BIN="bin.IBM_RISC_UNIX"
+          ;;
++     "FreeBSD"|\
+      "Linux")
+          # the Linux/x86 case
+        # We have two Linux implementations, one for Red Hat and
+   ----- snip end of patch -----</programlisting>
+
+	<para>"FreeBSD"|\ の後に空白を入れてはいけません。</para>
+
+	<para>このパッチにより <application>Maple</application> は、
+	  <quote>FreeBSD</quote> を Linux システムと認識します。
+	  <filename>bin/maple</filename> シェルスクリプトは
+	  <filename>bin/maple.system.type</filename> を呼び出します。
+	  このスクリプトは、uname -a を実行し、
+	  オペレーティングシステムの名前を入手します。
+	  OS 名にから、どのバイナリを使用するかを判断します。</para></step>
+
+	<step><para>ライセンスサーバを起動してください。</para>
+
+	<para><filename>/usr/local/etc/rc.d/lmgrd.sh</filename>
+	  としてインストールされる、以下のスクリプトは、
+	  lmgrd を起動する便利な方法です。</para>
+
+	<programlisting>   ----- snip ------------
+
+#! /bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bn
+PATH=${PATH}:/usr/local/maple/bin:/usr/local/maple/FLEXlm/UNIX/LINUX
+export PATH
+
+LICENSE_FILE=/usr/local/maple/license/license.dat
+LOG=/var/log/lmgrd.log
+
+case "$1" in
+start)
+	lmgrd -c ${LICENSE_FILE} 2>> ${LOG} 1>&gt;2
+	echo -n " lmgrd"
+	;;
+stop)
+	lmgrd -c ${LICENSE_FILE} -x lmdown 2>> ${LOG} 1>&gt;2
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" 1>&gt;2
+	exit 64
+	;;
+esac
+
+exit 0
+   ----- snip ------------</programlisting></step>
+
+
+      <step><para>maple の試験的に起動してください。</para>
+	<screen>&prompt.user; cd /usr/local/maple/bin
+&prompt.user; ./xmaple</screen>
+
+	<para>maple を使う用意はできました。
+	  ネイティブ FreeBSD 版を希望していることを
+	  Maplesoft に連絡してください!</para></step>
+    </procedure>
+
+    <sect2>
+      <title>落とし穴</title>
+
+      <itemizedlist>
+	<listitem><para>FLEXlm ライセンスマネージャは、
+	  動かすことが難しいツールでもあります。
+	  <link
+	  xlink:href="http://www.globetrotter.com/">http://www.globetrotter.com/</link>
+	  にも文書が用意されています。</para></listitem>
+
+	<listitem><para><command>lmgrd</command> は、
+	  ライセンスファイルに依存し、問題があると
+	  core dump してしまいます。
+	  正しいライセンスファイルは以下のようなものです。</para>
+
+<programlisting># =======================================================
+# License File for UNIX Installations ("Pointer File")
+# =======================================================
+SERVER chillig ANY
+#USE_SERVER
+VENDOR maplelmg
+
+FEATURE Maple maplelmg 2000.0831 permanent 1 XXXXXXXXXXXX \
+         PLATFORMS=i86_r ISSUER="Waterloo Maple Inc." \
+         ISSUED=11-may-2000 NOTICE=" Technische Universitat Wien" \
+         SN=XXXXXXXXX</programlisting>
+ 
+	<note><para>シリアル番号およびキーは 'X' に置き換えています。
+	  "chillig" は、ホスト名です。</para></note>
+
+	<para>ライセンスファイルを編集する際に、
+	  (ライセンスキーで保護されている) "FEATURE"
+	  の行を書き換えてしまうと、動かなくなるでしょう。</para></listitem>
+      </itemizedlist>
     </sect2>
   </sect1>
 
@@ -616,7 +794,9 @@ ORACLE_SID=ORCL; export ORACLE_SID
 ORACLE_TERM=386x; export ORACLE_TERM
 CLASSPATH=$ORACLE_HOME/jdbc/lib/classes111.zip
 export CLASSPATH
-PATH=/compat/linux/bin:/compat/linux/sbin:/compat/linux/usr/bin:/compat/linux/usr/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:$ORACLE_HOME/bin
+PATH=/compat/linux/bin:/compat/linux/sbin:/compat/linux/usr/bin
+PATH=$PATH:/compat/linux/usr/sbin:/bin:/sbin:/usr/bin:/usr/sbin
+PATH=$PATH:/usr/local/bin:$ORACLE_HOME/bin
 export PATH</programlisting>
       </sect3>
     </sect2>
@@ -925,7 +1105,7 @@ export PATH</programlisting>
 	<title>FTP 経由のインストール</title>
 	<para>ディスクイメージ kern.flp と mfsroot.flp を入手して、
 	  フロッピーディスクに書き込んでください (私は
-	  ftp7.de.freebsd.org から入手しました。
+	  ftp7.de.FreeBSD.org から入手しました。
 	  適切なミラーサイトを選んでください)。</para>
 
 	<screen>&prompt.root; <userinput>dd if=kern.flp of=/dev/fd0</userinput>
@@ -1050,7 +1230,8 @@ DOCSUPFILE=    /usr/share/examples/cvsup/doc-supfile</programlisting>
       <sect3 xml:id="makeworldandnewkernel">
 	<title><command>make world</command> と新しいカーネル</title>
 
-	<para>最初にすべきことは、ソースコードのインストールです。root
+	<para>最初にすべきことは、ソースコードのインストールです。
+	  <systemitem class="username">root</systemitem>
 	  ユーザで次の作業を行ってください。</para>
 
 	<screen>&prompt.root; <userinput>cd /usr/src</userinput>
@@ -1097,13 +1278,14 @@ DOCSUPFILE=    /usr/share/examples/cvsup/doc-supfile</programlisting>
 	試してみるとよいかもしれません。</para>
 
       <itemizedlist>
-	<listitem><para>ftp7.de.freebsd.org/pub/FreeBSD/distfiles/rpm</para></listitem>
+	<listitem><para>ftp7.de.FreeBSD.org/pub/FreeBSD/distfiles/rpm</para></listitem>
 	<listitem><para>ftp.redhat.com/pub/redhat/linux/6.1/en/os/i386/RedHat/RPMS</para></listitem>
       </itemizedlist>
 
       <sect3 xml:id="installinglinuxbase-system">
 	<title>Linux ベースシステムのインストール</title>
-	<para>まず、Linux のベースシステムを (root で)
+	<para>まず、Linux のベースシステムを
+	  (<systemitem class="username">root</systemitem> で)
 	  インストールしなければなりません。</para>
 
 	<screen>&prompt.root; <userinput>cd /usr/ports/emulators/linux_base</userinput>
@@ -1152,7 +1334,8 @@ DOCSUPFILE=    /usr/share/examples/cvsup/doc-supfile</programlisting>
 	<para>ただし、pam
 	  パッケージは次のようにして強制的にインストールしました。</para>
 
-	<screen>&prompt.root; <userinput>rpm -i --ignoreos --nodeps --root /compat/linux --dbpath /var/lib/rpm pam-0.68-7.i386.rpm</userinput> </screen>
+        <screen>&prompt.root; <userinput>rpm -i --ignoreos --nodeps --root /compat/linux --dbpath /var/lib/rpm \
+     pam-0.68-7.i386.rpm</userinput> </screen>
 
 	<para><application>Oracle</application> が intelligent agent
 	  を動作させるには、次の RedHat Tcl package を (FreeBSD
@@ -1511,7 +1694,8 @@ options SEMUME=100 #number of UNDO keys</programlisting></para>
 
 	<screen>&prompt.root; <userinput>export LD_LIBRARY_PATH=/oracle/IDS/lib:/sapmnt/IDS/exe:/oracle/805_32/lib</userinput> </screen>
 
-	<para>インストールディレクトリから root ユーザで
+	<para>インストールディレクトリから
+	  <systemitem class="username">root</systemitem> ユーザで
 	  R3SETUP を起動してください。</para>
 
 	<screen>&prompt.root; <userinput>cd /oracle/IDS/sapreorg/install</userinput>

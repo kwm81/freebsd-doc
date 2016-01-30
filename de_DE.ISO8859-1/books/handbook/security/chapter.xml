@@ -5,7 +5,7 @@
 
      $FreeBSD$
      $FreeBSDde: de-docproj/books/handbook/security/chapter.xml,v 1.178 2012/04/30 17:07:41 bcr Exp $
-     basiert auf: r39015
+     basiert auf: r41320
 -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="security">
   <info><title>Sicherheit</title>
@@ -667,10 +667,8 @@
         ist, werden die append-only und die unveränderlichen Dateien
         geschützt, die Flags können nicht abgeschaltet werden
         und der Zugriff auf raw Devices ist verboten.  Höhere Levels
-        verbieten mehr Aktionen.  Für einen vollständige Liste
-        aller Securelevels, lesen Sie bitte die &man.security.7;
-        Manual Seite (oder die Manual Seite von &man.init.8; für
-        ältere Releases als &os; 7.0).</para>
+        verbieten mehr Aktionen.  Eine vollständige Liste
+	aller Securelevels finden Sie in &man.security.7;.</para>
 
       <note>
 	<para>Das Erhöhen des Securelevels auf 1 oder höher
@@ -1139,7 +1137,9 @@
 
       <para>Die derzeit unterstützten Hash-Funktionen sind DES, MD5,
 	Blowfish, SHA256 und SHA512.  In der
-	Voreinstellung benutzt &os; die MD5-Hash-Funktion.</para>
+	Voreinstellung benutzten &os;&nbsp;9.1 und neuere Versionen
+	SHA512 zur Verschlüsselung von Passwörtern.  Ältere Versionen
+	benutzen standardmäßig MD5.</para>
 
       <para>Sie können leicht herausfinden, welche
 	Verschlüsselungsmethode von &os; verwendet wird.  Ein Weg
@@ -1570,11 +1570,11 @@ Enter secret pass phrase: <userinput>&lt;secret password&gt;</userinput>
       <programlisting># This line is required for POP3 connections:
 qpopper : ALL : allow</programlisting>
 
-      <para>Nachdem Sie die Zeile hinzugefügt haben, muss der
-        <application>inetd</application> neu gestartet werden.  Sie
-        können dazu das Kommando &man.kill.1; verwenden
-        oder <command>/etc/rc.d/inetd restart</command>
-        ausführen.</para>
+      <para>Nachdem Sie die Zeile hinzugefügt haben, muss
+	<application>inetd</application> mithilfe von &man.service.8;
+	neu gestartet werden:</para>
+
+      <screen>&prompt.root; <userinput>service inetd restart</userinput></screen>
     </sect2>
 
     <sect2>
@@ -4111,8 +4111,9 @@ VII. References<co xml:id="co-ref"/></programlisting>
 
 	<callout arearefs="co-details">
 	  <para>Das Feld <literal>Correction Details</literal>
-	    enthält die CVS-Tags der betroffenen Dateien
-	    zusammen mit zugehörigen Revisionsnummern.</para>
+	    enthält die <application>Subversion</application>-Tags
+	    der betroffenen Dateien zusammen mit zugehörigen
+	    Revisionsnummern.</para>
 	</callout>
 
 	<callout arearefs="co-ref">

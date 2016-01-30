@@ -29,7 +29,117 @@
   </cvs:keyword>
 
   <year>
+    <name>2016</name>
+
+    <month>
+      <name>1</name>
+
+      <day>
+	<name>18</name>
+
+	<event>
+	  <p>New committer:
+	    <a href="mailto:wma@FreeBSD.org">Wojciech Macek</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>6</name>
+
+	<event>
+	  <title>&os;&nbsp;Foundation Statement on Harassment</title>
+
+	  <p>The &os;&nbsp;Foundation has released its <a
+	      href="http://freebsdfoundation.blogspot.com/2016/01/freebsd-foundation-statement-on.html">initial
+	      statement</a> about harassment in the &os;
+	    community.</p>
+	</event>
+      </day>
+
+      <day>
+	<name>3</name>
+
+	<event>
+	  <p>The &os; Core team has released an
+	    <a
+	      href="&lists.announce;/2016-January/001691.html">Initial
+	      Statement</a> about harassment in the &os; Community</p>
+	</event>
+      </day>
+    </month>
+  </year>
+
+  <year>
     <name>2015</name>
+
+    <month>
+       <name>11</name>
+
+      <day>
+	<name>1</name>
+
+	<event>
+	  <p>New committer:
+	    <a href="mailto:mmel@FreeBSD.org">Michal Meloun</a> (src)</p>
+	</event>
+      </day>
+    </month>
+
+    <month>
+       <name>10</name>
+
+      <day>
+	<name>26</name>
+
+	<event>
+	  <p>New committer:
+	    <a href="mailto:jtl@FreeBSD.org">Jonathan T. Looney</a> (src)</p>
+	</event>
+      </day>
+
+      <day>
+	<name>25</name>
+
+	<event>
+	  <title>July&ndash;September Status Report</title>
+
+	  <p>The <a
+	    href="&enbase;/news/status/report-2015-07-2015-09.html">July&ndash;September,
+	      2015 Status Report</a> is now available.</p>
+	</event>
+      </day>
+
+      <day>
+         <name>23</name>
+
+         <event>
+           <p>New committer:
+             <a href="mailto:skra@FreeBSD.org">Svatopluk Kraus</a> (src)</p>
+         </event>
+      </day>
+
+       <day>
+         <name>21</name>
+
+         <event>
+           <p>New committer:
+             <a href="mailto:lidl@FreeBSD.org">Kurt Lidl</a> (src)</p>
+         </event>
+       </day>
+    </month>
+
+    <month>
+      <name>9</name>
+
+      <day>
+	<name>24</name>
+
+	<event>
+	  <p>New committer:
+	    <a href="mailto:avos@FreeBSD.org">Andriy Voskoboinyk</a> (src)</p>
+	 </event>
+       </day>
+    </month>
 
     <month>
       <name>8</name>

@@ -67,7 +67,7 @@ this file</a>.</p>
 </tr>
 
 <tr>
-<td>ref[10|9|8]-amd64</td>
+<td>ref[11|10|9]-amd64</td>
 <td>X-STABLE</td>
 <td>amd64</td>
 <td>Reference machine.</td>
@@ -80,60 +80,11 @@ this file</a>.</p>
 <td>Reference machine.</td>
 </tr>
 
-</tbody>
-</table>
-
-<h2>Administrative FreeBSD.org hosts</h2>
-
-<p>These systems perform various administrative services.  Most have
-  restricted access.</p>
-
-<table class="tblbasic">
-<thead>
 <tr>
-<th align="left">Host</th>
-<th align="left">Purpose</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>ftp-master</td>
-<td>FTP Master (stage server).</td>
-</tr>
-
-<tr>
-<td>skunkworks</td>
-<td>Perforce server.</td>
-</tr>
-
-<tr>
-<td>svn</td>
-<td>Subversion master repository.</td>
-</tr>
-
-</tbody>
-</table>
-
-<h2>Ports building cluster</h2>
-
-<p>The ports building cluster is primarily managed by the Ports
-  Management team (portmgr).</p>
-
-<table class="tblbasic">
-<thead>
-<tr>
-<th align="left">Host</th>
-<th align="left">Purpose</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr valign="top">
-<td>beefy<em>[1-8]</em></td>
-<td>Package building machines</td>
+<td>universe[11|10|9][a|b]</td>
+<td>X-STABLE</td>
+<td>amd64</td>
+<td>Universe build machine.</td>
 </tr>
 
 </tbody>
