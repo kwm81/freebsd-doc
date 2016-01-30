@@ -39,7 +39,7 @@
 			select="descendant::year[position() = 1]/name"/></p>
 		    <ul>
 
-		      <!-- Pull in the 10 most recent news items -->
+		      <!-- Pull in the 5 most recent news items -->
 		      <xsl:for-each select="descendant::event[position() &lt;= 5]">
 			<li><a>
 			    <xsl:attribute name="href">
