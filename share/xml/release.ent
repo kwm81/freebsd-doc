@@ -99,4 +99,8 @@
 
 <!ENTITY gnomeoldver '3.14'>
 <!ENTITY gnomever '3.16'>
-<!ENTITY gnomedevelver '3.17'>
+<!ENTITY gnomedevelver '3.18'>
+<!ENTITY mateoldver '1.13'>
+<!ENTITY matever '1.12'>
+<!ENTITY cinnamonoldver '2.8'>
+<!ENTITY cinnamonver '2.4'>
