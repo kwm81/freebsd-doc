@@ -64,7 +64,7 @@
 
 		<h2>What software does the GNOME Team maintain?</h2>
 
-		<p>The GNOME team maintains the GNOME, MATE and the
+		<p>The GNOME team maintains the GNOME, MATE, and
 		  Cinnamon desktop enviroments.</p>
 
 		<h2>What is GNOME?</h2>
@@ -94,8 +94,8 @@
 		    <li>cinnamon</li>
 		  </ul><br/>
 		  The easiest way of installing is to run the
-		  following command and replace gnome3 with the DE of
-		  choice:
+		  following command and replace gnome3 with the
+                  desktop enviroment of choice:
 		  <pre>
 # pkg install gnome3
 		  </pre>
@@ -113,8 +113,8 @@ for how to geting stuff -->
 
 		<p>GNOME, MATE and Cinnamon for &os; are currently
 		  fully supported on 10.2, 10.1 and 10-STABLE while
-		  9.3, 9.3-STABLE and 11.0-CURRENT is provided on a
-		  best effort basis. <!-- xxx volunteer page needs
+		  support for 9.3, 9-STABLE and 11.0-CURRENT is provided
+		  on a best effort basis. <!-- xxx volunteer page needs
 		  updating. There is still
 		  <a href="docs/volunteer.html">plenty left to be done</a>!-->
 		</p>
