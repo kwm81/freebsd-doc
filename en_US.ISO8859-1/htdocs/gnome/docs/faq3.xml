@@ -40,24 +40,23 @@ Note: links for existing questions should NEVER be changed.
 	      and applications up-to-date?</a></li>
 
 	    <li> <a href="#uninstall">How do I uninstall GNOME?</a></li>
+
 	    <li> <a href="#q8">Where can I get more themes for GNOME
 	      &gnomever;?</a></li>
+
 	    <li> <a href="#q10">Does GNOME &gnomever; support anti-aliased
 	      fonts?</a></li>
+
             <li> <a href="#q11">How can I control what fonts are anti-aliased?
               </a></li>
-	    <li> <a href="#q12">How do I edit my GNOME menus?</a></li>
 	    <li> <a href="#q13">How do I use GTK+ 2 resource settings for
 	      GTK+ 2 applications when not in a GNOME environment?</a></li>
 	    <li> <a href="#q15">Brasero does not let me burn CDs,
 	      or Totem/Rhythmbox/Sound-juicer cannot find my CD/DVD drive.
 	      How can I fix this?</a></li>
 	    <li> <a href="#q16">How do I add new GDM sessions?</a></li>
-	    <li> <a href="#q18">How do I disable desktop icons for
-	      "Computer," "Home," and "Trash?"</a></li>
 	    <li> <a href="#q19">How do I mount my removable media in
 	      Nautilus?</a></li>
-	    <li> <a href="#q20">Why is GNOME so slow to start up?</a></li>
 	    <li> <a href="#q21">How do I install GNOME packages from
 	      the GNOME Tinderbox?</a></li>
 	    <li> <a href="#q22">How do I add new MIME types to
@@ -70,8 +69,6 @@ Note: links for existing questions should NEVER be changed.
 	      keybindings in GTK+ applications?</a></li>
 	    <li> <a href="#q27">Why do I need confirm access to my keyring
 	      every time Nautilus tries to open an external share?</a></li>
-	    <li> <a href="#q28">How do I enable window compositing in
-	      GNOME?</a></li>
 	    <li> <a href="#q29">How can I get GDM to respect my locale
 	      settings?</a></li>
 	    <li> <a href="#procfs">Why do I not see any users in
@@ -412,16 +409,6 @@ Load	"type1"
                 <p>Refer to fonts-conf(5) for more information.</p>
 	  </li>
 
-<!-- XXX need to double check -->
-<!-- Q12 -->
-	  <li style="padding-bottom: 0.5em"><a name="q12"></a>
-	    <p><b>How do I edit my GNOME menus?</b></p>
-<!-- A12 -->
-	    <p>Right-click on the Applications menu, and select
-	      <b>Edit Menus</b>.  This will invoke the
-	      <b>alacarte</b> menu editing tool.</p>
-	  </li>
-
 <!-- XXX seems really old, needs review -->
 <!-- Q13 -->
 	  <li style="padding-bottom: 0.5em"><a name="q13"></a>
@@ -565,37 +552,6 @@ Type="Application"
 	      <b>KDE</b> link under the <em>Sessions</em> menu.</p>
 	  </li>
 
-<!-- XXX axe candidate -->
-<!-- Q17 -->
-	  <li style="padding-bottom: 0.5em"><a name="q17"></a>
-	    <p><b>How do I disable spatial Nautilus?</b></p>
-<!-- A17 -->
-	    <p>As of GNOME 2.8, Nautilus operates in what is known as
-	      a "spatial" mode.  This means that each item is opened in
-	      a new window.  This may not be desirable to all users.  If
-	      you wish to revert back to the old Nautilus file system
-	      browser, go to Desktop-&gt;Preferences-&gt;File
-	      Management, click on the Behavior tab, and check the
-	      "Always open in browser windows" checkbox.</p>
-	  </li>
-
-<!-- XXX turn this question around if possible for GNOME 3 desktop? -->
-<!-- Q18 -->
-	  <li style="padding-bottom: 0.5em"><a name="q18"></a>
-	    <p><b>How do I disable desktop icons for "Computer,"
-	      "Home," and "Trash?"</b></p>
-<!-- A18 -->
-	    <p>If you do not want your desktop cluttered with the
-	      default icons for "Computer," "Home," and "Trash," you can
-	      disable any or all of them.  To
-	      do this, launch <b>Applications &gt; System Tools &gt;
-              Configuration Editor</b> (<tt>gconf-editor</tt> from the
-	      command line), and go to the
-	      <tt>/apps/nautilus/desktop</tt> key.  From here, you can
-	      enable or disable the icons, and even rename "Home" and
-	      "Trash."</p>
-	  </li>
-
 <!-- XXX this works for somereason or doesn't check why --> 
 <!-- Q19 -->
 	  <li style="padding-bottom: 0.5em"><a name="q19"></a>
@@ -608,51 +564,6 @@ Type="Application"
 	      FAQ</a>.</p>
 	  </li>
 
-<!-- Q20 -->
-	  <li style="padding-bottom: 0.5em"><a name="q20"></a>
-	    <p><b>Why is GNOME so slow to start up?</b></p>
-<!-- A20 -->
-	    <p>Under normal circumstances, GNOME should only take a
-	      few seconds to start up (fifteen at most).  However,
-	      certain configurations may cause it to hang for up to an
-	      hour at login time.</p>
-
-	    <p>First, make sure your machine's hostname properly
-	      resolves.  To test this, run the following command:</p>
-
-	    <pre>
-ping `hostname`
-	    </pre>
-
-	    <p>If the command fails, you will either have to add your
-	      fully-qualified hostname to DNS or to <tt>/etc/hosts</tt>.
-	      If you do not have a static IP address, you can append
-	      your hostname to the <tt>localhost</tt> line in
-	      <tt>/etc/hosts</tt>.  For example, if your machine's
-	      hostname is <tt>gnome-rocks.mydomain.com</tt>, edit
-	      <tt>/etc/hosts</tt>, and change the line:</p>
-
-	    <pre>
-127.0.0.1               localhost localhost.my.domain
-	    </pre>
-
-	    <p>To:</p>
-
-	    <pre>
-127.0.0.1              localhost localhost.my.domain gnome-rocks gnome-rocks.mydomain.com
-	    </pre>
-
-	    <p>Finally, if you have either the TCP or UDP blackhole
-	      sysctl enabled, this may cause GNOME to stall on login.
-	      If, after fixing hostname resolution,
-	      GNOME still takes a long time to startup, verify the following
-	      sysctls are set to 0:</p>
-
-	    <pre>
-net.inet.tcp.blackhole
-net.inet.udp.blackhole
-	    </pre>
-	  </li>
 
 <!-- XXX do we need to setup a package tinderbox for gnome3.x devel work? -->
 <!-- Q21 -->
@@ -891,37 +802,6 @@ gtk-key-theme-name = "Emacs"
 proc			/proc		procfs	rw	0	0
 	    </pre>
 
-	  </li>
-
-<!-- XXX I think this one can go, since gnome-shell is already doing this? -->
-<!-- Q28 -->
-	  <li style="padding-bottom: 0.5em"><a name="q28"></a>
-	    <p><b>How do I enable window compositing in GNOME?</b></p>
-<!-- A28 -->
-	    <p>Starting with GNOME 2.22, the Metacity window manager includes
-	      a compositing manager.  When compositing is enabled,
-	      widgets will get a drop shadow, and the Alt+Tab
-	      application switcher will show previews of the
-	      application windows.</p>
-
-	    <p>Compositing is not enabled by default as not all
-	      graphics cards and drivers will do well with it.
-	      If your graphics card and driver support accelerated 3D
-	      rendering and you want to use compositing you can enable
-	      it using the following command:</p>
-
-	    <pre>
-% gconftool-2 -s --type bool /apps/metacity/general/compositing_manager true
-	    </pre>
-
-	    <p>If you want to disable it again, change "true" to
-	      "false", and re-run the command.
-	      You can also use <tt>gconf-editor</tt> to edit it.</p>
-
-	    <p>If your card is supported by the "nvidia," "intel",
-	      "openchrome", or "radeon" (see the radeon(4) man page to make
-	      sure your card is supported for 3D acceleration) drivers,
-	      then compositing should work for you.</p>
 	  </li>
 
 <!-- XXX localation this is fun -->
