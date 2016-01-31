@@ -93,6 +93,7 @@
 		    <li>mate-lite (minimal MATE desktop)</li>
 		    <li>cinnamon</li>
 		  </ul><br/>
+<!-- xxx namespace error on the xlink here -->
 		  Read our <link xlink:href="&base;/gnome/docs/faq3.html#install">
 		  install guide</link> for installation instructions.</p>
 
