@@ -22,23 +22,23 @@ Note: links for existing questions should NEVER be changed.
       <cvs:keyword xmlns:cvs="http://www.FreeBSD.org/XML/CVS">$FreeBSD$</cvs:keyword>
     </head>
 
-<!-- xxx Link to gnome3 cheat sheet -->
-
     <body class="navinclude.gnome">
+
+<!-- xxx Link to gnome3 cheat sheet -->
 
         <h2>Contents</h2>
           <ol>
-            <li> <a href="#install">How do I get GNOME, MATE, or CINNAMON for &os;?</a></li>
-<!-- xxx search and chagne #full-gnome -> #full-desktop -->
+            <li> <a href="#install">How do I get GNOME, MATE, or
+	      CINNAMON for &os;?</a></li>
 	    <li> <a href="#full-desktop">How do I get the most out of
 	      the desktop??</a></li>
-
-            <li> <a href="#failing">GNOME &gnomever; is failing to build from ports.
+            <li> <a href="#failing">A port is failing to build from ports.
 	      What do I do?</a></li>
             <li> <a href="#upgrade">What is the best way to upgrade from GNOME
 	      &gnomeoldver; to GNOME &gnomever;?</a></li>
-	    <li> <a href="#update">How do I keep my GNOME &gnomever; components
+	    <li> <a href="#update">How do I keep my desktop components
 	      and applications up-to-date?</a></li>
+
 	    <li> <a href="#uninstall">How do I uninstall GNOME?</a></li>
 	    <li> <a href="#q8">Where can I get more themes for GNOME
 	      &gnomever;?</a></li>
@@ -92,6 +92,7 @@ Note: links for existing questions should NEVER be changed.
 		<a href="http://www.gnome.org/start/&gnomever;/notes/en/">
 		release notes</a>.  For more information about MATE 
 		<a href="http://mate-desktop.org/">MATE desktop</a> website.</p>
+	<!-- xxx cinnamon? http://cinnamon.linuxmint.com/ seems defunct -->
 
 	    <p>The easiest way of installing is to run the following
 	      command and replace xxx with either gnome3, gnome3-lite,
@@ -173,34 +174,34 @@ exec ck-launch-session xxx
 
 <!-- Q Failing -->
             <li style="padding-bottom: 0.5em"><a name="failing"></a>
-	    <p><b>GNOME &gnomever; is failing to build from ports.  What do
+	    <p><b>A port failing to build from ports.  What do
 	      I do?</b></p>
 <!-- A Failing -->
-	    <p>The majority of GNOME &gnomever; compilation problems can be solved
-	      by making sure all the necessary GNOME &gnomever; components are
+	    <p>The majority of compilation problems can be solved
+	      by making sure all the necessary components are
 	      <a href="#update">up-to-date</a>.</p>
 
-		<p><u>Updating solves most problems</u></p>
+	    <p><u>Updating solves most problems</u></p>
 
-		<p>If you have not yet followed <a href="#update">FAQ update</a>,
-		  do so, as it will most likely fix the problem you are
-		  reading this document to solve.</p>
+	    <p>If you have not yet followed <a href="#update">FAQ update</a>,
+	      do so, as it will most likely fix the problem you are
+	      reading this document to solve.</p>
 
-		<p>Please follow <a href="#update">FAQ update</a>.  If you have not
-		  done so, and you ask for help, you will be told to follow
-		  FAQ update item.</p>
+	    <p>Please follow <a href="#update">FAQ update</a>.  If you have not
+	      done so, and you ask for help, you will be told to follow
+	      FAQ update item.</p>
 
-	    <p>In general, when a GNOME &gnomever; component is not up-to-date,
+	    <p>In general, when a component is not up-to-date,
 	      you will see an error similar to the following:</p>
 
-	      <pre>
+	    <pre>
 checking for libgnomeui-2.0 libbonoboui-2.0 libbonobo-2.0 >= 2.2.1
 gnome-vfs-2.0 libgnomeprint-2.2 >= 2.3.0 libgnomeprintui-2.2 libglade-2.0...
 configure: error: Library requirements (libgnomeui-2.0 libbonoboui-2.0
 libbonobo-2.0 >= 2.2.1 gnome-vfs-2.0 libgnomeprint-2.2 >= 2.3.0 libgnomeprintui-2.2
 libglade-2.0) not met; consider adjusting the PKG_CONFIG_PATH environment variable
 if your libraries are in a nonstandard prefix so pkg-config can find them.
-	      </pre>
+	    </pre>
 <!-- XXX convert this to a GNOME 3 errorr -->
 
 	    <p>Simply keeping your ports tree <a href="#update">up-to-date</a> will
@@ -209,31 +210,15 @@ if your libraries are in a nonstandard prefix so pkg-config can find them.
 	    <p>If the <tt>pkg-config</tt> program is out-of-date, you may see
 	      a configure error similar to the following:</p>
 
-	      <pre>
+	    <pre>
 configure: error: *** pkg-config too old; version 0.14 or better required.
-	      </pre>
+	    </pre>
 
-	      <p>While this may be buried in some other text, the error is
-	        very straight-forward: you need to upgrade pkg-config.
-		The pkg-config application is found in the
-		<tt>devel/pkg-config</tt> port.  By updating this port to
-		the latest version, this error will go away.</p>
-
-<!-- XXX is this still needed? check if all supported branches have posix
-     thingy enabled by default -->
-	      <p>You may see compiler errors relating to pthreads
-	      (&posix; threads), such as:</p>
-
-	    <pre>
-undefined reference to 'strerror_r'
-            </pre>
-
-	    <p>To fix thread related errors, make sure you have the following
-	      compiled into your kernel:</p>
-
-	    <pre>
-options     _KPOSIX_PRIORITY_SCHEDULING
-            </pre>
+	    <p>While this may be buried in some other text, the error is
+	      very straight-forward: you need to upgrade pkg-config.
+	      The pkg-config application is found in the
+	      <tt>devel/pkgconf</tt> port.  By updating this port to
+	      the latest version, this error will go away.</p>
 
 	    <p>If you are tracking -STABLE or -CURRENT, make sure that you
 	      do <b>not</b> have <tt>NO_LIBPTHREAD</tt> set in
@@ -245,7 +230,6 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 	      work directory.</p>
 	  </li>
 
-
 <!-- Q Upgrade -->
 	  <li style="padding-bottom: 0.5em"><a name="upgrade"></a>
 	    <p><b>What is the best way to upgrade from GNOME &gnomeoldver; to GNOME &gnomever;?</b></p>
@@ -255,22 +239,26 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 	      <a href="faq314.html">upgrade FAQ</a> for detailed
 	      instructions.</p>
 	  </li>
-<!-- XXX needs to be updated from gnome 2-> gnome 3. Also new question about removeing gnome 2 with mate. -->
+<!-- XXX needs to be updated from gnome 2-> gnome 3. Also new
+question about removing gnome 2 with mate. And MATE en cinnamon in here-->
 
 <!-- Q update -->
 	  <li style="padding-bottom: 0.5em"><a name="update"></a>
-	    <p><b>How do I keep my GNOME &gnomever; components and applications
+	    <p><b>How do I keep my components and applications
 	      up-to-date?</b></p>
 <!-- A update -->
+
 		<p>Package users can keep there installed packages update
-		  with the pkg command as mentioned in <a href="&base;/../books/handbook/pkgng-intro.html">binary package management handbook chapter</a>.</p>
-		<p>Port users are emphatically encouraged to use <tt>portupgrade</tt>
-		  or <tt>portmaster</tt> to keep your GNOME
-		  &gnomever; components and applications up-to-date.</p>
+		  with the pkg command as mentioned in
+		  <a href="&base;/../books/handbook/pkgng-intro.html">binary package management</a>
+		  handbook chapter.</p>
+		<p>Port users are emphatically encouraged to use <tt>portupgrade</tt>,
+		  <tt>portmaster</tt>, or <tt>synth</tt> to keep your
+		  desktop components and applications up-to-date.</p>
 
 		<p><u>Update your ports with <tt>portupgrade</tt> or
 		  <tt>portmaster</tt>.</u></p>
-
+<!-- add synth instructions here -->
 		<p>Once you have updated your ports tree (presumably with
 		  <tt>portsnap</tt>), the following two simple commands will update
 		  what needs to be updated, and will prevent inconsistencies:</p>
@@ -304,11 +292,11 @@ options     _KPOSIX_PRIORITY_SCHEDULING
 
 <!-- Q Uninstall -->
 	  <li style="padding-bottom: 0.5em"><a name="uninstall"></a>
-	    <p><b>How do I uninstall GNOME?</b></p>
+	    <p><b>How do I uninstall GNOME/MATE/CINNAMON?</b></p>
 <!-- A Uninstall -->
 	    <p>We would prefer that you did not uninstall GNOME ;-),
 	      but if you must, you have to decide how much you want to
-	      uninstall.  If you have installed <tt>x11/gnome2</tt>
+	      uninstall.  If you have installed <tt>x11/gnome3</tt>
 	      and you want to remove all Desktop components that do
 	      not have other dependent packages, do the following:</p>
 
