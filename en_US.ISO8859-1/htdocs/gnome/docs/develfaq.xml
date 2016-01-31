@@ -13,15 +13,19 @@
 
     <body class="navinclude.gnome">
 
+  <p>This page documents the development model the GNOME maintained software
+    follows, and the work flow the &os; GNOME Team uses.</p>
+This document is about the development branch.  
+
   <h2>Contents</h2>
     <ol>
-      <li> <a href="#q1">What are development versions of GNOME all about?</a></li>
-      <li> <a href="#q2">Should I track development versions?</a></li>
-      <li> <a href="#q3">How do I obtain development versions of GNOME stuff?</a></li>
-      <li> <a href="#q4">How do I keep everything up-to-date and in sync?</a></li>
-      <li> <a href="#q5">What should I do when something does not work?</a></li>
-      <li> <a href="#q6">How can I help with the development versions?</a></li>
-      <li> <a href="#q7">What is the current state of development GNOME on
+      <li> <a href="#develver">What are development versions all about?</a></li>
+      <li> <a href="#develtrack">Should I track development versions?</a></li>
+      <li> <a href="#develaquire">How do I obtain development versions of GNOME stuff?</a></li>
+      <li> <a href="#develupdate">How do I keep everything up-to-date and in sync?</a></li>
+      <li> <a href="#develbroken">What should I do when something does not work?</a></li>
+      <li> <a href="#develhelp">How can I help with the development versions?</a></li>
+      <li> <a href="#develstate">What is the current state of development GNOME on
 	&os;</a></li>
     </ol>
 
@@ -29,61 +33,67 @@
 
     <ol>
 <!-- Q1 -->
-      <li style="padding-bottom: 0.5em"><a name="q1"></a>
-	<p><b>What are development versions of GNOME all about?</b></p>
+      <li style="padding-bottom: 0.5em"><a name="develver"></a>
+	<p><b>What are development versions all about?</b></p>
 <!-- A1 -->
-	<p>The development versions are the packages released by the GNOME
-	  project that will eventually become the stable (release) versions.
-	  There are three working branches of GNOME development:</p>
+	<p>The GNOME, MATE, and CINNAMON project all use the same
+	  development schema.  The development versions are the packages
+	  released by the projects that will eventually become the
+	  stable (release) versions.  There are three working branches
+	  of development:</p>
 	<ol>
 	  <li><b>STABLE</b> - The applications and libraries in the stable
 	    branch are considered "release quality," and are the versions that
-	    appear in the &os; ports tree.  The current stable version is
-	    GNOME &gnomever;.</li>
+	    appear in the &os; ports tree.  The current stable version are
+	    GNOME &gnomever;, MATE &matever;, and CINNAMON &cinnamonver;.</li>
 	  <li><b>DEVELOPMENT</b> - In between stable releases are development
-	    releases.  Traditionally, GNOME development releases have odd minor
-	    numbers (e.g. 2.3, &gnomedevelver;, 3.(n*2)-1).  Development releases will
-	    become stable releases, and move from alpha to beta quality during
+	    releases.  Traditionally, GNOME and MATE development releases have
+	    odd minor numbers (e.g. 2.3, &gnomedevelver;, 3.(n*2)-1).  Development
+	    releases will become stable releases, and move from alpha to beta quality during
 	    their lifecycle.  The development releases need testing by &os;
 	    users to minimize the number of surprises when the new stable
-	    versions are committed to the &os; SVN tree. This document is
-	    about the development branch.  At any time the development branch for &os;
+	    versions are committed to the &os; SVN tree.  At any time the
+	    development branch for &os;
 	    might be based of a stable GNOME release.  However it will be tagged 
 	    "development" here if it is the version that is work in progress by the &os;
-	    GNOME team.  The current development branch for &os; is GNOME &gnomedevelver;.</li>
+	    GNOME team.  The current development branch for &os; is GNOME &gnomedevelver;,
+	    MATE &matedevelver;, and CINNAMON &cinnamondevelver;.</li>
 	  <li><b>GIT</b> - Often newer-than-new, the GIT master versions of GNOME
-	    applications and libraries are alpha quality, or often completely
-	    unbuildable.  The &os; GNOME project pays attention to, but
-	    does not track the alpha quality code.</li>
+	    applications and libraries are alpha quality, or might not even work
+	    on &os;. The &os; GNOME project pays attention to, but
+	    does not track the alpha quality code.  We do have a build machine
+	    that just builds the git code to find build issues.</li>
 	</ol>
       </li>
 
 <!-- Q2 -->
-      <li style="padding-bottom: 0.5em"><a name="q2"></a>
-	<p><b>Should I track GNOME development versions?</b></p>
+      <li style="padding-bottom: 0.5em"><a name="develtrack"></a>
+	<p><b>Should I track development versions?</b></p>
 <!-- A2 -->
 	<p>If you are looking for a stable environment, absolutely not.  Please
-	  only track the GNOME &gnomedevelver; branch if you wish to help identify bug
-	  and improve the &os; GNOME project.  You will find little
+	  only track the GNOME &gnomedevelver;, MATE &matedevelver;, or
+	  CINNAMON &cinnamondevelver; branch if you wish to help identify bug
+	  and improve the ports for &os;.  You will find little
 	  sympathy if a development-quality GNOME application eats your
 	  homework.</p>
       </li>
 
 <!-- Q3 -->
-      <li style="padding-bottom: 0.5em"><a name="q3"></a>
-	<p><b>How do I obtain the development versions of GNOME stuff?</b></p>
+      <li style="padding-bottom: 0.5em"><a name="develaquire"></a>
+	<p><b>How do I obtain the development versions of stuff?</b></p>
 <!-- A3 -->
 	<p>The FreeBSD gnome team uses a GIT repository where we maintain
-	  the development versions for &os; of the software we maintain.  These
+	  the development versions of the software we maintain of &os;.  These
 	  branches contain the complete &os; ports tree plus the development changes.</p>
 
 	<p>How to checkout the new git repo setup.</p>
+<!-- xxx explain git layout -->
 
 	<p>During the development cycle, FreeBSD-specific caveats and
 	  other useful information will be sent to <a
 	  href="mailto:marcuscom-devel@marcuscom.com">
 	  marcuscom-devel@marcuscom.com</a>.  If you are tracking
-	  the GNOME development branch, you <b>must</b> <a
+	  the a development branch, you <b>must</b> <a
 	  href="http://www.marcuscom.com/mailman/listinfo/marcuscom-devel">
 	  subscribe</a> to this list.  You should also consider <a
 	  href="http://lists.freebsd.org/mailman/listinfo/freebsd-gnome">
@@ -96,12 +106,14 @@
 <pre>
 WITH_DEBUG="yes"
 </pre>
+	<p>Please use gdb (from ports) or lldb as a debugger, gdb from
+	  base is too old to give usefull results</p>
 	<p>GNOME has an excellent guide for getting <a href="https://wiki.gnome.org/Community/GettingInTouch/Bugzilla/GettingTraces">
 	  useful back traces</a>.</p>
       </li>
 
 <!-- Q4 -->
-      <li style="padding-bottom: 0.5em"><a name="q4"></a>
+      <li style="padding-bottom: 0.5em"><a name="develupdate"></a>
 	<p><b>How do I keep everything up-to-date and in sync?</b></p>
 <!-- A4 -->
 	<p>There are two methods of keeping track of what happens in
@@ -112,11 +124,11 @@ WITH_DEBUG="yes"
 <pre>
 # env PORTSDIR=/path/to/where/the/checkout/is/ portmaster -a
 </pre></li>
-	  <li><b>poudriere</b> - Build a set of package from the development repository you want to test.</li>
+	  <li><b>poudriere</b> - Build a set of package from the development repository you want to test. See pkg-repository(5) how to configure pkg to use the repo.</li>
 	</ol>
-	<p></p>
+<!-- xxx note CONSERVIATE_UPGRADE flag , or pkg upgrade -r GNOME -->
 
-	<p>Keeping your ports up-to-date with the GNOME
+	<p>Keeping your ports up-to-date with the
 	  development branch can be complicated.  Sometimes components change
 	  in a way that makes <tt>portupgrade</tt> or <tt>portmaster</tt>
 	  fail, or causes strange end results. If you plan to track the
@@ -127,17 +139,16 @@ WITH_DEBUG="yes"
 	  (<tt>irc.freenode.net</tt>).</p>
 
 	<p>If all of this sounds scary, or you need a desktop that
-	  "Just Works," you should stick with the &gnomever; version that
+	  "Just Works," you should stick with the stable version that
 	  is available in the &os; ports tree.</p>
       </li>
 
 <!-- Q5 -->
-      <li style="padding-bottom: 0.5em"><a name="q5"></a>
+      <li style="padding-bottom: 0.5em"><a name="develbroken"></a>
 	<p><b>What should I do when something does not work?</b></p>
 <!-- A5 -->
 	<p>It depends.  If you think the problem is truly a bug with the
-	  GNOME component, you can report a bug using <b>bug-buddy</b> or
-	  the GNOME <a href="http://bugzilla.gnome.org">Bugzilla</a>
+	  GNOME component, you can report a bug in the GNOME <a href="http://bugzilla.gnome.org">Bugzilla</a>
 	  interface.  If you think the problem lies in a &os; port, or
 	  is FreeBSD-specific, send email to
 	  <a href="mailto:&email;@FreeBSD.org">&email;@FreeBSD.org</a>,
@@ -149,8 +160,9 @@ WITH_DEBUG="yes"
 	  so we can keep track of known issues.  Thanks!</p>
       </li>
 
+<!-- xxx this needs more work -->
 <!-- Q6 -->
-      <li style="padding-bottom: 0.5em"><a name="q6"></a>
+      <li style="padding-bottom: 0.5em"><a name="develhelp"></a>
 	<p><b>How can I help with the development versions?</b></p>
 <!-- A6 -->
 	<p>Now that work on &gnomedevelver; has started, we need
@@ -161,7 +173,7 @@ WITH_DEBUG="yes"
       </li>
 
 <!-- Q7 -->
-      <li style="padding-bottom: 0.5em"><a name="q7"></a>
+      <li style="padding-bottom: 0.5em"><a name="develstate"></a>
 	<p><b>What is the current state of development GNOME on &os;?</b></p>
 <!-- A7 -->
 	<p>&gnomever; is the latest version that was merged into the &os; ports tree.  
