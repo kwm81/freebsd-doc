@@ -102,5 +102,7 @@
 <!ENTITY gnomedevelver '3.18'>
 <!ENTITY mateoldver '1.13'>
 <!ENTITY matever '1.12'>
+<!ENTITY matedevelver '1.13'>
 <!ENTITY cinnamonoldver '2.8'>
 <!ENTITY cinnamonver '2.4'>
+<!ENTITY cinnamondevelver '2.9'>
