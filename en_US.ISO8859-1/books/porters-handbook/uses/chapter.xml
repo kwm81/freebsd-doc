@@ -75,7 +75,7 @@
     <para>Possible arguments: (none), <literal>47</literal>,
       <literal>49</literal>, <literal>5</literal></para>
 
-    <para>Depends on an <application>Ada</application>-capable
+   <para>Depends on an <application>Ada</application>-capable
       compiler, and sets <varname>CC</varname> accordingly.  Defaults
       to a <application>gcc</application> 4.9 based compiler, use
       <literal>:47</literal> to use the older
@@ -568,6 +568,17 @@
       dependency and sets up the environment to use
       <command>gmake</command> as the default <command>make</command>
       for the build.</para>
+  </sect1>
+
+  <sect1 xml:id="uses-gnome">
+    <title><literal>gnome</literal></title>
+
+    <para>Possible arguments: (none)</para>
+
+    <para>Uses <literal>gnome</literal> enables all the options provided
+      by USE_GNOME and macro's like INSTALLS_ICONS and GLIB_SCHEMAS.  See
+      the <link linkend="using-gnome"><literal>GNOME chapter</literal></link>
+      for more information.</para>
   </sect1>
 
   <sect1 xml:id="uses-gperf">
