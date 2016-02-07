@@ -1427,7 +1427,7 @@ USE_XORG=	x11 xpm</programlisting>
       <para>To enable the functionality provided by
 	<filename>Mk/Uses/gnome.mk</filename>, 
 <programlisting>USES=gnome</programlisting> needs to be set.  This
-	document assume this is the case.
+	document assume this variable is set and won't mention it again.
 	</para>
 
       <para>Adding this variable to the port allows the use of
@@ -1467,7 +1467,7 @@ MASTER_SITES=	 GNOME
 MAINTAINER=	 kwm@FreeBSD.org
 COMMENT=	 Interactive tool for performing search and replace operations
 
-USES=		 gettext gmake pathfix pkgconfig tar:xz
+USES=		 gettext gmake gnome pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	 gnomeprefix intlhack gtksourceviewmm3
 CPPFLAGS+=	 -I${LOCALBASE}/include
