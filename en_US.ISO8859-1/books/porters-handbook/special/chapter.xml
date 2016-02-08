@@ -1441,11 +1441,12 @@ USE_XORG=	x11 xpm</programlisting>
 	or the handling of special files.
 	<acronym>GNOME</acronym> applications under &os; use the
 	<varname>USES=gnome</varname> infrastructure.  Include all the
-	needed components as a space-separated list.  The
-	<varname>USE_GNOME</varname> components are divided into
-	these virtual lists: basic components, GNOME 3 components
-	and legacy components.  If the port needs only GTK3 libraries,
-	this is the shortest way to define it:</para>
+	needed components from <varname>USE_GNOME</varname> as a
+	space-separated list.  The <varname>USE_GNOME</varname>
+	components are divided into these virtual lists: basic
+	components, GNOME 3 components and legacy components.  If the
+	port needs only GTK3 libraries, this is the shortest way to
+	define it:</para>
 
       <programlisting>USE_GNOME=	gtk30</programlisting>
 
