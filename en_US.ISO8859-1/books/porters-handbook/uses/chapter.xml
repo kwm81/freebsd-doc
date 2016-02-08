@@ -75,7 +75,7 @@
     <para>Possible arguments: (none), <literal>47</literal>,
       <literal>49</literal>, <literal>5</literal></para>
 
-   <para>Depends on an <application>Ada</application>-capable
+    <para>Depends on an <application>Ada</application>-capable
       compiler, and sets <varname>CC</varname> accordingly.  Defaults
       to a <application>gcc</application> 4.9 based compiler, use
       <literal>:47</literal> to use the older
@@ -576,9 +576,10 @@
     <para>Possible arguments: (none)</para>
 
     <para>Uses <literal>gnome</literal> enables all the options provided
-      by USE_GNOME and macro's like INSTALLS_ICONS and GLIB_SCHEMAS.  See
-      the <link linkend="using-gnome"><literal>GNOME chapter</literal></link>
-      for more information.</para>
+      by <literal>USE_GNOME</literal> and macros like
+      <literal>INSTALLS_ICONS</literal> and <literal>GLIB_SCHEMAS</literal>.
+      See the <xref linkend="using-gnome"/> GNOME chapter for more
+      information.
   </sect1>
 
   <sect1 xml:id="uses-gperf">

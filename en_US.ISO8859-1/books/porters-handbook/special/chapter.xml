@@ -1422,22 +1422,25 @@ USE_XORG=	x11 xpm</programlisting>
     </sect2>
 
     <sect2 xml:id="use-gnome">
-      <title>Using <varname>USE_GNOME</varname></title>
+      <title>Using <varname>USES=gnome</varname></title>
 
-      <para>To enable the functionality provided by
-	<filename>Mk/Uses/gnome.mk</filename>, 
-<programlisting>USES=gnome</programlisting> needs to be set.  This
-	document assume this variable is set and won't mention it again.
-	</para>
+      <para>The functionality provided by
+	<filename>Mk/Uses/gnome.mk</filename> is enabled by adding
+	<literal>gnome</literal> to the <varname>USES</varname>
+	values:</para> 
+
+	<programlisting>USES=gnome</programlisting>
+
+	<para>This document assumes the variable has been set and will
+	  not mention it again.</para>
 
       <para>Adding this variable to the port allows the use of
 	the macros and components defined in
-	<filename>Mk/Uses/gnome.mk</filename>.  The code in
-	<filename>Mk/Uses/gnome.mk</filename> adds the needed
-	build-time, run-time or library dependencies
+	<filename>Mk/Uses/gnome.mk</filename>.  The added code supplies
+	the needed build-time, run-time, or library dependencies
 	or the handling of special files.
 	<acronym>GNOME</acronym> applications under &os; use the
-	<varname>USE_GNOME</varname> infrastructure.  Include all the
+	<varname>USES=gnome</varname> infrastructure.  Include all the
 	needed components as a space-separated list.  The
 	<varname>USE_GNOME</varname> components are divided into
 	these virtual lists: basic components, GNOME 3 components
