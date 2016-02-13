@@ -31,14 +31,7 @@
     <abstract>
       <para>In the open source world, the word <quote>Linux</quote> is almost
 	synonymous with <quote>Operating System</quote>, but it is not the only
-	open source &unix; operating system.  According
-	to the <link xlink:href="http://www.leb.net/hzo/ioscount/data/r.9904.txt">Internet
-	  Operating System Counter</link>, as of April 1999 31.3% of the
-	world's network connected machines run Linux.  14.6% run BSD &unix;.
-	Some of the world's largest web operations, such as <link xlink:href="http://www.yahoo.com/">Yahoo!</link>, run BSD.  The world's
-	busiest FTP server of 1999 (now defunct), <link xlink:href="ftp://ftp.cdrom.com/">ftp.cdrom.com</link>, used BSD to
-	transfer 1.4 TB of data a day.    Clearly this is not a niche
-	market: BSD is a well-kept secret.</para>
+	open source &unix; operating system.</para>
 
       <para>So what is the secret?  Why is BSD not better known?  This white
 	paper addresses these and other questions.</para>
@@ -65,9 +58,6 @@
 	<para>The BSD kernel, which handles process scheduling, memory
 	  management, symmetric multi-processing (SMP), device drivers,
 	  etc.</para>
-
-	<para><emphasis>Unlike the Linux kernel, there are several different
-	    BSD kernels with differing capabilities.</emphasis></para>
       </listitem>
 
       <listitem>
@@ -249,12 +239,10 @@
 
       <para>The BSD kernels are developed and updated following the Open
 	Source development model.  Each project maintains a publicly
-	accessible <emphasis>source tree</emphasis> under
-	<link xlink:href="https://subversion.apache.org/">Subversion</link>
-	(SVN), which contains all source files for the
-	project, including documentation and other incidental files.  SVN
-	allows users to <quote>check out</quote> (in other words, to
-	extract a copy of) any desired version of the system.</para>
+	accessible <emphasis>source tree</emphasis>
+	which contains all source files for the
+	project, including documentation and other incidental files.
+	Users can obtain a complete copy of any version.</para>
 
       <para>A large number of developers worldwide contribute to improvements
 	to BSD.  They are divided into three kinds:</para>

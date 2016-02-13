@@ -5,7 +5,7 @@
 <!ENTITY local.branch.stable "stable/10">
 <!ENTITY local.branch.releng "releng/10.3">
 <!ENTITY title "FreeBSD &local.rel; Release Process">
-<!ENTITY % beta.local.where "IGNORE">
+<!ENTITY % beta.local.where "INCLUDE">
 <!ENTITY % beta2.local.where "IGNORE">
 ]>
 
@@ -28,9 +28,9 @@
   <p>General discussions about the pending release and known issues
     should be sent to the public <a
       href="mailto:FreeBSD-stable@FreeBSD.org">freebsd-stable</a>
-    mailing list.  <a
+    mailing list.<!-- <a
       href="&base;/doc/en_US.ISO8859-1/books/handbook/freebsd-glossary.html#mfc-glossary">MFC</a>
-    requests are no longer being accepted at this time.</p>
+    requests are no longer being accepted at this time.--></p>
 
   &beta.local.where;
   &beta2.local.where;
@@ -83,14 +83,14 @@
     <tr>
       <td>BETA1 builds begin</td>
       <td>5&nbsp;February&nbsp;2016</td>
-      <td>-</td>
+      <td>5&nbsp;February&nbsp;2016</td>
       <td>First beta test snapshot.</td>
     </tr>
 
     <tr>
       <td>BETA2 builds begin</td>
       <td>12&nbsp;February&nbsp;2016</td>
-      <td>-</td>
+      <td>12&nbsp;February&nbsp;2016</td>
       <td>Second beta test snapshot.</td>
     </tr>
 
