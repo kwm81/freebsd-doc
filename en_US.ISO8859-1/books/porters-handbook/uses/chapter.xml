@@ -579,7 +579,7 @@
       by <literal>USE_GNOME</literal> and macros like
       <literal>INSTALLS_ICONS</literal> and <literal>GLIB_SCHEMAS</literal>.
       See the <xref linkend="using-gnome"/> GNOME chapter for more
-      information.
+      information.</para>
   </sect1>
 
   <sect1 xml:id="uses-gperf">
