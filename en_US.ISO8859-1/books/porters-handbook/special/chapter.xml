@@ -1427,12 +1427,8 @@ USE_XORG=	x11 xpm</programlisting>
       <para>The functionality provided by
 	<filename>Mk/Uses/gnome.mk</filename> is enabled by adding
 	<literal>gnome</literal> to the <varname>USES</varname>
-	values:</para> 
-
-	<programlisting>USES=gnome</programlisting>
-
-	<para>This document assumes the variable has been set and will
-	  not mention it again.</para>
+	values: <literal>USES=gnome</literal>.  This document assumes
+	the variable has been set and will not mention it again.</para>
 
       <para>Adding this variable to the port allows the use of
 	the macros and components defined in
